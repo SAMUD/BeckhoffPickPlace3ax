@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+  <POU Name="FB_RegulMoteur" Id="{76bd808d-6760-4a61-a5ed-d48ddecd1ecc}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_RegulMoteur
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

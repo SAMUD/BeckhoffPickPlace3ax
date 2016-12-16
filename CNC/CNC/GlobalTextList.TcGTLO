@@ -6,6 +6,11 @@
         <o xml:space="preserve" t="GlobalTextListObject">
           <l n="TextList" t="ArrayList" cet="TextListRow">
             <o>
+              <v n="TextID">"37"</v>
+              <v n="TextDefault">"%i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"3"</v>
               <v n="TextDefault">"%s"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -51,6 +56,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"25"</v>
+              <v n="TextDefault">"Consigne: %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"2"</v>
               <v n="TextDefault">"Cycle Auto"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -71,6 +81,21 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"33"</v>
+              <v n="TextDefault">"fbConfig.lrTemp : %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"36"</v>
+              <v n="TextDefault">"fbConfig.lrValInc : %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"32"</v>
+              <v n="TextDefault">"fbConfig.udiNbreIncBus : %i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"22"</v>
               <v n="TextDefault">"Going in"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -78,6 +103,16 @@
             <o>
               <v n="TextID">"21"</v>
               <v n="TextDefault">"Going out"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"34"</v>
+              <v n="TextDefault">"lrEcart : %.5f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"35"</v>
+              <v n="TextDefault">"lrTension : %.2f"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
@@ -106,6 +141,16 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"38"</v>
+              <v n="TextDefault">"QaSortie : %2.5f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"31"</v>
+              <v n="TextDefault">"QaSortie : %i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"10"</v>
               <v n="TextDefault">"Rentre       Sort"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -126,8 +171,33 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"26"</v>
+              <v n="TextDefault">"stConfigBus.uiNbBits: %i"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"24"</v>
               <v n="TextDefault">"Stop"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"27"</v>
+              <v n="TextDefault">"stTension.lrMax : %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"28"</v>
+              <v n="TextDefault">"stTension.lrMin : %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"29"</v>
+              <v n="TextDefault">"stValeur.lrMax : %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"30"</v>
+              <v n="TextDefault">"stValeur.lrMin : %.2f"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
           </l>
