@@ -251,6 +251,13 @@
 							<Name>GVL.stIO.stIn.xManual</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL.fbIa.IaEntree</Name>
+							<Comment>
+								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
@@ -370,6 +377,13 @@
 						<Var>
 							<Name>GVL.stIO.stOut.QxLampeOrange</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.fbQa.QaSortie</Name>
+							<Comment>
+								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
+							</Comment>
+							<Type>DINT</Type>
 						</Var>
 					</Vars>
 					<TaskPouOids>
@@ -1086,12 +1100,14 @@
 				<Link VarA="PlcTask Inputs^GVL.fbAct2.IxSensIn" VarB="Term 6 (KL1408)^Channel 4^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.fbAct2.IxSensOut" VarB="Term 6 (KL1408)^Channel 3^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.fbAct3.IxSensOut" VarB="Term 6 (KL1408)^Channel 5^Eingang"/>
+				<Link VarA="PlcTask Inputs^GVL.fbIa.IaEntree" VarB="Term 4 (KL3404)^Channel 2^Daten Ein"/>
 				<Link VarA="PlcTask Inputs^GVL.stIO.stIn.IxAruIO" VarB="Term 7 (KL1408)^Channel 1^Eingang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxInOutput" VarB="Term 8 (KL2408)^Channel 6^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxOutOutput" VarB="Term 8 (KL2408)^Channel 5^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxInOutput" VarB="Term 8 (KL2408)^Channel 8^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxOutOutput" VarB="Term 8 (KL2408)^Channel 7^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct3.QxOutOutput" VarB="Term 9 (KL2408)^Channel 1^Ausgang"/>
+				<Link VarA="PlcTask Outputs^GVL.fbQa.QaSortie" VarB="Term 5 (KL4434)^Channel 2^Daten Aus"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

@@ -53,8 +53,14 @@ CASE fbEtape.iNo OF
 		END_IF
 	122:fbEtape.psMess:='Actionneur3 sort';
 		IF fbAct3.xInOutPos THEN
-			fbEtape.piSVal:=130;
+			fbEtape.piSVal:=123;
+			fbEtape.tTimeQ:=T#5S;
 		END_IF
+	123:fbEtape.psMess:='activation compteur 5s - attendre fin comptage';
+		IF fbEtape.xTimeQ THEN
+			fbEtape.piSVal:=130;
+		END_IF	
+		
 	130:fbEtape.psMess:='Actionneur3 rentre';
 		IF fbAct3.xInInPos THEN
 			fbEtape.piSVal:=131;

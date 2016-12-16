@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
-  <DUT Name="ST_ParamActionneur" Id="{0c347d48-0c3b-4fdb-8720-88c1ac572b56}">
+  <DUT Name="ST_ParamActionneur" Id="{d8cce38b-c890-4be8-96b5-8991b4ebd688}">
     <Declaration><![CDATA[TYPE ST_ParamActionneur :
 STRUCT
 	tTimeOut : TIME; 			//max time allowed for moving to position bevor xState=TRUE

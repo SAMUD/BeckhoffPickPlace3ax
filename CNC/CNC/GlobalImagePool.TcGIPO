@@ -4,28 +4,28 @@
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalImagePoolObject">
-          <v n="UniqueIdGenerator">"3"</v>
+          <v n="UniqueIdGenerator">"8"</v>
           <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
             <o>
               <v n="BitmapID">"Verinrentree"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\Semester5\ProjetAutomne\Projet2\CNC\Verinrentree.png"</v>
-              <v n="ItemID">3</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\Semester5\ProjetAutomne\ProjetAutomneAutomatisme\Verinrentree.png"</v>
+              <v n="ItemID">4</v>
             </o>
             <o>
               <v n="BitmapID">"Verinsortie"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\Semester5\ProjetAutomne\Projet2\CNC\verinsortie.png"</v>
-              <v n="ItemID">2</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\Semester5\ProjetAutomne\ProjetAutomneAutomatisme\verinsortie.png"</v>
+              <v n="ItemID">5</v>
             </o>
             <o>
               <v n="BitmapID">""</v>
               <v n="FileID">""</v>
-              <v n="ItemID">1</v>
+              <v n="ItemID">6</v>
             </o>
           </l>
           <v n="GuidInit">{ac284356-706a-42e5-90c4-b102c5c00caf}</v>
           <v n="GuidReInit">{1b1f3489-21f0-4ad3-983e-dbf2da37a1e1}</v>
           <v n="GuidExitX">{52aa2f2b-6238-4f50-b630-9fe8bcd99d3c}</v>
-          <v n="ValidIds">false</v>
+          <v n="ValidIds">true</v>
         </o>
       </Data>
       <TypeList>

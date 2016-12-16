@@ -12,6 +12,8 @@ fbAct2();
 fbAct3();
 fbMMA();
 
+
+
 //copie des entreees dans la struct dans le fbBouton.
 //Le fbBouton fais pour l'instant rien d'autre que de tenir les variables.
 fbBtn.xAru:=stio.stIn.IxAruIO;
@@ -74,6 +76,14 @@ fbAct3.xInGoOut:=fbCycleAuto.iEtape=122 OR fbCycleMan.iEtape=206;
 fbAct3.xInGoIn:=fbCycleAuto.iEtape=130 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=205;
 fbAct2.xInGoIn:=fbCycleAuto.iEtape=131 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=203;
 fbAct1.xInGoIn:=fbCycleAuto.iEtape=132 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
+
+//Moteur
+IF(fbCycleAuto.iEtape=123) THEN
+	fbMoteur(Consigne:=2900);
+ELSE
+	fbMoteur(Consigne:=0);
+END_IF
+
 
 //Lampe out
 stIO.stOut.QxLampeOrange:=(fbCycleAuto.iEtape=120 OR fbCycleAuto.iEtape=121 OR fbCycleAuto.iEtape=122 OR fbCycleInit.xBusy);

@@ -3,14 +3,41 @@
   <POU Name="FB_RegulMoteur" Id="{76bd808d-6760-4a61-a5ed-d48ddecd1ecc}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_RegulMoteur
 VAR_INPUT
+		Consigne: LREAL;
+		
 END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
+
+	deltaConsigne :LREAL;
+	PID : FB_CTRL_PID;
+	PARA : ST_CTRL_PID_PARAMS;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[fbQa();
+fbIa();
+
+
+PARA.fKp:=0.7;
+PARA.tTn:=T#50MS; //I
+PARA.tTv:=T#0MS; //D
+PARA.tTd:=T#0MS; //Dämpfung
+PARA.fOutMaxLimit:=2998;
+PARA.fOutMinLimit:=-2998;
+PARA.bARWOnIPartOnly:=FALSE;
+PARA.bDInTheFeedbackPath:=FALSE;
+PARA.bPInTheFeedbackPath:=FALSE;
+PARA.tCtrlCycleTime:=T#3MS;
+PARA.tTaskCycleTime:=T#3MS;
+
+
+
+
+
+PID(fOut=>fbQa.lrConsigne,fSetpointValue:=Consigne,fActualValue:=fbIa.lrValeur,eMode:=2,stParams:=PARA);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

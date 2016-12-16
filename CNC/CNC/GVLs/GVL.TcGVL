@@ -19,6 +19,12 @@
 	stParam:ST_Param;
 	fbBtn:FB_Btn;
 	stIO:ST_IO;
+	
+	//Tachymetre moteur
+	fbMoteur : FB_RegulMoteur;
+	 fbQa : FB_Qa;
+	 fbIa : FB_Ia;
+	 
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
