@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+  <POU Name="MAIN" Id="{1e704377-3948-4a60-acf5-cdd6dbd4512e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//appel cycliquement des FB
+fbAct1(); 
+fbAct2();
+fbAct3();
+fbMMA();
+
+//copie des entreees dans la struct dans le fbBouton.
+//Le fbBouton fais pour l'instant rien d'autre que de tenir les variables.
+fbBtn.xAru:=stio.stIn.IxAruIO;
+fbBtn.xReset:=stio.stIn.xResetIO;
+//et ici on l'apelle
+fbBtn();
+
+//stParam
+stParam.stStatus.xErreur:= (fbAct2.stError.xState OR fbAct2.stError.xState OR fbAct2.stError.xState);
+
+//set les parametres dépendant de l'input
+//IF stio.stIn.xAuto THEN
+	//stparam.stStatus.eMMA:=Auto;
+//ELSE IF stio.stIn.xManual THEN
+//	stparam.stStatus.eMMA:=Man;
+//	ELSE
+//		stparam.stStatus.eMMA:=Init;
+//	END_IF
+//END_IF
+
+//appel le mode auto et lui donne les parametres pour lui dire si ol peut démarrer, si il doit s'arreter ou faire un reset
+fbCycleAuto(
+	xStart:=fbMMA.iEtape=350 , 
+	xStop:= fbMMA.iEtape=390, 
+	xReset:= fbMMA.iEtape=810 OR fbMMA.iEtape=910, 
+	 );
+
+//fonction init sur les verins	 
+fbCycleInit(
+	xStart:=(fbMMA.iEtape=110 OR fbMMA.iEtape=340),
+	xStop:= NOT (fbMMA.iEtape=111 OR fbMMA.iEtape=341)
+	);
+	
+//fonction Man
+fbCycleMan(
+	xStart:= fbMMA.iEtape=210,
+	xStop:=  fbMMa.iEtape<>211
+	);
+
+//--------------------------
+//Actions de sortie
+
+//activation de la lampe 1
+stIo.stOut.QxLampeRouge:=fbCycleAuto.iEtape=110;
+
+//Actionneurs autorize
+fbAct1.xAutorizeIn:=TRUE;
+fbAct1.xAutorizeOut:=TRUE;
+fbAct2.xAutorizeIn:=TRUE;
+fbAct2.xAutorizeOut:=TRUE;
+fbAct3.xAutorizeIn:=TRUE;
+fbAct3.xAutorizeOut:=TRUE;
+
+
+//ici on sortira et rerentrera un verin apres l'autre
+fbAct1.xInGoOut:=fbCycleAuto.iEtape=120 OR fbCycleMan.iEtape=202;
+fbAct2.xInGoOut:=fbCycleAuto.iEtape=121 OR fbCycleMan.iEtape=204;
+fbAct3.xInGoOut:=fbCycleAuto.iEtape=122 OR fbCycleMan.iEtape=206;
+
+fbAct3.xInGoIn:=fbCycleAuto.iEtape=130 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=205;
+fbAct2.xInGoIn:=fbCycleAuto.iEtape=131 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=203;
+fbAct1.xInGoIn:=fbCycleAuto.iEtape=132 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
+
+//Lampe out
+stIO.stOut.QxLampeOrange:=(fbCycleAuto.iEtape=120 OR fbCycleAuto.iEtape=121 OR fbCycleAuto.iEtape=122 OR fbCycleInit.xBusy);
+stIO.stOut.QxLampeVerte:=(fbCycleAuto.iEtape=130 OR fbCycleAuto.iEtape=131 OR fbCycleAuto.iEtape=132 OR fbCycleInit.xBusy);
+
+//Reset des Actionneurs avan le init
+IF(fbCycleInit.iEtape=99) THEN
+	fbAct1.xReset:=1;
+	fbAct2.xReset:=1;
+	fbAct3.xReset:=1;
+END_IF
+fbAct1.xReset:=fbCycleInit.iEtape=99;
+fbAct2.xReset:=fbCycleInit.iEtape=99;
+fbAct3.xReset:=fbCycleInit.iEtape=99;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
