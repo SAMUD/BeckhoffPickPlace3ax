@@ -9,22 +9,19 @@ VAR_INPUT
 	xNextPas:BOOL;
 	xAru:BOOL;
 	
-	xManAct1Rentre: BOOL;
-	xManAct1Sort : BOOL;
-	
-	xManAct2Rentre: BOOL;
-	xManAct2Sort : BOOL;
-	
-	xManAct3Rentre: BOOL;
-	xManAct3Sort : BOOL;
-END_VAR
-VAR_OUTPUT
-END_VAR
-VAR
+	xManualAct1GoIn: BOOL;
+	xManualAct1GoOut : BOOL;
+	xManualAct2GoIn: BOOL;
+	xManualAct2GoOut : BOOL;
+	xManualAct3GoIn: BOOL;
+	xManualAct3GoOut : BOOL;
+	xManualCNCMotorTurnOn : BOOL;
+	xManualCNCMotorTurnOff : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -7,35 +7,34 @@ VAR_INPUT
 	xInGoIn AT%I*:BOOL;					//input for going in
 	xReset AT%I*:BOOL;					//Reset all (go back to init state
 	
-	xAutorizeOut AT%I* : BOOL;		//allowed to do the move requested with xInGoOut, If this is false Programm will threw an error
-	xAutorizeIn At%I* : BOOL;			//allowed to do the move requested with xInGoIn, If this is false Programm will threw an error
-	
-	stParam:ST_ParamActionneur;	//Param for actuator 
+	xAutorizeOut AT%I* : BOOL;			//allowed to do the move requested with xInGoOut, If this is false Programm will return an error
+	xAutorizeIn AT%I* : BOOL;			//allowed to do the move requested with xInGoIn, If this is false Programm will return an error
+
+	IxSensOut AT%I*:BOOL;				//Sensor for the reached In-Pos
+	IxSensIn AT%I*:BOOL;				//Sensor for the reached Out-Pos
+		
+	stParam:ST_ParamActionneur;			//Param for actuator 
 END_VAR
 VAR_OUTPUT
-	xInOutPos:BOOL;
-	xInInPos:BOOL;
+	xInOutPos:BOOL;						//Actuator is in Out Position
+	xInInPos:BOOL;						//Actuator is in In Position
 	
-	xGoingOutNow AT%Q*:BOOL; //indication that actor is going in Out-Pos
-	xGoingInNow AT%Q*:BOOL; //indication that actor is going in In-Pos
+	xGoingOutNow AT%Q*:BOOL; 			//indication that actor is going in Out-Pos
+	xGoingInNow AT%Q*:BOOL; 			//indication that actor is going in In-Pos
 	
-	QxOutOutput AT%Q*:BOOL;//Output to actuator for going Out
-	QxInOutput AT%Q*:BOOL;//Output to actuator for going In
+	QxOutOutput AT%Q*:BOOL;				//Output to actuator for going Out
+	QxInOutput AT%Q*:BOOL;				//Output to actuator for going In
 	
-	IxSensOut AT%I*:BOOL;	//Sensor for the reached In-Pos
-	IxSensIn AT%I*:BOOL;//Sensor for the reached Out-Pos
-		
-	stError:ST_Erreur;//Error Struct
-	
-	QxVanneDeBloquage AT%Q* : BOOL; //Vanne de blocace. Elle devient seulement 1 si l'autorisation entree/sortie est present
+	QxBlockingValve AT%Q* : BOOL; 		//Blocking valve. Only TRUE when autorisation is present.
+										//TODO: put this in an external actuator
 END_VAR
 VAR
 	fbEtape:FB_Etape;
 	fbTimeOut:TON;
 	fbRTrigOut:R_Trig;
 	fbRTrigIn:R_Trig;
-		
 	
+	stError:ST_Erreur;					//Error Struct
 
 END_VAR
 ]]></Declaration>
@@ -52,7 +51,7 @@ IF fbRTrigOut.Q AND NOT(fbEtape.iNo>=200 AND fbEtape.iNo<=299) THEN	//When risin
 		fbEtape.piVal:=200;
 	ELSE
 		stError.iId:=10;
-		stError.sMessage:='Autorisation refusee pour action sortir verin';
+		stError.sMessage:='Actuator | Autorisation refused for action Go Out';
 	END_IF		
 fbEtape.piVal:=200;	
 END_IF
@@ -63,7 +62,7 @@ IF fbRTrigIn.Q AND NOT(fbEtape.iNo>=100 AND fbEtape.iNo<=199) THEN	//When rising
 		fbEtape.piVal:=100;
 	ELSE
 		stError.iId:=11;
-		stError.sMessage:='Autorisation refusee pour action rentrer verin';
+		stError.sMessage:='Actuator | Autorisation refused for action Go In';
 	END_IF	
 END_IF
 
@@ -75,20 +74,19 @@ IF xReset THEN
 	xInInPos:=0;
 END_IF
 
-//check pour vanne de blocage
-QxVanneDeBloquage:= (xAutorizeOut OR xAutorizeIn);
+//check for blocking valve
+QxBlockingValve:= (xAutorizeOut OR xAutorizeIn);
 
-//Reset de l'erreur
+//reset error
 IF stError.xState THEN
 	stError.iId:=0;
 	stError.sMessage:='';
 END_IF
 
 
-
 CASE fbEtape.iNo OF
 	0:fbEtape.psMess:='Wait for an In or Out command';
-	//-----------------------------------------------
+	//************************************************
 	100:fbEtape.psMess:='Action go In';
 		IF xAutorizeIn THEN
 			fbEtape.piVal:=110;
@@ -98,7 +96,7 @@ CASE fbEtape.iNo OF
 		IF (IxSensIn AND stParam.xPresenceSensIn) OR NOT stParam.xPresenceSensIn THEN
 			fbEtape.piVal:=150;
 		END_IF
-	150:fbEtape.psMess:='Action rentre, attend tenps d enveloppe';
+	150:fbEtape.psMess:='Going in, waiting for Timer';
 		IF fbEtape.xTimeQ THEN
 			fbEtape.piSVal:=199;
 		END_IF
@@ -106,7 +104,7 @@ CASE fbEtape.iNo OF
 		IF (NOT IxSensIn) AND stParam.xPresenceSensIn THEN
 			fbEtape.piVal:=150;
 		END_IF
-	//-----------------------------------------------
+	//****************************************************
 	200:fbEtape.psMess:='Action go Out';
 		IF xAutorizeOut THEN
 			fbEtape.piVal:=210;
@@ -116,7 +114,7 @@ CASE fbEtape.iNo OF
 		IF (IxSensOut AND stParam.xPresenceSensOut) OR NOT stParam.xPresenceSensOut THEN
 			fbEtape.piVal:=250;
 		END_IF
-	250:fbEtape.psMess:='Action sort, attend temps d enveloppe';
+	250:fbEtape.psMess:='Going Out, waiting for Timer';
 		IF fbEtape.xTimeQ THEN
 			fbEtape.piSVal:=299;
 		END_IF
@@ -125,10 +123,10 @@ CASE fbEtape.iNo OF
 			fbEtape.piVal:=250;
 		END_IF
 	
-	999:fbEtape.psMess:='Erreur';
+	999:fbEtape.psMess:='Error';
 END_CASE
 
-//Activation du Timer
+//Activation Timer
 fbTimeOut(IN:=(fbEtape.iNo>100 AND fbEtape.iNo<199 OR fbEtape.iNo>200 AND fbEtape.iNo<299)
 				AND (NOT fbRTrigIn.Q AND NOT fbRTrigOut.Q),PT:=stParam.tTimeOut);	
 
@@ -143,31 +141,31 @@ fbTimeOut(IN:=(fbEtape.iNo>100 AND fbEtape.iNo<199 OR fbEtape.iNo>200 AND fbEtap
 //Gestion des erreurs
 IF fbTimeOut.Q THEN
 	IF fbEtape.iNo < 200 THEN
-		stError.sMessage:='Erreur de timeout rentre';
+		stError.sMessage:='Actuator | Error timeout go-in';
 		stError.iId:=21;
 	ELSIF fbEtape.iNo>200 THEN
-		stError.sMessage:='Erreur de timeout sort';
+		stError.sMessage:='Actuator | Error timeout go-out';
 		stError.iId:=20;
 	END_IF
 ELSIF IxSensIn AND IxSensOut THEN
-	stError.sMessage:='Les deus fins de course sont vraies en même temps';
+	stError.sMessage:='Actuator | Both sensors (IxSensIn & IxSensOut) at the same time';
 	stError.iId:=30;
 ELSIF xInGoOut AND xInGoIn THEN
-	stError.sMessage:='Double consigne,xSetSort=1 et xSetRentre=1';
+	stError.sMessage:='Actuator | Where shall I go? xSetSort=1 et xSetRentre=1';
 	stError.iId:=31;
 END_IF
 
 stError.xState :=fbEtape.iNo=999 OR fbTimeOut.Q OR (IxSensIn AND IxSensOut) OR (xInGoIn AND xInGoOut);
 
+//***********************************
+//Output affectation
+//***********************************
 
-//Activation des états
 xInInPos:=fbEtape.iNo=199;
 xInOutPos:=fbEtape.iNo=299;
 xGoingInNow:= QxInOutput AND NOT IxSensIn;
 xGoingOutNow:= QxOutOutput AND NOT IxSensOut;
 
-
-//Activation des sorties
 QxOutOutput:=fbEtape.iNo>200 AND fbEtape.iNo<=299;
 QxInOutput:=fbEtape.iNo>100 AND fbEtape.iNo<=199;]]></ST>
     </Implementation>

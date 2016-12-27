@@ -6,95 +6,103 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//appel cycliquement des FB
-fbAct1(); 
-fbAct2();
-fbAct3();
+      <ST><![CDATA[//******************************************
+//cyclic call of all needed FB
+//******************************************
+
+fbAct1();	//Act1 corresponds to charging
+fbAct2();	//Act2 corresponds to engraving
+fbAct3();	//Act3 corresponds to tightening
 fbMMA();
 
-
-
-//copie des entreees dans la struct dans le fbBouton.
-//Le fbBouton fais pour l'instant rien d'autre que de tenir les variables.
+//copy physical Inputs in fbBtn
 fbBtn.xAru:=stio.stIn.IxAruIO;
 fbBtn.xReset:=stio.stIn.xResetIO;
-//et ici on l'apelle
+fbBtn.xStart:=stio.stIn.xStartIO;
+fbBtn.xStop:=stio.stIn.xStopIO;
+fbBtn.xManualAct1GoIn:=stio.stIn.xManualAct1GoIn;
+fbBtn.xManualAct1GoOut:=stio.stIn.xManualAct1GoOut;
+fbBtn.xManualAct2GoIn:=stio.stIn.xManualAct2GoIn;
+fbBtn.xManualAct2GoOut:=stio.stIn.xManualAct2GoOut;
+fbBtn.xManualAct3GoIn:=stio.stIn.xManualAct3GoIn;
+fbBtn.xManualAct3GoOut:=stio.stIn.xManualAct3GoOut;
+fbBtn.xManualCNCMotorTurnOn:=stio.stIn.xManualCNCMotorTurnOn;
+fbBtn.xManualCNCMotorTurnOff:=stio.stIn.xManualCNCMotorTurnOff;
+//and now call it
 fbBtn();
 
 //stParam
-stParam.stStatus.xErreur:= (fbAct2.stError.xState OR fbAct2.stError.xState OR fbAct2.stError.xState);
+//*****************************************
+//check for active errors
+IF (fbAct1.stError.xState) THEN
+	stParam.stStatus.xErreur:=TRUE;
+	stParam.stStatus.iId:=fbAct1.stError.iId;
+	stParam.stStatus.sMessage:=fbAct1.stError.sMessage;
+ELSIF (fbAct2.stError.xState) THEN
+	stParam.stStatus.xErreur:=TRUE;
+	stParam.stStatus.iId:=fbAct2.stError.iId;
+	stParam.stStatus.sMessage:=fbAct2.stError.sMessage;
+ELSIF (fbAct3.stError.xState) THEN
+	stParam.stStatus.xErreur:=TRUE;
+	stParam.stStatus.iId:=fbAct3.stError.iId;
+	stParam.stStatus.sMessage:=fbAct3.stError.sMessage;
+ELSIF (fbCycleAuto.xError) THEN
+	stParam.stStatus.xErreur:=TRUE;
+	stParam.stStatus.iId:=fbCycleAuto.iId;
+	stParam.stStatus.sMessage:=fbCycleAuto.sMessage;
+ELSIF (fbAct3.stError.xState) THEN
+	//clear the error State. Do not clear the last error Message to have a small error history
+	stParam.stStatus.xErreur:=FALSE;
+END_IF
 
-//set les parametres dépendant de l'input
-//IF stio.stIn.xAuto THEN
-	//stparam.stStatus.eMMA:=Auto;
-//ELSE IF stio.stIn.xManual THEN
-//	stparam.stStatus.eMMA:=Man;
-//	ELSE
-//		stparam.stStatus.eMMA:=Init;
-//	END_IF
-//END_IF
+//call auto mode and give over the needed parameters
+fbCycleAuto.xStart:=fbMMA.iEtape=350;
+fbCycleAuto.xStop:= fbMMA.iEtape=390;
+fbCycleAuto.xReset:= fbMMA.iEtape=810 OR fbMMA.iEtape=910;
+fbCycleAuto();
 
-//appel le mode auto et lui donne les parametres pour lui dire si ol peut démarrer, si il doit s'arreter ou faire un reset
-fbCycleAuto(
-	xStart:=fbMMA.iEtape=350 , 
-	xStop:= fbMMA.iEtape=390, 
-	xReset:= fbMMA.iEtape=810 OR fbMMA.iEtape=910, 
-	 );
-
-//fonction init sur les verins	 
-fbCycleInit(
-	xStart:=(fbMMA.iEtape=110 OR fbMMA.iEtape=340),
-	xStop:= NOT (fbMMA.iEtape=111 OR fbMMA.iEtape=341)
-	);
+//call Init mode and give over the needed parameters
+fbCycleInit.xStart:=(fbMMA.iEtape=110 OR fbMMA.iEtape=340);
+fbCycleInit.xStop:= NOT (fbMMA.iEtape=111 OR fbMMA.iEtape=341);
+fbCycleInit();
 	
-//fonction Man
-fbCycleMan(
-	xStart:= fbMMA.iEtape=210,
-	xStop:=  fbMMa.iEtape<>211
-	);
+//call Manual mode and give over the needed parameters
+fbCycleMan.xStart:= fbMMA.iEtape=210;
+fbCycleMan.xStop:=  fbMMa.iEtape<>211;
+fbCycleMan();
 
-//--------------------------
-//Actions de sortie
+//******************************************
+//Output actions
+//******************************************
 
-//activation de la lampe 1
-stIo.stOut.QxLampeRouge:=fbCycleAuto.iEtape=110;
+//activate Lamp1
+stIo.stOut.QxLampeRed:=fbCycleAuto.iEtape<800 AND fbCycleAuto.iEtape>0;
 
-//Actionneurs autorize
-fbAct1.xAutorizeIn:=TRUE;
-fbAct1.xAutorizeOut:=TRUE;
-fbAct2.xAutorizeIn:=TRUE;
-fbAct2.xAutorizeOut:=TRUE;
-fbAct3.xAutorizeIn:=TRUE;
-fbAct3.xAutorizeOut:=TRUE;
+//actuator movement autorize only if not in ARU
+fbAct1.xAutorizeIn:=fbBtn.xAru;
+fbAct1.xAutorizeOut:=fbBtn.xAru;
+fbAct2.xAutorizeIn:=fbBtn.xAru;
+fbAct2.xAutorizeOut:=fbBtn.xAru;
+fbAct3.xAutorizeIn:=fbBtn.xAru;
+fbAct3.xAutorizeOut:=fbBtn.xAru;
 
+//move in and out each actuator
+fbAct1.xInGoOut:=fbCycleAuto.iEtape=130 OR fbCycleMan.iEtape=202;
+fbAct2.xInGoOut:=fbCycleAuto.iEtape=160 OR fbCycleMan.iEtape=204;
+fbAct3.xInGoOut:=fbCycleAuto.iEtape=140 OR fbCycleMan.iEtape=206;
 
-//ici on sortira et rerentrera un verin apres l'autre
-fbAct1.xInGoOut:=fbCycleAuto.iEtape=120 OR fbCycleMan.iEtape=202;
-fbAct2.xInGoOut:=fbCycleAuto.iEtape=121 OR fbCycleMan.iEtape=204;
-fbAct3.xInGoOut:=fbCycleAuto.iEtape=122 OR fbCycleMan.iEtape=206;
+fbAct3.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=205;
+fbAct2.xInGoIn:=fbCycleAuto.iEtape=170 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=203;
+fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
 
-fbAct3.xInGoIn:=fbCycleAuto.iEtape=130 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=205;
-fbAct2.xInGoIn:=fbCycleAuto.iEtape=131 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=203;
-fbAct1.xInGoIn:=fbCycleAuto.iEtape=132 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
-
-//Moteur
-IF(fbCycleAuto.iEtape=123) THEN
+//Motor
+IF(fbCycleAuto.iEtape=123) THEN //TODO: include manual mode for motor
 	fbMoteur(Consigne:=2900);
 ELSE
 	fbMoteur(Consigne:=0);
 END_IF
 
-
-//Lampe out
-stIO.stOut.QxLampeOrange:=(fbCycleAuto.iEtape=120 OR fbCycleAuto.iEtape=121 OR fbCycleAuto.iEtape=122 OR fbCycleInit.xBusy);
-stIO.stOut.QxLampeVerte:=(fbCycleAuto.iEtape=130 OR fbCycleAuto.iEtape=131 OR fbCycleAuto.iEtape=132 OR fbCycleInit.xBusy);
-
 //Reset des Actionneurs avan le init
-IF(fbCycleInit.iEtape=99) THEN
-	fbAct1.xReset:=1;
-	fbAct2.xReset:=1;
-	fbAct3.xReset:=1;
-END_IF
 fbAct1.xReset:=fbCycleInit.iEtape=99;
 fbAct2.xReset:=fbCycleInit.iEtape=99;
 fbAct3.xReset:=fbCycleInit.iEtape=99;]]></ST>

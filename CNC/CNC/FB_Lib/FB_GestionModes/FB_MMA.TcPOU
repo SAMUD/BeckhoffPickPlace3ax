@@ -2,8 +2,6 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
   <POU Name="FB_MMA" Id="{0e7ce976-5b63-45cb-af38-a3b8fef59482}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_MMA
-VAR_INPUT
-END_VAR
 VAR_OUTPUT
 	iEtape:INT;
 END_VAR
@@ -15,26 +13,26 @@ END_VAR
     <Implementation>
       <ST><![CDATA[fbEtape.mActualisation(FALSE,FALSE);
 
-//on active l'arret d'urgence si l'entree devient false
+//activate ARU if system already running (fbEtape>10) and not in reset or already in ARU (fbEtape<800)
 IF NOT fbBtn.xAru AND fbEtape.iNo>10 AND fbEtape.iNo<800 THEN
 	fbEtape.piVal:=900; 
 END_IF
 
-//on fait un reset
+//do reset
 IF fbBtn.xReset AND fbEtape.iNo>10 AND fbEtape.iNo<800 THEN
 	fbEtape.piVal:=800;
 END_IF
 
-
 CASE fbEtape.iNo OF
-	0://mise en marche du système
+	0:fbEtape.psMess:='MMA | Booting MMA';
 		fbEtape.piVal:=10;
 	
-	10://OB100 Siemens
+	10:	fbEtape.psMess:='MMA | Init stock-Variables';
+		//OB100 Siemens
 		p_InitVar(); //initialiser les vars (propre a la machine)
 		fbEtape.piVal:=50;
 	
-	50:fbEtape.psMess:='Selection du mode MMA';
+	50:fbEtape.psMess:='MMA | Selection du mode MMA';
 		IF (stParam.stStatus.eMMA=Auto) THEN
 			fbEtape.piVal:=300;
 		ELSIF (stParam.stStatus.eMMA=Man) THEN
@@ -46,17 +44,17 @@ CASE fbEtape.iNo OF
 	//--------------------------------------------------------------
 	//Init
 	//--------------------------------------------------------------
-	100:fbEtape.psMess:='Cycle Init | Attente de fbBtn.xStart';
+	100:fbEtape.psMess:='MMA | Init | Wait for fbBtn.xStart';
 		IF (fbBtn.xStart) THEN
 			fbEtape.piVal:=110;
 		ELSIF (stParam.stStatus.eMMA<>Init) THEN
 			fbEtape.piVal:=50;
 		END_IF
-	110:fbEtape.psMess:='Cycle Init | Attente fin';
+	110:fbEtape.psMess:='MMA | Init | Wait end';
 		IF fbCycleInit.iEtape=999 THEN
 		fbEtape.piVal:=50;
 		END_IF
-	111:fbEtape.psMess:='Cycle Init | Finir';
+	111:fbEtape.psMess:='MMA | Init | Finished';
 		IF fbCycleInit.xBusy THEN
 		fbEtape.piVal:=50;
 		END_IF
@@ -64,11 +62,11 @@ CASE fbEtape.iNo OF
 	//--------------------------------------------------------------
 	//Manual
 	//--------------------------------------------------------------
-	210:fbEtape.psMess:='Cycle Manuel | Attente de changement de mode';
+	210:fbEtape.psMess:='MMA | Manual | Wait for mode changing';
 		IF (fbCycleMan.iEtape=999) THEN
 		fbEtape.piVal:=211;
 		END_IF
-	211:fbEtape.psMess:='Cycle Manuel | Finir';
+	211:fbEtape.psMess:='MMA | Manual | Finishing';
 		IF (fbCycleMan.xBusy) THEN
 		fbEtape.piVal:=50;
 		END_IF
@@ -76,29 +74,27 @@ CASE fbEtape.iNo OF
 	//--------------------------------------------------------------
 	//Auto
 	//--------------------------------------------------------------
-	300:fbEtape.psMess:='Mode Auto | Attente de fbBtn.xStart';
+	300:fbEtape.psMess:='MMA | Auto | Wait for fbBtn.xStart';
 		IF (fbBtn.xStart) THEN
 			fbEtape.piVal:=340;
 		ELSIF (stParam.stStatus.eMMA<>Auto) THEN
 			fbEtape.piVal:=50;
 		END_IF
 	
-	340:fbEtape.psMess:='Mode Auto | Cycle Init - attente fin';
-		//si le cycle INIT est terminé alors on continue
+	340:fbEtape.psMess:='MMA | Auto | Do Init - Start';
 		fbEtape.piVal:=341;
 		
-	341:fbEtape.psMess:='Mode Auto | Cycle Init - Finir';
-		//si le cycle INIT est terminé alors on continue
+	341:fbEtape.psMess:='MMA | Auto | Do Init - Wait end';
 		IF fbCycleInit.iEtape=999 THEN
 			fbEtape.piVal:=350;
 		END_IF
 		
-	350:fbEtape.psMess:='Mode Auto | Production - attend signal Stop';
+	350:fbEtape.psMess:='MMA | Auto | Production - Wait Stop Signal';
 		IF (fbBtn.xStop OR stParam.stStatus.xErreur ) THEN 
 			fbEtape.piVal:=390;
 		END_IF
 		
-	390:fbEtape.psMess:='Mode Auto | Attendre fin';
+	390:fbEtape.psMess:='MMA | Auto | Wait end';
 		IF (NOT fbCycleAuto.xBusy) THEN
 			fbEtape.piVal:=50;
 		END_IF
@@ -106,28 +102,27 @@ CASE fbEtape.iNo OF
 	//--------------------------------------------------------------
 	//Reset
 	//--------------------------------------------------------------
-	800:fbEtape.psMess:='Reset | Procédure de reset, stop imédiat';
+	800:fbEtape.psMess:='MMA | Reset | Stopp all';
 		fbEtape.piVal:=810;
-	810:fbEtape.psMess:='Reset | Ordre pour pilotage reste sur cycle';
+	810:fbEtape.psMess:='MMA | Reset | Stopp all';
 		fbEtape.piVal:=899;
-	899:fbEtape.psMess:='Reset | Fin de procédure Reset';
+	899:fbEtape.psMess:='MMA | Reset | Finished';
 		fbEtape.piVal:=50;
 		
 	//--------------------------------------------------------------
 	//ARU
 	//--------------------------------------------------------------
-	900:fbEtape.psMess:='ARU | Procédure de ARU';
+	900:fbEtape.psMess:='MMA | ARU | Stopp all';
 		fbEtape.piVal:=910;
-	910:fbEtape.psMess:='ARU | Ordre pour pilotage reste sur cycle';
+	910:fbEtape.psMess:='MMA | ARU | Stopp all';
 		fbEtape.piVal:=950;
-	950:fbEtape.psMess:='ARU | ok - Attente de quittance';
+	950:fbEtape.psMess:='MMA | ARU | ok - Wait until resetting ARU-Btn';
 		IF fbBtn.xAru THEN
 			fbEtape.piVal:=999;
 	END_IF
-	999:fbEtape.psMess:='ARU | Fin de procédure ARU';
+	999:fbEtape.psMess:='MMA | ARU | Finished';
 		fbEtape.piVal:=50;
 END_CASE
-
 
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>

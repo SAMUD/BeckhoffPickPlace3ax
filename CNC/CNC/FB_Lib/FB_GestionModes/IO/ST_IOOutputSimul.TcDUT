@@ -3,7 +3,7 @@
   <DUT Name="ST_IOOutputSimul" Id="{8ef0b6d5-238d-47ba-a7f5-b954781fe0a8}">
     <Declaration><![CDATA[TYPE ST_IOOutputSimul :
 STRUCT
-	QxLampeRouge AT%Q*:BOOL;
+	QxLampeRed AT%Q*:BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
