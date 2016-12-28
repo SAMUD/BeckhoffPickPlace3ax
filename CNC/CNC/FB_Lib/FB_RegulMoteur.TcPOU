@@ -4,39 +4,33 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_RegulMoteur
 VAR_INPUT
 		Consigne: LREAL;
+		xDirection: BOOL;
+		xOnOff: BOOL;
+		PARA : ST_CTRL_PID_PARAMS;
 		
+		fbConvertNumToMotorOut : FB_Qa;
+		fbConvertTachoToNumSpeed : FB_Ia;
 END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-
-	deltaConsigne :LREAL;
 	PID : FB_CTRL_PID;
-	PARA : ST_CTRL_PID_PARAMS;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbQa();
-fbIa();
+      <ST><![CDATA[fbConvertNumToMotorOut();
+fbConvertTachoToNumSpeed();
 
+IF xDirection THEN
+	Consigne:=-Consigne;
+END_IF
 
-PARA.fKp:=0.7;
-PARA.tTn:=T#50MS; //I
-PARA.tTv:=T#0MS; //D
-PARA.tTd:=T#0MS; //Dämpfung
-PARA.fOutMaxLimit:=2998;
-PARA.fOutMinLimit:=-2998;
-PARA.bARWOnIPartOnly:=FALSE;
-PARA.bDInTheFeedbackPath:=FALSE;
-PARA.bPInTheFeedbackPath:=FALSE;
-PARA.tCtrlCycleTime:=T#3MS;
-PARA.tTaskCycleTime:=T#3MS;
-
-
-
-
-
-PID(fOut=>fbQa.lrConsigne,fSetpointValue:=Consigne,fActualValue:=fbIa.lrValeur,eMode:=2,stParams:=PARA);
+IF xOnOff THEN
+	PID(fOut=>fbConvertNumToMotorOut.lrConsigne,fSetpointValue:=Consigne,fActualValue:=fbConvertTachoToNumSpeed.lrValeur,eMode:=2,stParams:=PARA);
+ELSE
+	fbConvertNumToMotorOut.lrConsigne:=0;
+END_IF
 ]]></ST>
     </Implementation>
   </POU>

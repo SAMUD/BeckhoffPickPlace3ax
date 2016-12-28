@@ -18,6 +18,9 @@ STRUCT
 	xManualAct3GoOut AT%I* : BOOL;
 	xManualCNCMotorTurnOn AT%I* : BOOL;
 	xManualCNCMotorTurnOff AT%I* : BOOL;
+	
+	lSetSpeedMotor : LREAL;
+	lTachoValue AT%I* : LREAL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

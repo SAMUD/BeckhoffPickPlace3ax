@@ -51,6 +51,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"40"</v>
+              <v n="TextDefault">"Admin"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"8"</v>
               <v n="TextDefault">"ARU"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -141,6 +146,11 @@
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"39"</v>
+              <v n="TextDefault">"None"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"38"</v>
               <v n="TextDefault">"QaSortie : %2.5f"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -198,6 +208,11 @@
             <o>
               <v n="TextID">"30"</v>
               <v n="TextDefault">"stValeur.lrMin : %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"41"</v>
+              <v n="TextDefault">"User"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
           </l>

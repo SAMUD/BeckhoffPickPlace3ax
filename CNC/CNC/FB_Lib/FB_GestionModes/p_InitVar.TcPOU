@@ -29,7 +29,37 @@ fbAct3.stParam.tTimeOut:=T#5S;
 fbAct3.stParam.tMoveInTimeDelay:=T#3S;
 fbAct3.stParam.tMoveOutTimeDelay:=T#0.2S;
 
-stParam.stStatus.eMMA:=Init;]]></ST>
+stParam.stStatus.eMMA:=Init;
+
+//Param MotorController and Conversion
+fbMotor.fbConvertNumToMotorOut.fbConfig.uiNbreBitBus:=16;
+fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMax:=10;
+fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMin:=-10;
+fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMin:=-2998;
+fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMax:=2998;
+fbMotor.fbConvertNumToMotorOut.lrConsigne:=0;
+
+fbMotor.fbConvertTachoToNumSpeed.fbConfig.uiNbreBitBus:=16;
+fbMotor.fbConvertTachoToNumSpeed.fbConfig.stValeur.lrMax:=5025;
+fbMotor.fbConvertTachoToNumSpeed.fbConfig.stValeur.lrMin:=-5025;
+
+fbMotor.PARA.fKp:=0.7;
+fbMotor.PARA.tTn:=T#50MS; //I
+fbMotor.PARA.tTv:=T#0MS; //D
+fbMotor.PARA.tTd:=T#0MS; //Dämpfung
+fbMotor.PARA.fOutMaxLimit:=2998;
+fbMotor.PARA.fOutMinLimit:=-2998;
+fbMotor.PARA.bARWOnIPartOnly:=FALSE;
+fbMotor.PARA.bDInTheFeedbackPath:=FALSE;
+fbMotor.PARA.bPInTheFeedbackPath:=FALSE;
+fbMotor.PARA.tCtrlCycleTime:=T#3MS;
+fbMotor.PARA.tTaskCycleTime:=T#3MS;
+fbMotor.xDirection:=FALSE;
+
+
+
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

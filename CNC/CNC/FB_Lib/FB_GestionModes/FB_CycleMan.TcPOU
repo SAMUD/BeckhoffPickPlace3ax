@@ -98,7 +98,7 @@ CASE fbEtape.iNo OF
 		END_IF
 	
 	990:fbEtape.psMess:='Manual | Finishing';
-		//ici on fait des choses de fin (ex. eteindre un moteur qui tourne encore)
+		//ici on fait des choses de fin (ex. eteindre un Motor qui tourne encore)
 		IF (1) THEN
 			fbEtape.piSVal:=999;
 		END_IF	

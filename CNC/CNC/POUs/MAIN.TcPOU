@@ -71,6 +71,12 @@ fbCycleMan.xStart:= fbMMA.iEtape=210;
 fbCycleMan.xStop:=  fbMMa.iEtape<>211;
 fbCycleMan();
 
+//call Motor Controller
+fbMotor.Consigne:=stIO.stIn.lSetSpeedMotor;
+fbMotor.fbConvertTachoToNumSpeed.IaEntree:=stio.stIn.lTachoValue;
+fbMotor();
+stio.stOut.lMotorOut:=fbMotor.fbConvertNumToMotorOut.QaSortie;
+
 //******************************************
 //Output actions
 //******************************************
@@ -96,11 +102,13 @@ fbAct2.xInGoIn:=fbCycleAuto.iEtape=170 OR fbCycleAuto.iEtape=800 OR fbCycleInit.
 fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
 
 //Motor
-IF(fbCycleAuto.iEtape=123) THEN //TODO: include manual mode for motor
-	fbMoteur(Consigne:=2900);
-ELSE
-	fbMoteur(Consigne:=0);
+IF(fbCycleAuto.iEtape=140 OR fbCycleMan.iEtape=207) THEN
+	fbMotor.xOnOff:=TRUE;
 END_IF
+IF(fbCycleAuto.iEtape=170 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=208 OR fbCycleAuto.iEtape=800 OR fbMMA.iEtape=910) THEN
+	fbMotor.xOnOff:=FALSE;
+END_IF
+
 
 //Reset des Actionneurs avan le init
 fbAct1.xReset:=fbCycleInit.iEtape=99;

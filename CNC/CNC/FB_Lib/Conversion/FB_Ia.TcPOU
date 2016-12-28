@@ -5,12 +5,12 @@
 VAR_INPUT
 	///configuration de la sortie analogique
 	fbConfig: FB_ConfigAnalog;
+	///sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne
+	IaEntree: LREAL;
 END_VAR
 VAR_OUTPUT
 	///Valeur dans l'unité de l'utilisateur, selon min et max de fbCongig.stValeur
 	lrValeur: LREAL;
-	///sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne
-	IaEntree AT%I*: INT;
 	///écart de précision sur la valeur de consigne => valeur +/- écart
 	lrEcart: LREAL;
 	///tension en volt

@@ -67,6 +67,12 @@
 	</ImageDatas>
 	<Project ProjectGUID="{68B614FD-BDF4-4EDD-A890-EDD57B09D215}" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
+			<Settings MaxCpus="4">
+				<Cpu/>
+				<Cpu CpuId="1"/>
+				<Cpu CpuId="2"/>
+				<Cpu CpuId="3"/>
+			</Settings>
 			<Licenses>
 				<Target>
 					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
@@ -233,13 +239,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.fbIa.IaEntree</Name>
-							<Comment>
-								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>GVL.stIO.stIn.IxAruIO</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -294,6 +293,10 @@
 						<Var>
 							<Name>GVL.stIO.stIn.xManualCNCMotorTurnOff</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.lTachoValue</Name>
+							<Type>LREAL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
@@ -404,13 +407,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.fbQa.QaSortie</Name>
-							<Comment>
-								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
-							</Comment>
-							<Type>DINT</Type>
-						</Var>
-						<Var>
 							<Name>GVL.stIO.stOut.QxLampeRed</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -422,7 +418,30 @@
 							<Name>GVL.stIO.stOut.QxLampeOrange</Name>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL.stIO.stOut.lMotorOut</Name>
+							<Type>LREAL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.fbMotor.fbConvertNumToMotorOut.QaSortie</Name>
+							<Comment>
+								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
 					</Vars>
+					<UnrestoredVarLinks ImportTime="2016-12-28T11:45:33">
+						<OwnerA Name="OutputSrc" Prefix="TIPC^CNC^CNC Instance" Type="2">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (BK1150)">
+								<Link VarA="GVL.fbQa.QaSortie" TypeA="DINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000009}" VarB="Term 5 (KL4434)^Channel 2^Daten Aus" Size="16" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="InputDst" Prefix="TIPC^CNC^CNC Instance" Type="1">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (BK1150)">
+								<Link VarA="GVL.fbIa.IaEntree" TypeA="INT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="Term 4 (KL3404)^Channel 2^Daten Ein" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<TaskPouOids>
 						<TaskPouOid Prio="20" OTCID="#x01010011"/>
 					</TaskPouOids>
@@ -1136,14 +1155,12 @@
 				<Link VarA="PlcTask Inputs^GVL.fbAct2.IxSensIn" VarB="Term 6 (KL1408)^Channel 4^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.fbAct2.IxSensOut" VarB="Term 6 (KL1408)^Channel 3^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.fbAct3.IxSensOut" VarB="Term 6 (KL1408)^Channel 5^Eingang"/>
-				<Link VarA="PlcTask Inputs^GVL.fbIa.IaEntree" VarB="Term 4 (KL3404)^Channel 2^Daten Ein"/>
 				<Link VarA="PlcTask Inputs^GVL.stIO.stIn.IxAruIO" VarB="Term 7 (KL1408)^Channel 1^Eingang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxInOutput" VarB="Term 8 (KL2408)^Channel 6^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxOutOutput" VarB="Term 8 (KL2408)^Channel 5^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxInOutput" VarB="Term 8 (KL2408)^Channel 8^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxOutOutput" VarB="Term 8 (KL2408)^Channel 7^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct3.QxOutOutput" VarB="Term 9 (KL2408)^Channel 1^Ausgang"/>
-				<Link VarA="PlcTask Outputs^GVL.fbQa.QaSortie" VarB="Term 5 (KL4434)^Channel 2^Daten Aus"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

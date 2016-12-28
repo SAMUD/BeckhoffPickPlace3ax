@@ -21,9 +21,8 @@
 	stIO:ST_IO;
 	
 	//Tachymetre moteur
-	fbMoteur : FB_RegulMoteur;
-	fbQa : FB_Qa;
-	fbIa : FB_Ia;
+	fbMotor : FB_RegulMoteur;
+
 	 
 END_VAR]]></Declaration>
   </GVL>
