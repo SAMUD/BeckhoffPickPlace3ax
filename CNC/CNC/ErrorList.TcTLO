@@ -9,70 +9,126 @@
             <o>
               <v n="TextID">"0"</v>
               <v n="TextDefault">"no error"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>kein Fehler</v>
+                <v>pas de Erreur</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"100"</v>
               <v n="TextDefault">"Actuator | Autorisation refused for action Go Out"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Aktor | Keine Autorisation zum ausfahren</v>
+                <v>Actionneur | Pas de autorisation pour étendre</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"101"</v>
               <v n="TextDefault">"Actuator | Autorisation refused for action Go In"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Aktor | Keine Autorisation zum einfahren</v>
+                <v>Actionneur | Pas de autorisation pour retracter</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"110"</v>
               <v n="TextDefault">"Actuator | Error timeout go-out"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Aktor | Timeout ausfahren</v>
+                <v>Actionneur | Timeout  étendre</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"111"</v>
               <v n="TextDefault">"Actuator | Error timeout go-in"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Aktor | Timeout einfahren</v>
+                <v>Actionneur | Timeout retracter</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"120"</v>
               <v n="TextDefault">"Actuator | Both sensors (IxSensIn &amp; IxSensOut) at the same time"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Aktor | Beide Sensoren sind gleichzeitig aktiv</v>
+                <v>Actionneur | Les deux capteurs sont vrai en meme temps</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"121"</v>
               <v n="TextDefault">"Actuator | Where shall I go? xSetSort=1 et xSetRentre=1"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Aktor | Was soll ich tun? xSetSort=1 und xSetRentre=1</v>
+                <v>Actionneur | Sortir ou rentrer? xSetSort=1 et xSetRentre=1</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"200"</v>
               <v n="TextDefault">"Auto | Vision | Error while detecting original object"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Auto | Vision | Fehler beim Erkennen des Start-Objektes</v>
+                <v>Auto | Vision | Erreur detecter l'object de départ</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"210"</v>
               <v n="TextDefault">"Auto | Timeout - Motor did not reach desired speed"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Auto | Timeout - Motor hat nicht schnell genug den Soll-Wert erreicht</v>
+                <v>Auto | Timeout - Moteur a pas atteint la vitesse de consigne assez rapide</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"201"</v>
               <v n="TextDefault">"Auto | Vision | Error detecting processed object"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Auto | Vision | Fehler beim Erkennen des End-Objektes</v>
+                <v>Auto | Vision | Erreur detecter object de fin</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"300"</v>
               <v n="TextDefault">"fbMotor | Error in PID-Loop"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>fbMotor | Fehler in der PID-Schleife</v>
+                <v>fbMotor | Erreur dans boucle PID</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">"301"</v>
               <v n="TextDefault">"fbMotor | Unable to reach Setpoint Speed"</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>fbMotor | Kann Setpoint-Wert nicht erreichen</v>
+                <v>fbMoteur | Impossible d'atteindre la vitesse de consigne</v>
+                <v></v>
+              </l>
             </o>
             <o>
               <v n="TextID">""</v>
               <v n="TextDefault">""</v>
-              <l n="LanguageTexts" t="ArrayList" />
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
             </o>
           </l>
-          <l n="Languages" t="ArrayList" />
+          <l n="Languages" t="ArrayList" cet="String">
+            <v>de</v>
+            <v>fr</v>
+            <v>en</v>
+          </l>
           <v n="GuidInit">{3daa4cd0-7fd0-46ad-9d63-71d0d901c20f}</v>
           <v n="GuidReInit">{ae5ce799-f682-4198-8102-3eeb9b2e05a9}</v>
           <v n="GuidExitX">{04fb7105-25cc-4b97-adb3-4ada8a97db3f}</v>
