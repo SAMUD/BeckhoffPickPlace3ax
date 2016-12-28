@@ -74,6 +74,7 @@ fbCycleMan();
 //call Motor Controller
 fbMotor.Consigne:=stIO.stIn.lSetSpeedMotor;
 fbMotor.fbConvertTachoToNumSpeed.IaEntree:=stio.stIn.lTachoValue;
+fbMotor.xDirection:=stio.stIn.xMotorDirection;
 fbMotor();
 stio.stOut.lMotorOut:=fbMotor.fbConvertNumToMotorOut.QaSortie;
 

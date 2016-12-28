@@ -16,7 +16,7 @@
             <v n="PaintBufferSize">50000</v>
             <v n="MemorybufferSize">400000</v>
             <v n="VisuInternal">false</v>
-            <v n="CurrentVisuGlobal">false</v>
+            <v n="CurrentVisuGlobal">true</v>
             <v n="FileTransferMode">true</v>
             <v n="VisuStyle">"Flat style, 3.1.4.0 (Beckhoff Automation GmbH)"</v>
             <v n="MaxNumOfClients">100</v>
@@ -40,10 +40,10 @@
             <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
               <v>FB_Init</v>
               <v>34f38952-86bd-4aaa-a0fd-1904298261c7</v>
-              <v>FB_Exit</v>
-              <v>fed098e9-1fd4-4646-8f9a-c0543aee5d40</v>
               <v>FB_Reinit</v>
               <v>d2eb7792-9842-48fe-b4ff-60562bcbb9b0</v>
+              <v>FB_Exit</v>
+              <v>fed098e9-1fd4-4646-8f9a-c0543aee5d40</v>
             </d>
             <v n="FbName">"NotImportant"</v>
             <v n="FbGuid">{db540460-b7e1-4ff8-84f7-11da94172630}</v>
@@ -513,56 +513,50 @@
             </o>
           </o>
           <o n="VisuUserManagement" t="VisuUserManagement">
-            <v n="GroupIdCounter">3</v>
-            <v n="UserIdCounter">2</v>
+            <v n="GroupIdCounter">4</v>
+            <v n="UserIdCounter">3</v>
             <v n="ChangeToStartVisuAtLogout">false</v>
             <o n="UserList" t="VisuUserList">
               <l n="UserList" t="ArrayList" cet="VisuUser">
                 <o>
                   <v n="Id">0</v>
                   <v n="Name">"Admin"</v>
-                  <v n="FullName">"Admin"</v>
+                  <v n="FullName">"Administrator"</v>
                   <v n="Password">"0F037584C99E7FD4F4F8C59550F8F507"</v>
-                  <v n="Group">""</v>
+                  <v n="Group">"Admin"</v>
                   <v n="IsDeactivated">false</v>
                   <v n="Description">""</v>
-                  <l2 n="Groups" cet="String">
-                    <v>Admin</v>
-                    <v>User</v>
-                  </l2>
+                  <n n="Groups" />
                 </o>
                 <o>
                   <v n="Id">1</v>
-                  <v n="Name">"User"</v>
-                  <v n="FullName">"User"</v>
+                  <v n="Name">"Service"</v>
+                  <v n="FullName">"Service"</v>
                   <v n="Password">"0F037584C99E7FD4F4F8C59550F8F507"</v>
-                  <v n="Group">""</v>
+                  <v n="Group">"Service"</v>
                   <v n="IsDeactivated">false</v>
                   <v n="Description">""</v>
-                  <l2 n="Groups" cet="String">
-                    <v>User</v>
-                  </l2>
+                  <n n="Groups" />
+                </o>
+                <o>
+                  <v n="Id">2</v>
+                  <v n="Name">"Operator"</v>
+                  <v n="FullName">"Operator"</v>
+                  <v n="Password">"0F037584C99E7FD4F4F8C59550F8F507"</v>
+                  <v n="Group">"Operator"</v>
+                  <v n="IsDeactivated">false</v>
+                  <v n="Description">""</v>
+                  <n n="Groups" />
                 </o>
               </l>
             </o>
             <o n="GroupList" t="VisuGroupList">
               <l n="Groups" t="ArrayList" cet="VisuGroup">
                 <o>
-                  <v n="Id">0</v>
-                  <v n="Name">"None"</v>
-                  <v n="AutoLogOff">false</v>
-                  <v n="LogOffTimeValue">1</v>
-                  <v n="LogOffTimeUnit" t="TimeUnit">Minute</v>
-                  <v n="RightToChangeUser">false</v>
-                  <v n="Description">""</v>
-                  <v n="GroupNameIndex">"39"</v>
-                  <l n="UserMembers" t="ArrayList" />
-                </o>
-                <o>
                   <v n="Id">1</v>
                   <v n="Name">"Admin"</v>
                   <v n="AutoLogOff">true</v>
-                  <v n="LogOffTimeValue">3</v>
+                  <v n="LogOffTimeValue">1</v>
                   <v n="LogOffTimeUnit" t="TimeUnit">Minute</v>
                   <v n="RightToChangeUser">true</v>
                   <v n="Description">""</v>
@@ -573,17 +567,40 @@
                 </o>
                 <o>
                   <v n="Id">2</v>
-                  <v n="Name">"User"</v>
+                  <v n="Name">"Service"</v>
+                  <v n="AutoLogOff">true</v>
+                  <v n="LogOffTimeValue">1</v>
+                  <v n="LogOffTimeUnit" t="TimeUnit">Minute</v>
+                  <v n="RightToChangeUser">false</v>
+                  <v n="Description">""</v>
+                  <v n="GroupNameIndex">"45"</v>
+                  <l n="UserMembers" t="ArrayList" cet="Int32">
+                    <v>1</v>
+                  </l>
+                </o>
+                <o>
+                  <v n="Id">3</v>
+                  <v n="Name">"Operator"</v>
+                  <v n="AutoLogOff">true</v>
+                  <v n="LogOffTimeValue">1</v>
+                  <v n="LogOffTimeUnit" t="TimeUnit">Minute</v>
+                  <v n="RightToChangeUser">false</v>
+                  <v n="Description">""</v>
+                  <v n="GroupNameIndex">"46"</v>
+                  <l n="UserMembers" t="ArrayList" cet="Int32">
+                    <v>2</v>
+                  </l>
+                </o>
+                <o>
+                  <v n="Id">0</v>
+                  <v n="Name">"None"</v>
                   <v n="AutoLogOff">false</v>
                   <v n="LogOffTimeValue">1</v>
                   <v n="LogOffTimeUnit" t="TimeUnit">Minute</v>
                   <v n="RightToChangeUser">false</v>
                   <v n="Description">""</v>
-                  <v n="GroupNameIndex">"41"</v>
-                  <l n="UserMembers" t="ArrayList" cet="Int32">
-                    <v>0</v>
-                    <v>1</v>
-                  </l>
+                  <v n="GroupNameIndex">"39"</v>
+                  <l n="UserMembers" t="ArrayList" />
                 </o>
               </l>
             </o>

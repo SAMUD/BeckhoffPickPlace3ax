@@ -109,7 +109,31 @@
     <Compile Include="Visualisierungsmanager.TcVMO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="VISUs\Home.TcVIS">
+      <SubType>Code</SubType>
+      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+    </Compile>
+    <Compile Include="VISUs\VisuAdmin.TcVIS">
+      <SubType>Code</SubType>
+      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+    </Compile>
     <Compile Include="VISUs\Visualization.TcVIS">
+      <SubType>Code</SubType>
+      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+    </Compile>
+    <Compile Include="VISUs\VisuAuto.TcVIS">
+      <SubType>Code</SubType>
+      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+    </Compile>
+    <Compile Include="VISUs\VisuInit.TcVIS">
+      <SubType>Code</SubType>
+      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+    </Compile>
+    <Compile Include="VISUs\VisuManual.TcVIS">
+      <SubType>Code</SubType>
+      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+    </Compile>
+    <Compile Include="VISUs\VisuMMA.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
     </Compile>
@@ -118,6 +142,10 @@
       <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
     </Compile>
     <Compile Include="VISUs\vi_ConvertAnalog_1.TcVIS">
+      <SubType>Code</SubType>
+      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+    </Compile>
+    <Compile Include="VISUs\VisuMotor.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
     </Compile>
@@ -189,6 +217,10 @@
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Interfaces">
+      <DefaultResolution>Tc3_Interfaces, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Interfaces</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
@@ -224,6 +256,29 @@
         <v>{246001F4-279D-43AC-B241-948EB31120E1}</v>
         <o>
           <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>SymbolLibraryConfiguration</v>
+            <v>VisuSymbols (System);False
+</v>
+          </d>
+        </o>
+        <v>{29BD8D0C-3586-4548-BB48-497B9A01693F}</v>
+        <o>
+          <v n="Name">"{29BD8D0C-3586-4548-BB48-497B9A01693F}"</v>
+          <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+            <v>Rules</v>
+            <o>
+              <v n="Name">"Rules"</v>
+              <d n="SubKeys" t="Hashtable" />
+              <d n="Values" t="Hashtable" />
+            </o>
+          </d>
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
+        <o>
+          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
           <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" />
         </o>

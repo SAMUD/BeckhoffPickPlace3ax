@@ -54,7 +54,8 @@ fbMotor.PARA.bDInTheFeedbackPath:=FALSE;
 fbMotor.PARA.bPInTheFeedbackPath:=FALSE;
 fbMotor.PARA.tCtrlCycleTime:=T#3MS;
 fbMotor.PARA.tTaskCycleTime:=T#3MS;
-fbMotor.xDirection:=FALSE;
+
+stio.stIn.xMotorDirection:=FALSE;
 
 
 
