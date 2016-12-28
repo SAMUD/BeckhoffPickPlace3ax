@@ -140,14 +140,6 @@
       <SubType>Code</SubType>
       <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
     </Compile>
-    <Compile Include="VISUs\vi_ConvertAnalog.TcVIS">
-      <SubType>Code</SubType>
-      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
-    </Compile>
-    <Compile Include="VISUs\vi_ConvertAnalog_1.TcVIS">
-      <SubType>Code</SubType>
-      <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
-    </Compile>
     <Compile Include="VISUs\VisuMotor.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>

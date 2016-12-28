@@ -51,7 +51,7 @@ CASE fbEtape.iNo OF
 		END_IF
 	120:fbEtape.psMess:='Auto | Do image aquisition';
 		//send image tcp and wait response
-		IF (TRUE) THEN
+		IF (FALSE) THEN
 			//CNC can start
 			fbEtape.piSVal:=130;
 		ELSE
