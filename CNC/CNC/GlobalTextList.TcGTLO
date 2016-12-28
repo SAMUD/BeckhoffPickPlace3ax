@@ -204,6 +204,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"43"</v>
+              <v n="TextDefault">"Gain : %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"20"</v>
               <v n="TextDefault">"german"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -420,6 +429,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"42"</v>
+              <v n="TextDefault">"QaSortie : %2.5f tr/min"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"31"</v>
               <v n="TextDefault">"QaSortie : %i"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -582,12 +600,30 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"18"</v>
+              <v n="TextDefault">"TachoInput: %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"54"</v>
               <v n="TextDefault">"Tighten"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v>Serrage</v>
                 <v>Spannen</v>
                 <v>Tighten</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"44"</v>
+              <v n="TextDefault">"WriteSpeed: %d"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>
