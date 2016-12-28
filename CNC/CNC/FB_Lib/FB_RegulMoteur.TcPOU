@@ -7,14 +7,17 @@ VAR_INPUT
 		xDirection: BOOL;
 		xOnOff: BOOL;
 		PARA : ST_CTRL_PID_PARAMS;
-		
+		xReset: BOOL;
+		PID : FB_CTRL_PID;
 		fbConvertNumToMotorOut : FB_Qa;
 		fbConvertTachoToNumSpeed : FB_Ia;
 END_VAR
 VAR_OUTPUT
+	xError : BOOL;
+	iErrorID : INT;
 END_VAR
 VAR
-	PID : FB_CTRL_PID;
+
 
 END_VAR
 ]]></Declaration>
@@ -31,6 +34,21 @@ IF xOnOff THEN
 ELSE
 	fbConvertNumToMotorOut.lrConsigne:=0;
 END_IF
+
+//Errors
+IF (PID.bError) THEN
+xError:=TRUE;
+iErrorID:=300;
+ELSIF PID.bARWactive THEN
+	xError:=TRUE;
+	iErrorId:=301;
+ELSE
+	xError:=FALSE;
+END_IF
+
+//Reset
+PID.bSync:=xReset;
+
 ]]></ST>
     </Implementation>
   </POU>
