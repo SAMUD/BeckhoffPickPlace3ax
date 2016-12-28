@@ -50,8 +50,7 @@ IF fbRTrigOut.Q AND NOT(fbEtape.iNo>=200 AND fbEtape.iNo<=299) THEN	//When risin
 	IF xAutorizeOut THEN
 		fbEtape.piVal:=200;
 	ELSE
-		stError.iId:=10;
-		stError.sMessage:='Actuator | Autorisation refused for action Go Out';
+		stError.iId:=100;
 	END_IF		
 fbEtape.piVal:=200;	
 END_IF
@@ -61,8 +60,7 @@ IF fbRTrigIn.Q AND NOT(fbEtape.iNo>=100 AND fbEtape.iNo<=199) THEN	//When rising
 	IF xAutorizeIn THEN
 		fbEtape.piVal:=100;
 	ELSE
-		stError.iId:=11;
-		stError.sMessage:='Actuator | Autorisation refused for action Go In';
+		stError.iId:=101;
 	END_IF	
 END_IF
 
@@ -80,7 +78,6 @@ QxBlockingValve:= (xAutorizeOut OR xAutorizeIn);
 //reset error
 IF stError.xState THEN
 	stError.iId:=0;
-	stError.sMessage:='';
 END_IF
 
 
@@ -131,28 +128,17 @@ fbTimeOut(IN:=(fbEtape.iNo>100 AND fbEtape.iNo<199 OR fbEtape.iNo>200 AND fbEtap
 				AND (NOT fbRTrigIn.Q AND NOT fbRTrigOut.Q),PT:=stParam.tTimeOut);	
 
 
-(*Liste des erreurs possibles :
--	10 Si un ordre de déplacement sort est donné et que l’entrée, xAutoriseSort n’est pas vrai, on indique une erreur
--	11 Idem pour xAutoriseRentre
--	20 Erreur de timeout sort
--	21 Erreur de timeout rentre
--	30 Les deux fins de course sont vraies en même temps
--	31 Double consignes, xSetSort=1 et xSetRentre=1*)				
-//Gestion des erreurs
+//stError.sMessage is not needed anymore. Only the ID is needed, to use it with a GlobalText List and have Multilangage Support
 IF fbTimeOut.Q THEN
 	IF fbEtape.iNo < 200 THEN
-		stError.sMessage:='Actuator | Error timeout go-in';
-		stError.iId:=21;
+		stError.iId:=111;
 	ELSIF fbEtape.iNo>200 THEN
-		stError.sMessage:='Actuator | Error timeout go-out';
-		stError.iId:=20;
+		stError.iId:=110;
 	END_IF
 ELSIF IxSensIn AND IxSensOut THEN
-	stError.sMessage:='Actuator | Both sensors (IxSensIn & IxSensOut) at the same time';
-	stError.iId:=30;
+	stError.iId:=120;
 ELSIF xInGoOut AND xInGoIn THEN
-	stError.sMessage:='Actuator | Where shall I go? xSetSort=1 et xSetRentre=1';
-	stError.iId:=31;
+	stError.iId:=121;
 END_IF
 
 stError.xState :=fbEtape.iNo=999 OR fbTimeOut.Q OR (IxSensIn AND IxSensOut) OR (xInGoIn AND xInGoOut);

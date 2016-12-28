@@ -306,6 +306,13 @@
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
 						<Var>
+							<Name>GVL.fbMotor.fbConvertNumToMotorOut.QaSortie</Name>
+							<Comment>
+								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
 							<Name>GVL.fbAct1.xGoingOutNow</Name>
 							<Comment>
 								<![CDATA[indication that actor is going in Out-Pos]]>
@@ -409,13 +416,6 @@
 								<![CDATA[Blocking valve. Only TRUE when autorisation is present.]]>
 							</Comment>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbMotor.fbConvertNumToMotorOut.QaSortie</Name>
-							<Comment>
-								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
-							</Comment>
-							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL.stIO.stOut.QxLampeRed</Name>

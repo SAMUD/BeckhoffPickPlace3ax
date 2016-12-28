@@ -37,20 +37,16 @@ fbBtn();
 IF (fbAct1.stError.xState) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbAct1.stError.iId;
-	stParam.stStatus.sMessage:=fbAct1.stError.sMessage;
 ELSIF (fbAct2.stError.xState) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbAct2.stError.iId;
-	stParam.stStatus.sMessage:=fbAct2.stError.sMessage;
 ELSIF (fbAct3.stError.xState) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbAct3.stError.iId;
-	stParam.stStatus.sMessage:=fbAct3.stError.sMessage;
 ELSIF (fbCycleAuto.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbCycleAuto.iId;
-	stParam.stStatus.sMessage:=fbCycleAuto.sMessage;
-ELSIF (fbAct3.stError.xState) THEN
+ELSE
 	//clear the error State. Do not clear the last error Message to have a small error history
 	stParam.stStatus.xErreur:=FALSE;
 END_IF
@@ -112,9 +108,9 @@ END_IF
 
 
 //Reset des Actionneurs avan le init
-fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=910;
-fbAct2.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=910;
-fbAct3.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=910;]]></ST>
+fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
+fbAct2.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
+fbAct3.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

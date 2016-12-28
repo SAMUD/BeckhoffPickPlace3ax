@@ -194,7 +194,7 @@
                   <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                     <o>
                       <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
+                      <v n="Value">"LEFT"</v>
                     </o>
                     <o>
                       <v n="Id">2565699834L</v>
@@ -234,7 +234,7 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">0</v>
+                      <v n="Value">2</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
@@ -242,7 +242,7 @@
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">80</v>
+                      <v n="Value">159</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>

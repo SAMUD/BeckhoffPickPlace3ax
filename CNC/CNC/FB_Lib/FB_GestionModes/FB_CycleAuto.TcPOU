@@ -13,7 +13,6 @@ VAR_OUTPUT
 	xError:BOOL;
 	iEtape:INT;
 	iId : INT; 			//error number currently active
-	sMessage : STRING; 	//error message for the active error
 	iNumberProduced : INT;
 END_VAR
 VAR
@@ -58,8 +57,7 @@ CASE fbEtape.iNo OF
 		ELSE
 			//do not start and go into error
 			fbEtape.piSVal:=800;
-			iId:=25;
-			sMessage:='Auto | Object is not right';
+			iId:=200;
 		END_IF
 	130:fbEtape.psMess:='Auto | Act1 Go out';
 		IF fbAct1.xInOutPos THEN
@@ -79,8 +77,7 @@ CASE fbEtape.iNo OF
 		IF fbEtape.xTimeQ THEN
 			//Go to Error
 			fbEtape.piSVal:=800;
-			iId:=26;
-			sMessage:='Auto | Timeout - Motor did not reach speed';
+			iId:=210;
 		END_IF
 	160:fbEtape.psMess:='Auto | Act2 go out';
 	IF fbAct2.xInOutPos THEN
@@ -104,8 +101,7 @@ CASE fbEtape.iNo OF
 			fbEtape.piSVal:=200;
 		ELSE
 			fbEtape.piSVal:=800;
-			iId:=27;
-			sMessage:='Auto | Error with mesurements';
+			iId:=201;
 		END_IF
 	200:fbEtape.psMess:='Auto | Wait 3s';
 		//assigne le temps de comptage

@@ -15,6 +15,9 @@
     <LibraryReferences>{c3cda876-4894-4325-bbfd-a8b141f90604}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ErrorList.TcTLO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="FB_Lib\Conversion\FB_ConfigAnalog.TcPOU">
       <SubType>Code</SubType>
     </Compile>
