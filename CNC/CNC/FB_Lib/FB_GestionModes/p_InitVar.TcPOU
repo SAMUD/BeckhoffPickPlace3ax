@@ -37,8 +37,8 @@ stParam.stStatus.eMMA:=Init;
 fbMotor.fbConvertNumToMotorOut.fbConfig.uiNbreBitBus:=16;
 fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMax:=10;
 fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMin:=-10;
-fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMin:=-2998;
-fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMax:=2998;
+fbMotor.fbConvertNumToMotorOut.fbConfig.stValeur.lrMin:=-2998;
+fbMotor.fbConvertNumToMotorOut.fbConfig.stValeur.lrMax:=2998;
 fbMotor.fbConvertNumToMotorOut.lrConsigne:=0;
 
 fbMotor.fbConvertTachoToNumSpeed.fbConfig.uiNbreBitBus:=16;
