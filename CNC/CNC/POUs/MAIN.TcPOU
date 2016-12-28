@@ -68,7 +68,7 @@ fbCycleInit();
 	
 //call Manual mode and give over the needed parameters
 fbCycleMan.xStart:= fbMMA.iEtape=210;
-fbCycleMan.xStop:=  fbMMa.iEtape<>211;
+fbCycleMan.xStop:=  fbMMa.iEtape<>210;
 fbCycleMan();
 
 //call Motor Controller
@@ -112,9 +112,9 @@ END_IF
 
 
 //Reset des Actionneurs avan le init
-fbAct1.xReset:=fbCycleInit.iEtape=99;
-fbAct2.xReset:=fbCycleInit.iEtape=99;
-fbAct3.xReset:=fbCycleInit.iEtape=99;]]></ST>
+fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=910;
+fbAct2.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=910;
+fbAct3.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=910;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

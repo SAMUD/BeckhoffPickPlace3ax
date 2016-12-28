@@ -63,7 +63,7 @@ CASE fbEtape.iNo OF
 	//Manual
 	//--------------------------------------------------------------
 	210:fbEtape.psMess:='MMA | Manual | Wait for mode changing';
-		IF (fbCycleMan.iEtape=999) THEN
+		IF (stParam.stStatus.eMMA<>Man) THEN
 		fbEtape.piVal:=211;
 		END_IF
 	211:fbEtape.psMess:='MMA | Manual | Finishing';

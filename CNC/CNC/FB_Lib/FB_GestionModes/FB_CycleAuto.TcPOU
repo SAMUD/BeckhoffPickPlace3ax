@@ -14,6 +14,7 @@ VAR_OUTPUT
 	iEtape:INT;
 	iId : INT; 			//error number currently active
 	sMessage : STRING; 	//error message for the active error
+	iNumberProduced : INT;
 END_VAR
 VAR
 	fbEtape:FB_Etape;
@@ -40,6 +41,7 @@ CASE fbEtape.iNo OF
 		IF fbRtrigStart.Q THEN
 			xMemStop:=FALSE;
 			fbEtape.piVal:=100;
+			iNumberProduced:=0;
 		END_IF
 	100:fbEtape.psMess:='Auto | Turn on Lamp1';
 		fbEtape.tTimeQ:=T#500MS;
@@ -111,8 +113,15 @@ CASE fbEtape.iNo OF
 		fbEtape.piVal:=210;
 	210:fbEtape.psMess:='Auto | Wait 3 sec';
 		IF fbEtape.xTimeQ THEN
-			fbEtape.piSVal:=300;
+			fbEtape.piSVal:=220;
+			iNumberProduced:=iNumberProduced+1;
 		END_IF
+	220:fbEtape.psMess:='Auto | Test if stop was asked';
+		IF xMemStop THEN
+		fbEtape.piSVal:=999;
+		ELSE
+		fbEtape.piSVal:=100;
+	END_IF
 	800:fbEtape.psMess:='Auto | Error occured - Going into stock state';
 		//turn off all motors and release all Actors
 		IF (fbAct1.xInInPos AND fbAct2.xInInPos AND fbAct3.xInInPos) THEN
@@ -120,12 +129,7 @@ CASE fbEtape.iNo OF
 		END_IF
 	810:fbEtape.psMess:='Auto | Error occured - Press Reset to recover';
 		//do nothing and wait
-	900:fbEtape.psMess:='Auto | Test if stop was asked';
-		IF xMemStop THEN
-		fbEtape.piSVal:=999;
-		ELSE
-		fbEtape.piSVal:=100;
-	END_IF
+	
 	999:fbEtape.psMess:='Auto | Finished';
 		fbEtape.piSVal:=0;
 END_CASE

@@ -15,6 +15,7 @@ VAR_OUTPUT
 END_VAR
 VAR
 	fbEtape:FB_Etape;
+	inc: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -56,13 +57,11 @@ CASE fbEtape.iNo OF
 		END_IF
 		IF (fbBtn.xManualCNCMotorTurnOn) THEN
 			fbEtape.piVal:=207;
+			inc:=inc+1;		
 		END_IF
 		IF (fbBtn.xManualCNCMotorTurnOff) THEN
 			fbEtape.piVal:=208;
 		END_IF
-		
-		
-		
 		
 	201: fbEtape.psMess:='Manual | Action : Act 1 Go in';
 		IF (NOT fbBtn.xManualAct1GoIn) THEN
