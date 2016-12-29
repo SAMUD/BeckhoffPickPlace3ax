@@ -93,6 +93,9 @@
     <Compile Include="FB_Lib\FB_RegulMoteur.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FB_Lib\TCPIP\FB_TCP.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalImagePool.TcGIPO">
       <SubType>Code</SubType>
     </Compile>
@@ -153,6 +156,7 @@
     <Folder Include="FB_Lib\FB_GestionModes" />
     <Folder Include="FB_Lib\FB_GestionModes\IO" />
     <Folder Include="FB_Lib\FB_GestionModes\Param" />
+    <Folder Include="FB_Lib\TCPIP" />
     <Folder Include="GVLs" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
@@ -211,6 +215,10 @@
     <PlaceholderReference Include="Tc2_System">
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_TcpIp">
+      <DefaultResolution>Tc2_TcpIp, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_TcpIp</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Interfaces">
       <DefaultResolution>Tc3_Interfaces, * (Beckhoff Automation GmbH)</DefaultResolution>

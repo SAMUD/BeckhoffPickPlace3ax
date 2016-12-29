@@ -23,6 +23,9 @@
 	//Tachymetre moteur
 	fbMotor : FB_RegulMoteur;
 	
+	//include TCP_LIB
+	fbTCP : FB_TCP;
+	
 
 	 
 END_VAR]]></Declaration>
