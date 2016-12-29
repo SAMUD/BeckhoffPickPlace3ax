@@ -12,7 +12,7 @@ VAR_INPUT
 	sSendData : STRING;
 	
 	sReceived : STRING;
-	sReceived2 : STRING;
+	sReceivedBuffer : STRING;
 	
 	xDisconnect : BOOL;
 END_VAR
@@ -44,8 +44,9 @@ xConnect:=fbConnect.bBusy;
 
 
 //Send data
-fbSend.cbLen:=LEN(CONCAT(sSendData,''));
-IF(fbSend.cbLen>0 OR fbSend.bBusy) THEN
+fbSend.cbLen:=LEN(CONCAT(sSendData,'$R$L'));
+IF(fbSend.cbLen>4 OR fbSend.bBusy) THEN
+	sSendData:=CONCAT(sSendData,'$R$L');
 	fbSend.pSrc:=ADR(sSendData);
 	fbSend.hSocket:=hSocket;
 	fbSend.tTimeout:=tTimeout;
@@ -58,16 +59,17 @@ IF (fbRTrig.Q) THEN
 END_IF
 fbSend();
 
-Timer.PT:=T#5S;
+Timer.PT:=T#100MS;
 Timer();
 IF (Timer.Q) THEN
 	Timer(IN:=FALSE);
 	fbReceive.tTimeout:=tTimeout;
-	fbReceive.cbLen:=30;
+	fbReceive.cbLen:=100;
 	fbReceive.hSocket:=hSocket;
 	fbReceive.bExecute:=xConnected;
-	fbReceive.pDest:=ADR(sReceived);
+	fbReceive.pDest:=ADR(sReceivedBuffer);
 	Timer(IN:=TRUE);
+	sReceived:=LEFT(STR:=sReceivedBuffer,SIZE:=UDINT_TO_INT(fbReceive.nRecBytes));
 ELSE
 	fbReceive.bExecute:=FALSE;
 END_IF
