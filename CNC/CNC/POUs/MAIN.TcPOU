@@ -77,6 +77,9 @@ fbMotor.xDirection:=stio.stIn.xMotorDirection;
 fbMotor();
 stio.stOut.lMotorOut:=fbMotor.fbConvertNumToMotorOut.QaSortie;
 
+//call TCP Block
+fbTCP();
+
 //******************************************
 //Output actions
 //******************************************
