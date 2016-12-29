@@ -6,13 +6,7 @@ VAR_INPUT
 	xConnect : BOOL;
 	sRemoteHost : T_IPV4Addr :='127.0.0.1';
 	nRemotePort : UDINT := 23;
-	tTimeout: TIME := T#30S;
-	xConnected : BOOL;
-	
-	sSendData : STRING;
-	
-	sReceived : STRING;
-	
+	tTimeout: TIME := T#15S;
 	xDisconnect : BOOL;
 END_VAR
 VAR_OUTPUT
@@ -20,16 +14,10 @@ VAR_OUTPUT
 	xError: BOOL;
 	nErrID : UDINT;
 	hSocket : T_HSOCKET;
-
 END_VAR
 VAR
 	fbConnect : FB_SocketConnect;
-	fbSend : FB_SocketSend;
-	fbReceive : FB_SocketReceive;
-	fbRTrig:R_Trig;
-	
-	hSocketEmpty : T_HSOCKET;
-	//strlen: LEN;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -38,52 +26,12 @@ fbConnect.sRemoteHost:=sRemoteHost;
 fbConnect.nRemotePort:=nRemotePort;
 fbConnect.tTimeout:=tTimeout;
 fbConnect();
+xBusy:=fbConnect.bBusy;
+xError:=fbConnect.bError;
+nErrID:=fbConnect.nErrId;
 hSocket:=fbConnect.hSocket;
-xConnect:=fbConnect.bBusy;
-IF(hSocket<>hSocketEmpty) THEN
-	xConnected:=TRUE;
-END_IF
 
-//Send data
-fbSend.cbLen:=LEN(CONCAT(sSendData,'\r\n'));
-IF(fbSend.cbLen>4 OR fbSend.bBusy) THEN
-	fbSend.pSrc:=ADR(sSendData);
-	fbSend.hSocket:=hSocket;
-	fbSend.tTimeout:=tTimeout;
-	fbSend.bExecute:=TRUE;
-END_IF
-fbRTrig(CLK:=NOT fbSend.bBusy);
-IF (fbRTrig.Q) THEN
-	fbSend.bExecute:=FALSE;
-	sSendData:='';
-END_IF
-fbSend();
-
-
-//fbReceive.tTimeout:=tTimeout;
-//fbReceive.cbLen:=100;
-//fbReceive.hSocket:=hSocket;
-//fbReceive.bExecute:=xConnected;
-//fbReceive();
-
-
-
-
-//******************************************
-//Output actions
-//******************************************
-
-//Errors
-xBusy:=fbConnect.bBusy OR fbSend.bBusy;
-IF(fbConnect.bError) THEN
-	xError:=TRUE;
-	nErrID:=fbConnect.nErrId;
-ELSIF (fbSend.bError) THEN
-	xError:=TRUE;
-	nErrID:=fbSend.nErrId;
-ELSE
-	xError:=FALSE;
-END_IF]]></ST>
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

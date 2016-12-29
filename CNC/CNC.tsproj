@@ -67,7 +67,7 @@
 	</ImageDatas>
 	<Project ProjectGUID="{68B614FD-BDF4-4EDD-A890-EDD57B09D215}" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
-			<Settings MaxCpus="4" DontCheckTarget="192.168.56.1.1.1">
+			<Settings MaxCpus="4">
 				<Cpu/>
 				<Cpu CpuId="1"/>
 				<Cpu CpuId="2"/>
@@ -306,6 +306,13 @@
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
 						<Var>
+							<Name>GVL.fbMotor.fbConvertNumToMotorOut.QaSortie</Name>
+							<Comment>
+								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
 							<Name>GVL.fbAct1.xGoingOutNow</Name>
 							<Comment>
 								<![CDATA[indication that actor is going in Out-Pos]]>
@@ -425,13 +432,6 @@
 						<Var>
 							<Name>GVL.stIO.stOut.lMotorOut</Name>
 							<Type>LREAL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbMotor.fbConvertNumToMotorOut.QaSortie</Name>
-							<Comment>
-								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
-							</Comment>
-							<Type>DINT</Type>
 						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2016-12-28T11:45:33">
