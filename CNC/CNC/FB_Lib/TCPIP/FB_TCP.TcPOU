@@ -12,7 +12,10 @@ VAR_INPUT
 	sSendData : STRING;
 	
 	sReceived : STRING;
+<<<<<<< HEAD
 	sReceivedBuffer : STRING;
+=======
+>>>>>>> 138f7229e97923726556796679bea81f026caf40
 	
 	xDisconnect : BOOL;
 END_VAR
@@ -28,7 +31,12 @@ VAR
 	fbSend : FB_SocketSend;
 	fbReceive : FB_SocketReceive;
 	fbRTrig:R_Trig;
+<<<<<<< HEAD
 	Timer : TON;
+=======
+	
+	hSocketEmpty : T_HSOCKET;
+>>>>>>> 138f7229e97923726556796679bea81f026caf40
 	//strlen: LEN;
 END_VAR
 ]]></Declaration>
@@ -40,6 +48,7 @@ fbConnect.tTimeout:=tTimeout;
 fbConnect();
 hSocket:=fbConnect.hSocket;
 xConnect:=fbConnect.bBusy;
+<<<<<<< HEAD
 //fbTCP.Timer.IN:=fbConnect.bBusy;;
 
 
@@ -47,6 +56,15 @@ xConnect:=fbConnect.bBusy;
 fbSend.cbLen:=LEN(CONCAT(sSendData,'$R$L'));
 IF(fbSend.cbLen>4 OR fbSend.bBusy) THEN
 	sSendData:=CONCAT(sSendData,'$R$L');
+=======
+IF(hSocket<>hSocketEmpty) THEN
+	xConnected:=TRUE;
+END_IF
+
+//Send data
+fbSend.cbLen:=LEN(CONCAT(sSendData,'\r\n'));
+IF(fbSend.cbLen>4 OR fbSend.bBusy) THEN
+>>>>>>> 138f7229e97923726556796679bea81f026caf40
 	fbSend.pSrc:=ADR(sSendData);
 	fbSend.hSocket:=hSocket;
 	fbSend.tTimeout:=tTimeout;
@@ -59,6 +77,7 @@ IF (fbRTrig.Q) THEN
 END_IF
 fbSend();
 
+<<<<<<< HEAD
 Timer.PT:=T#100MS;
 Timer();
 IF (Timer.Q) THEN
@@ -77,6 +96,14 @@ fbReceive();
 
 sSendData:=sReceived;
 sReceived:='';
+=======
+
+//fbReceive.tTimeout:=tTimeout;
+//fbReceive.cbLen:=100;
+//fbReceive.hSocket:=hSocket;
+//fbReceive.bExecute:=xConnected;
+//fbReceive();
+>>>>>>> 138f7229e97923726556796679bea81f026caf40
 
 
 
