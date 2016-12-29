@@ -33,6 +33,33 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"50"</v>
+              <v n="TextDefault">"Act1"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"60"</v>
+              <v n="TextDefault">"Act2"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"51"</v>
+              <v n="TextDefault">"Act3"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"15"</v>
               <v n="TextDefault">"Actionneur 1"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -156,6 +183,15 @@
                 <v>Anglais</v>
                 <v>Englisch</v>
                 <v>English</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"79"</v>
+              <v n="TextDefault">"ErrID: %d"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>
@@ -465,6 +501,42 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"61"</v>
+              <v n="TextDefault">"Remote IP-Adress: %s"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"72"</v>
+              <v n="TextDefault">"Remote Port: %d"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"62"</v>
+              <v n="TextDefault">"Remote Port: %s"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"74"</v>
+              <v n="TextDefault">"Remote Socket: %d"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"10"</v>
               <v n="TextDefault">"Rentre       Sort"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -507,6 +579,15 @@
                 <v>Marche</v>
                 <v>Betrieb</v>
                 <v>Running</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"83"</v>
+              <v n="TextDefault">"Send Data: %s"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>
@@ -620,6 +701,51 @@
             <o>
               <v n="TextID">"44"</v>
               <v n="TextDefault">"WriteSpeed: %d"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"77"</v>
+              <v n="TextDefault">"xBusy"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"80"</v>
+              <v n="TextDefault">"xConnect"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"81"</v>
+              <v n="TextDefault">"xDisconnect"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"78"</v>
+              <v n="TextDefault">"xError"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"82"</v>
+              <v n="TextDefault">"xSend"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>
