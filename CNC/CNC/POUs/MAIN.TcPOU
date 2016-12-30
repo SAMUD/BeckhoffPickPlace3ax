@@ -49,6 +49,9 @@ ELSIF (fbCycleAuto.xError) THEN
 ELSIF (fbMotor.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbMotor.iErrorID;
+ELSIF (fbTCP.OutputGlobal.xError) THEN
+	stParam.stStatus.xErreur:=TRUE;
+	stParam.stStatus.iId:=fbTCP.OutPutGlobal.nErrID;
 ELSE
 	//clear the error State. Do not clear the last error Message to have a small error history
 	stParam.stStatus.xErreur:=FALSE;
@@ -118,6 +121,9 @@ fbMotor.xReset:=fbMMA.iEtape=810;
 fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
 fbAct2.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
 fbAct3.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
+
+//Reset de la connexion TCIP
+fbTCP.xForceDisconnect:=fbMMA.iEtape=810;
 
 
 

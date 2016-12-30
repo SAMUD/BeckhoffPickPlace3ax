@@ -61,13 +61,11 @@ fbMotor.PID.fManSyncValue:=0;
 stio.stIn.xMotorDirection:=FALSE;
 
 //Param TCP
-fbTCP.nRemotePort:=23;
-fbTCP.sRemoteHost:='127.0.0.1';
-fbTCP.tTimeout:=T#30S;
-<<<<<<< HEAD
+fbTCP.TCPParam.nRemotePort:=23;
+fbTCP.TCPParam.sRemoteHost:='127.0.0.1';
+fbTCP.TCPParam.tTimeout:=T#30S;
+fbTCP.xForceDisconnect:=TRUE;
 
-=======
->>>>>>> 138f7229e97923726556796679bea81f026caf40
 
 
 ]]></ST>

@@ -96,6 +96,15 @@
     <Compile Include="FB_Lib\TCPIP\FB_TCP.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FB_Lib\TCPIP\ST_Output.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FB_Lib\TCPIP\ST_ParamTCP.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FB_Lib\TCPIP\ST_TxRx.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalImagePool.TcGIPO">
       <SubType>Code</SubType>
     </Compile>

@@ -115,6 +115,42 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"401"</v>
+              <v n="TextDefault">"fbTCP | mReceive | Received Data was lost"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>fbTCP | mReceive | Verlust von eingehenden Daten </v>
+                <v>fbTCP | mReceive | Perte de donnes en entree</v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"402"</v>
+              <v n="TextDefault">"fbTCP | Error sending data"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>fbTCP | Fehler beim Senden der Daten</v>
+                <v>fbTCP | Probleme lorsque de l'envoi des données</v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"403"</v>
+              <v n="TextDefault">"fbTCP | Error connecting /disconnecting to Server"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>fbTCP | Fehler beim Verbinden / Trennen der Verbindung zum Server</v>
+                <v>fbTCP | Erreur lorsque de la (de-)connexion aux Serveur</v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"404"</v>
+              <v n="TextDefault">"fbTCP | mReceive | Error while Receiving data"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>fbTCP | mReceive | Fehler beim Empfangen von Daten</v>
+                <v>fbTCP | mReceive | Probleme de réception</v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">""</v>
               <v n="TextDefault">""</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">

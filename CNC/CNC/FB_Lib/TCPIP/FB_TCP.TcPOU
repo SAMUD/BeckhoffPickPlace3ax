@@ -3,126 +3,202 @@
   <POU Name="FB_TCP" Id="{4b1b7a1f-ef81-4f06-8a09-5c3e603fef73}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_TCP
 VAR_INPUT
-	xConnect : BOOL;
-	sRemoteHost : T_IPV4Addr :='127.0.0.1';
-	nRemotePort : UDINT := 23;
-	tTimeout: TIME := T#30S;
-	xConnected : BOOL;
+	xEnable : BOOL;			//true enables the communication and connect to host. False is like a reset: disconecting and disabling all Communication
+	xForceDisconnect : BOOL;//force a disconnect. Only needed when the Program starts the first time or when there is a Reset
+	TxRx : ST_TxRx;			//Tx and Rx Strings
+	TCPParam : ST_ParamTCP;	//Parameters for the Communication
 	
-	sSendData : STRING;
-	
-	sReceived : STRING;
-<<<<<<< HEAD
-	sReceivedBuffer : STRING;
-=======
->>>>>>> 138f7229e97923726556796679bea81f026caf40
-	
-	xDisconnect : BOOL;
+	OutputDisconnect : ST_Output;
+	OutputDisconnectAll : ST_Output;
+	OutputConnect : ST_Output;
+	OutputSend : ST_Output;
+	OutputReceive : ST_Output;
+
 END_VAR
 VAR_OUTPUT
-	xBusy: BOOL;
-	xError: BOOL;
-	nErrID : UDINT;
-	hSocket : T_HSOCKET;
-
+	OutputGlobal : ST_Output;
 END_VAR
 VAR
 	fbConnect : FB_SocketConnect;
-	fbSend : FB_SocketSend;
-	fbReceive : FB_SocketReceive;
-	fbRTrig:R_Trig;
-<<<<<<< HEAD
-	Timer : TON;
-=======
+	fbDisconnectAll : FB_SocketCloseAll;
+	fbDisconnect : FB_SocketClose;
 	
-	hSocketEmpty : T_HSOCKET;
->>>>>>> 138f7229e97923726556796679bea81f026caf40
-	//strlen: LEN;
+	REdge : R_Trig;
+	FEdge : F_Trig;
+	FEdgeBusyConnect : F_Trig;
+	fbReceive : FB_SocketReceive;
+		Timer : TON;
+		xReceiveToFast: BOOL;
+		sReceivedBuffer : STRING;
+			fbSend : FB_SocketSend;
+	fbRTrig:F_Trig;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbConnect.bExecute:=xConnect;
-fbConnect.sRemoteHost:=sRemoteHost;
-fbConnect.nRemotePort:=nRemotePort;
-fbConnect.tTimeout:=tTimeout;
-fbConnect();
-hSocket:=fbConnect.hSocket;
-xConnect:=fbConnect.bBusy;
-<<<<<<< HEAD
-//fbTCP.Timer.IN:=fbConnect.bBusy;;
-
-
-//Send data
-fbSend.cbLen:=LEN(CONCAT(sSendData,'$R$L'));
-IF(fbSend.cbLen>4 OR fbSend.bBusy) THEN
-	sSendData:=CONCAT(sSendData,'$R$L');
-=======
-IF(hSocket<>hSocketEmpty) THEN
-	xConnected:=TRUE;
-END_IF
-
-//Send data
-fbSend.cbLen:=LEN(CONCAT(sSendData,'\r\n'));
-IF(fbSend.cbLen>4 OR fbSend.bBusy) THEN
->>>>>>> 138f7229e97923726556796679bea81f026caf40
-	fbSend.pSrc:=ADR(sSendData);
-	fbSend.hSocket:=hSocket;
-	fbSend.tTimeout:=tTimeout;
-	fbSend.bExecute:=TRUE;
-END_IF
-fbRTrig(CLK:=NOT fbSend.bBusy);
-IF (fbRTrig.Q) THEN
-	fbSend.bExecute:=FALSE;
-	sSendData:='';
-END_IF
-fbSend();
-
-<<<<<<< HEAD
-Timer.PT:=T#100MS;
-Timer();
-IF (Timer.Q) THEN
-	Timer(IN:=FALSE);
-	fbReceive.tTimeout:=tTimeout;
-	fbReceive.cbLen:=100;
-	fbReceive.hSocket:=hSocket;
-	fbReceive.bExecute:=xConnected;
-	fbReceive.pDest:=ADR(sReceivedBuffer);
-	Timer(IN:=TRUE);
-	sReceived:=LEFT(STR:=sReceivedBuffer,SIZE:=UDINT_TO_INT(fbReceive.nRecBytes));
-ELSE
-	fbReceive.bExecute:=FALSE;
-END_IF
-fbReceive();
-
-sSendData:=sReceived;
-sReceived:='';
-=======
-
-//fbReceive.tTimeout:=tTimeout;
-//fbReceive.cbLen:=100;
-//fbReceive.hSocket:=hSocket;
-//fbReceive.bExecute:=xConnected;
-//fbReceive();
->>>>>>> 138f7229e97923726556796679bea81f026caf40
-
-
-
+      <ST><![CDATA[mConnect();
+mSend();
+mReceive();
 
 //******************************************
 //Output actions
 //******************************************
 
+//Busy
+OutputGlobal.xBusy:=OutputReceive.xBusy OR OutputSend.xBusy OR OutputConnect.xBusy OR OutputDisconnect.xBusy OR OutputDisconnectAll.xBusy;
 //Errors
-xBusy:=fbConnect.bBusy OR fbSend.bBusy;
-IF(fbConnect.bError) THEN
-	xError:=TRUE;
-	nErrID:=fbConnect.nErrId;
-ELSIF (fbSend.bError) THEN
-	xError:=TRUE;
-	nErrID:=fbSend.nErrId;
+IF(OutputReceive.xError) THEN
+	OutputGlobal.xError:=TRUE;
+	OutputGlobal.nErrID:=OutputReceive.nErrID;
+ELSIF (OutputSend.xError) THEN
+	OutputGlobal.xError:=TRUE;
+	OutputGlobal.nErrID:=OutputSend.nErrID;
+ELSIF (OutputConnect.xError) THEN
+	OutputGlobal.xError:=TRUE;
+	OutputGlobal.nErrID:=OutputConnect.nErrID;
+ELSIF (OutputDisconnect.xError) THEN
+	OutputGlobal.xError:=TRUE;
+	OutputGlobal.nErrID:=OutputDisconnect.nErrID;
+ELSIF (OutputDisconnectAll.xError) THEN
+	OutputGlobal.xError:=TRUE;
+	OutputGlobal.nErrID:=OutputDisconnectAll.nErrID;
 ELSE
-	xError:=FALSE;
+	OutputGlobal.xError:=FALSE;
 END_IF]]></ST>
     </Implementation>
+    <Method Name="mConnect" Id="{14c4892f-d874-4037-a124-ab30f97c8b2f}">
+      <Declaration><![CDATA[METHOD PUBLIC mConnect
+VAR_INPUT
+
+END_VAR
+VAR
+	
+	
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//Detecting Rising and falling edge of xEnable and nBusyConnect
+REdge(CLK:=xEnable);
+FEdge(CLK:=xEnable);
+FEdgeBusyConnect(CLK:=fbConnect.bBusy);
+
+
+//when there is a falling edge do a déconnection
+fbDisconnect.tTimeout:=TCPParam.tTimeout;
+fbDisconnect.hSocket:=TCPParam.hSocket;
+fbDisconnect.bExecute:=FEdge.Q;
+fbDisconnect();
+OutputDisconnect.xBusy:=fbDisconnect.bBusy;
+OutputDisconnect.xError:=fbDisconnect.bError;
+OutputDisconnect.nErrID:=403;
+IF (FEdge.Q) THEN
+	TCPParam.xConnected:=FALSE;
+END_IF
+
+//force disconnecting when xForceDisconnect
+fbDisconnectAll.bExecute:=xForceDisconnect;
+fbDisconnectAll.tTimeout:=TCPParam.tTimeout;
+fbDisconnectAll();
+OutputDisconnectAll.xBusy:=fbDisconnectAll.bBusy;
+OutputDisconnectAll.xError:=fbDisconnectAll.bError;
+OutputDisconnectAll.nErrID:=403;
+IF (xForceDisconnect) THEN
+	TCPParam.xConnected:=FALSE;
+	xForceDisconnect:=FALSE;
+END_IF
+
+//Connect to the Server
+fbConnect.nRemotePort:=TCPPAram.nRemotePort;
+fbConnect.sRemoteHost:=TCPParam.sRemoteHost;
+fbConnect.tTimeout:=TCPPAram.tTimeout;
+fbConnect.bExecute:=REdge.Q;
+fbConnect();
+OutputConnect.xBusy:=fbConnect.bBusy;
+OutputConnect.xError:=fbConnect.bError;
+OutputConnect.nErrID:=403;
+IF FEdgeBusyConnect.Q THEN
+	TCPParam.xConnected:=TRUE;
+	TCPParam.hSocket:=fbConnect.hSocket;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mReceive" Id="{27a39fd8-18a9-49dd-b944-010ba65bd7e0}">
+      <Declaration><![CDATA[METHOD PUBLIC mReceive
+VAR_INPUT
+
+END_VAR
+VAR
+		
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//Receive data each 250mS
+Timer.PT:=T#250MS;
+//Timer should only work if TCP is currently connected
+Timer(IN:=TCPParam.xConnected);
+
+IF (Timer.Q) THEN
+	Timer(IN:=FALSE);
+	fbReceive.tTimeout:=TCPPAram.tTimeout;
+	fbReceive.cbLen:=100;
+	fbReceive.hSocket:=TCPParam.hSocket;
+	fbReceive.bExecute:=TRUE;
+	fbReceive.pDest:=ADR(sReceivedBuffer);
+	IF fbReceive.nRecBytes>0 THEN  //some data received
+		xReceiveToFast:=FALSE;
+		//IF (TxRx.sReceived='') THEN
+			TxRx.sReceived:=LEFT(STR:=sReceivedBuffer,SIZE:=UDINT_TO_INT(fbReceive.nRecBytes));
+		//ELSE
+		//	xReceiveToFast:=TRUE;
+		//END_IF
+	END_IF	
+ELSE
+	fbReceive.bExecute:=FALSE;
+END_IF
+fbReceive();
+
+OutputReceive.xBusy:=fbReceive.bBusy;
+IF xReceiveToFast THEN
+	OutputReceive.xError:=TRUE;
+	OutputReceive.nErrID:=401;
+ELSE
+	OutputReceive.xError:=fbReceive.bError;
+	OutputReceive.nErrID:=404;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mSend" Id="{efd282ab-cfec-43b7-84e2-09e93da75cbe}">
+      <Declaration><![CDATA[METHOD PUBLIC mSend
+VAR_INPUT
+
+END_VAR
+VAR
+
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF(TCPParam.xConnected) THEN //only sending when connected
+	//Send data when there is something to Send
+	fbSend.cbLen:=INT_TO_UINT(LEN(CONCAT(TxRx.sSend,'$R$L')));
+	IF(fbSend.cbLen>4 OR fbSend.bBusy) THEN
+		TxRx.sSend:=CONCAT(TxRx.sSend,'$R$L');
+		fbSend.pSrc:=ADR(TxRx.sSend);
+		fbSend.hSocket:=TCPParam.hSocket;
+		fbSend.tTimeout:=TCPParam.tTimeout;
+		fbSend.bExecute:=TRUE;
+	END_IF
+	fbRTrig(CLK:=fbSend.bBusy);
+	IF (fbRTrig.Q) THEN
+		fbSend.bExecute:=FALSE;
+		TxRx.sSend:='';
+	END_IF
+	fbSend();
+	
+	OutputSend.xBusy:=fbSend.bBusy;
+	OutputSend.xError:=fbSend.bError;
+	OutputSend.nErrID:=402;
+	
+END_IF]]></ST>
+      </Implementation>
+    </Method>
   </POU>
 </TcPlcObject>
