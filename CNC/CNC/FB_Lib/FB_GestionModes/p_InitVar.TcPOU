@@ -65,6 +65,9 @@ fbTCP.TCPParam.nRemotePort:=23;
 fbTCP.TCPParam.sRemoteHost:='127.0.0.1';
 fbTCP.TCPParam.tTimeout:=T#30S;
 fbTCP.xForceDisconnect:=TRUE;
+fbTCP.TCPParam.sCognexUser:='admin';
+fbTCP.TCPParam.sCognexPW:='';
+fbTCP.TCPParam.xCognexMode:=TRUE;
 
 
 

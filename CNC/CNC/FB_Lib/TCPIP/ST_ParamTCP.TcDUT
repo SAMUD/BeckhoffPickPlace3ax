@@ -8,6 +8,10 @@ STRUCT
 	tTimeout: TIME;
 	xConnected : BOOL;			//TRUE if currently Connected to a Server
 	hSocket : T_HSOCKET;		//saves the connection details after the first Connection
+	xCognexMode : BOOL;			//login in into an cognex Camera
+	sCognexUser: STRING;
+	sCognexPW: STRING;
+	xConnectedCognex: BOOL;		//connection to Cognex etablished
 END_STRUCT
 END_TYPE
 ]]></Declaration>

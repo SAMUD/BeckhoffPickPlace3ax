@@ -726,8 +726,26 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"86"</v>
+              <v n="TextDefault">"xConnectedCognex"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"51"</v>
               <v n="TextDefault">"xEnable"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"87"</v>
+              <v n="TextDefault">"xEnableCognexMode"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>

@@ -127,6 +127,7 @@
     <Compile Include="VISUs\Home.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+      <ExcludeFromBuild>true</ExcludeFromBuild>
     </Compile>
     <Compile Include="VISUs\VisuAdmin.TcVIS">
       <SubType>Code</SubType>
