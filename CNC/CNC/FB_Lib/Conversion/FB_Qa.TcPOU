@@ -3,22 +3,17 @@
   <POU Name="FB_Qa" Id="{f0715c0c-30b0-4295-ae4b-91cb1e50682c}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Qa
 VAR_INPUT
-	///consigne dans l'unité de l'utilisateur, selon min et max de fbCongig.stValeur
-	lrConsigne: LREAL;
-	///configuration de la sortie analogique
-	fbConfig: FB_ConfigAnalog;
+	lrConsigne: LREAL;  		//user value to be converted in an analog value
+	fbConfig: FB_ConfigAnalog; 	//Analog output configuration
 END_VAR
 VAR_OUTPUT
-	///sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne
-	QaSortie AT %Q*: DINT;
-	///écart de précision sur la valeur de consigne => valeur +/- écart
-	lrEcart: LREAL;
-	///tension en volt
-	lrTension: LREAL;
+	QaSortie : DINT; 			//analog output
+	lrEcart: LREAL; 			//actual error introduced while converting the value
+	lrTension: LREAL; 			//Voltage on the Output-Pin depending on IrConsigne
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// 
+      <ST><![CDATA[//call the Method for converting
 QaSortie:=fbConfig.mConvertValToAn(lrConsigne,lrTension=>lrTension,lrEcart=>lrEcart);
 ]]></ST>
     </Implementation>

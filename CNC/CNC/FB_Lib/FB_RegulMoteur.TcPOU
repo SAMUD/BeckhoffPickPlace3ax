@@ -16,13 +16,9 @@ VAR_OUTPUT
 	xError : BOOL;
 	iErrorID : INT;
 END_VAR
-VAR
-
-
-END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbConvertNumToMotorOut();
+      <ST><![CDATA[
 fbConvertTachoToNumSpeed();
 
 IF xDirection THEN
@@ -30,10 +26,14 @@ IF xDirection THEN
 END_IF
 
 IF xOnOff THEN
-	PID(fOut=>fbConvertNumToMotorOut.lrConsigne,fSetpointValue:=Consigne,fActualValue:=fbConvertTachoToNumSpeed.lrValeur,eMode:=2,stParams:=PARA);
+	PID(fOut=>fbConvertNumToMotorOut.lrConsigne,fSetpointValue:=Consigne,
+		fActualValue:=fbConvertTachoToNumSpeed.lrValeur,eMode:=2,stParams:=PARA);
 ELSE
 	fbConvertNumToMotorOut.lrConsigne:=0;
 END_IF
+
+//Convert now to have the value as fast as possible written to the motor
+fbConvertNumToMotorOut();
 
 //Errors
 IF (PID.bError) THEN

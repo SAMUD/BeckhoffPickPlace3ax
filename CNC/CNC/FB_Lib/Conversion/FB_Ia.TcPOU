@@ -3,24 +3,20 @@
   <POU Name="FB_Ia" Id="{066a8567-c425-448a-b812-c781f3454bc0}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Ia
 VAR_INPUT
-	///configuration de la sortie analogique
-	fbConfig: FB_ConfigAnalog;
-	///sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne
-	IaEntree: LREAL;
+	fbConfig: FB_ConfigAnalog;  //Analog Input configuration
+	IaEntree: LREAL;			//Analog input value on the Input-Pin
 END_VAR
 VAR_OUTPUT
-	///Valeur dans l'unité de l'utilisateur, selon min et max de fbCongig.stValeur
-	lrValeur: LREAL;
-	///écart de précision sur la valeur de consigne => valeur +/- écart
-	lrEcart: LREAL;
-	///tension en volt
-	lrTension: LREAL;
+	lrValeur: LREAL; 			//converted value in the user unit
+	(*Not used ? *)lrEcart: LREAL; 		///écart de précision sur la valeur de consigne => valeur +/- écart
+	(*Not used ? *)lrTension: LREAL;	///tension en volt
 END_VAR
 VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[lrValeur:=fbConfig.mConvertAnToVal(IaEntree,lrTension=>lrTension,lrEcart=>lrEcart);
+      <ST><![CDATA[//call the Method for converting
+lrValeur:=fbConfig.mConvertAnToVal(IaEntree,lrTension=>lrTension,lrEcart=>lrEcart);
 ]]></ST>
     </Implementation>
   </POU>

@@ -429,13 +429,6 @@
 							<Name>GVL.stIO.stOut.lMotorOut</Name>
 							<Type>LREAL</Type>
 						</Var>
-						<Var>
-							<Name>GVL.fbMotor.fbConvertNumToMotorOut.QaSortie</Name>
-							<Comment>
-								<![CDATA[sortie analogique, atention, supprimer MatchingSize lors de la liaison avec la borne]]>
-							</Comment>
-							<Type>DINT</Type>
-						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2016-12-28T11:45:33">
 						<OwnerA Name="OutputSrc" Prefix="TIPC^CNC^CNC Instance" Type="2">

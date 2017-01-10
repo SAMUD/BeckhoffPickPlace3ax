@@ -78,16 +78,13 @@ END_VAR
 	IF TxRx.sReceived='User: ' AND iCounter=0 THEN
 		TxRx.sSend:='admin';
 		iCounter:=1;
-		TCPParam.xCognexMode:=FALSE;
 	END_IF
 	IF TxRx.sReceived='Password: ' AND iCounter=1 THEN
 		TxRx.sSend:='$R$N';
 		iCounter:=2;
-		TCPParam.xCognexMode:=FALSE;
 	END_IF
 	IF TxRx.sReceived='User Logged In$R$N' AND iCounter=2 THEN
 		TCPParam.xConnectedCognex:=TRUE;
-		TCPParam.xCognexMode:=FALSE;
 	END_IF
 END_IF]]></ST>
       </Implementation>
