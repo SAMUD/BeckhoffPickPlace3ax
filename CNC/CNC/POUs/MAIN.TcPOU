@@ -28,11 +28,11 @@ fbBtn.xManualAct3GoIn:=stio.stIn.xManualAct3GoIn;
 fbBtn.xManualAct3GoOut:=stio.stIn.xManualAct3GoOut;
 fbBtn.xManualCNCMotorTurnOn:=stio.stIn.xManualCNCMotorTurnOn;
 fbBtn.xManualCNCMotorTurnOff:=stio.stIn.xManualCNCMotorTurnOff;
+fbBtn.xEmulateTCPConnection:=stio.stIn.xEmulateTCPConnection;
 //and now call it
 fbBtn();
 
 //stParam
-//*****************************************
 //check for active errors
 IF (fbAct1.stError.xState) THEN
 	stParam.stStatus.xErreur:=TRUE;
@@ -53,7 +53,7 @@ ELSIF (fbTCP.OutputGlobal.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbTCP.OutPutGlobal.nErrID;
 ELSE
-	//clear the error State. Do not clear the last error Message to have a small error history
+	//clear the error State. Do not clear the last error Message to have some ind of error history
 	stParam.stStatus.xErreur:=FALSE;
 END_IF
 

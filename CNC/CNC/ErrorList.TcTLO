@@ -151,6 +151,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"202"</v>
+              <v n="TextDefault">"Auto | Camera | Error while taking image"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">""</v>
               <v n="TextDefault">""</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">

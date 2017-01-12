@@ -298,6 +298,10 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL.stIO.stIn.xEmulateTCPConnection</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL.stIO.stIn.lTachoValue</Name>
 							<Type>LREAL</Type>
 						</Var>

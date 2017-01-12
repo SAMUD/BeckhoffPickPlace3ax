@@ -17,6 +17,8 @@ VAR_INPUT
 	xManualAct3GoOut : BOOL;
 	xManualCNCMotorTurnOn : BOOL;
 	xManualCNCMotorTurnOff : BOOL;
+	
+	xEmulateTCPConnection : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>

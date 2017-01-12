@@ -23,13 +23,20 @@ fbRtrigStart(clk:=fbBtn.xStart);
 CASE fbEtape.iNo OF
 	0:fbEtape.psMess:='Init | Wait';
 		IF xStart THEN
-			fbEtape.piVal:=99;
+			fbEtape.piVal:=100;
 		END_IF
-	99: fbEtape.psMess:='Init | Reset on Actuators and Motor';
-		fbEtape.piSVal:=100;
+	100: fbEtape.psMess:='Init | Reset on Actuators and Motor';
+		fbTCP.xForceDisconnect:=TRUE;
+		fbTCP.xEnable:=FALSE;
+		fbEtape.piSVal:=101;
+	101: fbEtape.psMess:='Init | Wait disconnecting TCP';
+		IF fbTCP.xEnable=FALSE AND fbTCP.xForceDisconnect=FALSE THEN
+			fbEtape.piSVal:=102;
+		END_IF
 		
-	100:fbEtape.psMess:='Init | Init all positions';
-		IF  fbAct1.xInInPos AND fbAct2.xInInPos AND fbAct3.xInInPos THEN
+	102:fbEtape.psMess:='Init | Init all positions';
+		fbTCP.xEnable:=TRUE;
+		IF  fbAct1.xInInPos AND fbAct2.xInInPos AND fbAct3.xInInPos AND fbTCP.TCPParam.xConnected THEN
 			fbEtape.piSVal:=999;
 		END_IF
 	

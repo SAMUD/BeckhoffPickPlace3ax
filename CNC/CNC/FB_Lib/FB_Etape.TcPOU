@@ -6,11 +6,11 @@ VAR_INPUT
 	tTimeQ :TIME;			//Time to stay in one state after which xTimeQ will go to TRUE
 END_VAR
 VAR_OUTPUT
-	tTimeState: TIME ; 	//passed time in the actual state
-	xTimeQ : BOOL ;		//is TRUE when time passed in the actual State is greather then tTimeQ
-	xTransition:BOOL; 	//information that the state has just changed. For use when entering a new State the first time
-	iNo:INT:=0; 		//State number running at the moment
-	sMess :STRING ; 	//Information message about the current running state
+	tTimeState: TIME ; 		//passed time in the actual state
+	xTimeQ : BOOL ;			//is TRUE when time passed in the actual State is greather then tTimeQ
+	xTransition:BOOL; 		//information that the state has just changed. For use when entering a new State the first time
+	iNo:INT:=0; 			//State number running at the moment
+	sMess :STRING ; 		//Information message about the current running state
 END_VAR
 VAR
 	iMemNo:INT;				//Used for xTransition. Saves the actual state of the machine
@@ -28,8 +28,8 @@ END_VAR
       <Declaration><![CDATA[//executed at each state-machine-loop
 METHOD PUBLIC mActualisation
 VAR_INPUT
-	xModeStepByStep: BOOL; //activate the Stepping-Mode (TRUE=ON)
-	xSetNextStep: BOOL; //go to the next Step on rising eddge
+	xModeStepByStep: BOOL; 		//activate the Stepping-Mode (TRUE=ON)
+	xSetNextStep: BOOL; 		//go to the next Step on rising eddge
 END_VAR
 ]]></Declaration>
       <Implementation>

@@ -47,18 +47,28 @@ CASE fbEtape.iNo OF
 		fbEtape.piVal:=110;
 	110:fbEtape.psMess:='Auto | wait until timeout';
 		IF fbEtape.xTimeQ THEN
-			fbEtape.piSVal:=120;
+			fbEtape.piSVal:=111;
 		END_IF
-	120:fbEtape.psMess:='Auto | Do image aquisition';
-		//send image tcp and wait response
-		IF (TRUE) THEN
-			//CNC can start
-			fbEtape.piSVal:=130;
-		ELSE
-			//do not start and go into error
-			fbEtape.piSVal:=800;
-			iId:=200;
-		END_IF
+	111:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
+		fbTCP.TxRx.sSend:='TRIG';
+		fbEtape.piSVal:=112;
+	112:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
+		 IF (fbTCP.TxRx.sReceived='ACK') OR (fbBtn.xEmulateTCPConnection=1) THEN
+			fbEtape.piSVal:=113; //all is ok;
+		ELSIF fbTCP.TxRx.sReceived='NACK' THEN
+			fbEtape.piVal:=800; //error taking the image
+			iID:=202;
+		 END_IF
+	113:fbEtape.psMess:='Auto | sending "CHECK" to Camera';
+		fbTCP.TxRx.sSend:='CHECK';
+		fbEtape.piSVal:=120;
+	120:fbEtape.psMess:='Auto | Is the object ok';
+		IF fbTCP.TxRx.sReceived='START' OR fbBtn.xEmulateTCPConnection THEN
+			fbEtape.piSVal:=130; //all is ok;
+		ELSIF fbTCP.TxRx.sReceived='STOP' THEN
+			fbEtape.piVal:=800; //error taking the image
+			iID:=200;
+		 END_IF
 	130:fbEtape.psMess:='Auto | Act1 Go out';
 		IF fbAct1.xInOutPos THEN
 			fbEtape.piSVal:=140;
@@ -96,13 +106,26 @@ CASE fbEtape.iNo OF
 		IF fbAct2.xInInPos THEN
 			fbEtape.piSVal:=190;
 		END_IF
-	190:fbEtape.psMess:='Auto | Control with Camera';
-		IF TRUE THEN
-			fbEtape.piSVal:=200;
-		ELSE
-			fbEtape.piSVal:=800;
-			iId:=201;
-		END_IF
+	190:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
+		fbTCP.TxRx.sSend:='TRIG';
+		fbEtape.piSVal:=191;
+	191:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
+		 IF (fbTCP.TxRx.sReceived='ACK') OR (fbBtn.xEmulateTCPConnection=1) THEN
+			fbEtape.piSVal:=192; //all is ok;
+		ELSIF fbTCP.TxRx.sReceived='NACK' THEN
+			fbEtape.piVal:=800; //error taking the image
+			iID:=202;
+		 END_IF
+	192:fbEtape.psMess:='Auto | sending "GETRES" to Camera';
+		fbTCP.TxRx.sSend:='GETRES';
+		fbEtape.piSVal:=193;
+	193:fbEtape.psMess:='Auto | Is the object ok';
+		IF (fbTCP.TxRx.sReceived='PASS') OR (fbBtn.xEmulateTCPConnection) THEN
+			fbEtape.piSVal:=200; //all is ok;
+		ELSIF fbTCP.TxRx.sReceived='FAIL' THEN
+			fbEtape.piVal:=800; //error taking the image
+			iID:=201;
+		 END_IF
 	200:fbEtape.psMess:='Auto | Wait 3s';
 		//assigne le temps de comptage
 		fbEtape.tTimeQ:=T#3S;

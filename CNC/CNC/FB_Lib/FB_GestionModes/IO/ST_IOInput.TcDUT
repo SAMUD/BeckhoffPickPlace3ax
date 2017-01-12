@@ -19,6 +19,8 @@ STRUCT
 	xManualCNCMotorTurnOn AT%I* : BOOL;
 	xManualCNCMotorTurnOff AT%I* : BOOL;
 	
+	xEmulateTCPConnection AT%I* : BOOL;
+	
 	lSetSpeedMotor : LREAL;
 	lTachoValue AT%I* : LREAL;
 	xMotorDirection AT%I* : BOOL;
