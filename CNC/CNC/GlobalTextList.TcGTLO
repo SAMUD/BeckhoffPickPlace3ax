@@ -393,6 +393,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"89"</v>
+              <v n="TextDefault">"NetID: %s"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"39"</v>
               <v n="TextDefault">"None"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">

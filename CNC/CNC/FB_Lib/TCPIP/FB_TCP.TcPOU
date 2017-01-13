@@ -110,6 +110,7 @@ FEdgeBusyConnect(CLK:=fbConnect.bBusy);
 //when there is a falling edge on xEnable do a normal déconnection
 fbDisconnect.tTimeout:=TCPParam.tTimeout;
 fbDisconnect.hSocket:=TCPParam.hSocket;
+fbDisconnect.sSrvNetId:=TCPPAram.NetID;
 fbDisconnect.bExecute:=FEdge.Q;
 fbDisconnect();
 OutputDisconnect.xBusy:=fbDisconnect.bBusy;
@@ -124,6 +125,7 @@ END_IF
 //force disconnecting when xForceDisconnect
 fbDisconnectAll.bExecute:=xForceDisconnect;
 fbDisconnectAll.tTimeout:=TCPParam.tTimeout;
+fbDisconnectAll.sSrvNetId:=TCPPAram.NetID;
 fbDisconnectAll();
 OutputDisconnectAll.xBusy:=fbDisconnectAll.bBusy;
 OutputDisconnectAll.xError:=fbDisconnectAll.bError;
@@ -138,6 +140,7 @@ END_IF
 
 //Connect to the Server
 fbConnect.nRemotePort:=TCPPAram.nRemotePort;
+fbConnect.sSrvNetId:=TCPParam.NetID;
 fbConnect.sRemoteHost:=TCPParam.sRemoteHost;
 fbConnect.tTimeout:=TCPPAram.tTimeout;
 fbConnect.bExecute:=REdge.Q;
@@ -166,6 +169,7 @@ Timer(IN:=TCPParam.xConnected);
 IF (Timer.Q) THEN
 	Timer(IN:=FALSE);
 	fbReceive.tTimeout:=TCPPAram.tTimeout;
+	fbReceive.sSrvNetId:=TCPPAram.NetID;
 	fbReceive.cbLen:=200;
 	fbReceive.hSocket:=TCPParam.hSocket;
 	fbReceive.bExecute:=TRUE;
@@ -217,6 +221,7 @@ END_VAR
 			TxRx.sSend:=CONCAT(TxRx.sSend,'$R$L'); //send a whole message
 		END_IF
 		fbSend.pSrc:=ADR(TxRx.sSend);
+		fbSend.sSrvNetId:=TCPPAram.NetID;
 		fbSend.hSocket:=TCPParam.hSocket;
 		fbSend.tTimeout:=TCPParam.tTimeout;
 		fbSend.bExecute:=TRUE;

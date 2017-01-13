@@ -68,6 +68,8 @@ fbTCP.xForceDisconnect:=TRUE;
 fbTCP.TCPParam.sCognexUser:='admin';
 fbTCP.TCPParam.sCognexPW:='';
 fbTCP.TCPParam.xCognexMode:=TRUE;
+fbTCP.TCPParam.NetID:='192.168.56.1.1.1';
+
 
 
 

@@ -12,6 +12,7 @@ STRUCT
 	sCognexUser: STRING;
 	sCognexPW: STRING;
 	xConnectedCognex: BOOL;		//connection to Cognex etablished
+	NetID :  T_AmsNetId;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
