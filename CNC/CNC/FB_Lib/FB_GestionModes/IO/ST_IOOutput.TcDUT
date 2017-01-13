@@ -7,7 +7,7 @@ STRUCT
 	QxLampeVerte AT%Q* : BOOL;
 	QxLampeOrange AT%Q* :BOOL;
 	
-	lMotorOut AT%Q* : LREAL;
+	lMotorOut AT%Q* : DINT;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

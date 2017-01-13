@@ -22,7 +22,7 @@ STRUCT
 	xEmulateTCPConnection AT%I* : BOOL;
 	
 	lSetSpeedMotor : LREAL;
-	lTachoValue AT%I* : LREAL;
+	lTachoValue AT%I* : DINT;
 	xMotorDirection AT%I* : BOOL;
 END_STRUCT
 END_TYPE

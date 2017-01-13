@@ -1288,13 +1288,13 @@
                                           <v>TL_ElementProperties.Desc_Text</v>
                                           <v>DisplayTextId</v>
                                           <v>TL_ElementProperties.Text</v>
-                                          <v>AllocateText</v>
+                                          <v>Visu_TypeString</v>
                                           <v></v>
                                           <v>''DOCU__COMMENT</v>
                                           <v> The text, the user entered resp. can modify.</v>
                                           <v>DirectlyAssignable</v>
                                           <v></v>
-                                          <v>Visu_TypeString</v>
+                                          <v>AllocateText</v>
                                           <v></v>
                                         </d>
                                         <v n="ConvDone">false</v>
@@ -1403,13 +1403,13 @@
                                           <v>TL_ElementProperties.Desc_StaticTextsTooltipOnly</v>
                                           <v>DisplayTextId</v>
                                           <v>TL_ElementProperties.Tooltip</v>
-                                          <v>AllocateText</v>
+                                          <v>Visu_TypeString</v>
                                           <v></v>
                                           <v>''DOCU__COMMENT</v>
                                           <v> The tooltip, the user entered resp. can modify.</v>
                                           <v>DirectlyAssignable</v>
                                           <v></v>
-                                          <v>Visu_TypeString</v>
+                                          <v>AllocateText</v>
                                           <v></v>
                                         </d>
                                         <v n="ConvDone">false</v>
@@ -1809,13 +1809,13 @@
                                             <v>TL_ElementProperties.Desc_Text</v>
                                             <v>DisplayTextId</v>
                                             <v>TL_ElementProperties.Text</v>
-                                            <v>AllocateText</v>
+                                            <v>Visu_TypeString</v>
                                             <v></v>
                                             <v>''DOCU__COMMENT</v>
                                             <v> The text, the user entered resp. can modify.</v>
                                             <v>DirectlyAssignable</v>
                                             <v></v>
-                                            <v>Visu_TypeString</v>
+                                            <v>AllocateText</v>
                                             <v></v>
                                           </d>
                                           <v n="ConvDone">false</v>
@@ -1924,13 +1924,13 @@
                                             <v>TL_ElementProperties.Desc_StaticTextsTooltipOnly</v>
                                             <v>DisplayTextId</v>
                                             <v>TL_ElementProperties.Tooltip</v>
-                                            <v>AllocateText</v>
+                                            <v>Visu_TypeString</v>
                                             <v></v>
                                             <v>''DOCU__COMMENT</v>
                                             <v> The tooltip, the user entered resp. can modify.</v>
                                             <v>DirectlyAssignable</v>
                                             <v></v>
-                                            <v>Visu_TypeString</v>
+                                            <v>AllocateText</v>
                                             <v></v>
                                           </d>
                                           <v n="ConvDone">false</v>
@@ -2329,13 +2329,13 @@
                                             <v>TL_ElementProperties.Desc_Text</v>
                                             <v>DisplayTextId</v>
                                             <v>TL_ElementProperties.Text</v>
-                                            <v>AllocateText</v>
+                                            <v>Visu_TypeString</v>
                                             <v></v>
                                             <v>''DOCU__COMMENT</v>
                                             <v> The text, the user entered resp. can modify.</v>
                                             <v>DirectlyAssignable</v>
                                             <v></v>
-                                            <v>Visu_TypeString</v>
+                                            <v>AllocateText</v>
                                             <v></v>
                                           </d>
                                           <v n="ConvDone">false</v>
@@ -2444,13 +2444,13 @@
                                             <v>TL_ElementProperties.Desc_StaticTextsTooltipOnly</v>
                                             <v>DisplayTextId</v>
                                             <v>TL_ElementProperties.Tooltip</v>
-                                            <v>AllocateText</v>
+                                            <v>Visu_TypeString</v>
                                             <v></v>
                                             <v>''DOCU__COMMENT</v>
                                             <v> The tooltip, the user entered resp. can modify.</v>
                                             <v>DirectlyAssignable</v>
                                             <v></v>
-                                            <v>Visu_TypeString</v>
+                                            <v>AllocateText</v>
                                             <v></v>
                                           </d>
                                           <v n="ConvDone">false</v>
@@ -2849,13 +2849,13 @@
                                             <v>TL_ElementProperties.Desc_Text</v>
                                             <v>DisplayTextId</v>
                                             <v>TL_ElementProperties.Text</v>
-                                            <v>AllocateText</v>
+                                            <v>Visu_TypeString</v>
                                             <v></v>
                                             <v>''DOCU__COMMENT</v>
                                             <v> The text, the user entered resp. can modify.</v>
                                             <v>DirectlyAssignable</v>
                                             <v></v>
-                                            <v>Visu_TypeString</v>
+                                            <v>AllocateText</v>
                                             <v></v>
                                           </d>
                                           <v n="ConvDone">false</v>
@@ -2964,13 +2964,13 @@
                                             <v>TL_ElementProperties.Desc_StaticTextsTooltipOnly</v>
                                             <v>DisplayTextId</v>
                                             <v>TL_ElementProperties.Tooltip</v>
-                                            <v>AllocateText</v>
+                                            <v>Visu_TypeString</v>
                                             <v></v>
                                             <v>''DOCU__COMMENT</v>
                                             <v> The tooltip, the user entered resp. can modify.</v>
                                             <v>DirectlyAssignable</v>
                                             <v></v>
-                                            <v>Visu_TypeString</v>
+                                            <v>AllocateText</v>
                                             <v></v>
                                           </d>
                                           <v n="ConvDone">false</v>
@@ -8304,7 +8304,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"fbMotor.fbConvertTachoToNumSpeed.IaEntree"</v>
+                      <v n="Value">"fbMotor.fbConvertTachoToNumSpeed.lrValeur"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -9669,10 +9669,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable_1" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>0a70654c-cf65-4510-af30-fe929b1d89f8</v>
-                <v>FB_Reinit</v>
-                <v>0259f01a-cbd7-4e49-aae0-23ff1a82ad0a</v>
                 <v>FB_Exit</v>
                 <v>7a9f7535-ea63-418a-9ee2-150ff3180062</v>
+                <v>FB_Reinit</v>
+                <v>0259f01a-cbd7-4e49-aae0-23ff1a82ad0a</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{7c735c9d-8d40-40cb-a1cb-25ac2e3577a1}</v>
