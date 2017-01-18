@@ -177,7 +177,7 @@ IF (Timer.Q) THEN
 	IF fbReceive.nRecBytes>0 THEN  //some data received
 		xReceiveToFast:=FALSE;
 		//IF (TxRx.sReceived='') THEN
-			TxRx.sReceived:=LEFT(STR:=sReceivedBuffer,SIZE:=UDINT_TO_INT(fbReceive.nRecBytes));
+			TxRx.sReceived:=LEFT(STR:=sReceivedBuffer,SIZE:=UDINT_TO_INT(fbReceive.nRecBytes-2));
 		//ELSE
 		//	xReceiveToFast:=TRUE;
 		//END_IF		(* TODO: Turn on 'receiving to fast' again when the buffer was not cleared before there is new data *)
