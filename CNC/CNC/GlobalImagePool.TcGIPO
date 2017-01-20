@@ -4,7 +4,7 @@
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalImagePoolObject">
-          <v n="UniqueIdGenerator">"8"</v>
+          <v n="UniqueIdGenerator">"11"</v>
           <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
             <o>
               <v n="BitmapID">"Verinrentree"</v>
@@ -17,9 +17,14 @@
               <v n="ItemID">5</v>
             </o>
             <o>
+              <v n="BitmapID">"Piece"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\Semester5\ProjetAutomne\ProjetAutomneAutomatisme\BatteryClamp00019.jpg"</v>
+              <v n="ItemID">6</v>
+            </o>
+            <o>
               <v n="BitmapID">""</v>
               <v n="FileID">""</v>
-              <v n="ItemID">6</v>
+              <v n="ItemID">9</v>
             </o>
           </l>
           <v n="GuidInit">{ac284356-706a-42e5-90c4-b102c5c00caf}</v>

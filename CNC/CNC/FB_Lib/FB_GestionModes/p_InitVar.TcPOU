@@ -61,13 +61,13 @@ fbMotor.PID.fManSyncValue:=0;
 stio.stIn.xMotorDirection:=FALSE;
 
 //Param TCP
-fbTCP.TCPParam.nRemotePort:=23;
+fbTCP.TCPParam.nRemotePort:=4000;
 fbTCP.TCPParam.sRemoteHost:='127.0.0.1';
 fbTCP.TCPParam.tTimeout:=T#30S;
 fbTCP.xForceDisconnect:=TRUE;
 fbTCP.TCPParam.sCognexUser:='admin';
 fbTCP.TCPParam.sCognexPW:='';
-fbTCP.TCPParam.xCognexMode:=TRUE;
+fbTCP.TCPParam.xCognexMode:=FALSE;
 fbTCP.TCPParam.NetID:='192.168.56.1.1.1';
 
 

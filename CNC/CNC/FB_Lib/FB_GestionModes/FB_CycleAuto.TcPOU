@@ -120,9 +120,9 @@ CASE fbEtape.iNo OF
 		fbTCP.TxRx.sSend:='GETRES';
 		fbEtape.piSVal:=193;
 	193:fbEtape.psMess:='Auto | Is the object ok';
-		IF (fbTCP.TxRx.sReceived='PASS') OR (fbBtn.xEmulateTCPConnection) THEN
+		IF (FIND(fbTCP.TxRx.sReceived,'PASS')>0) OR (fbBtn.xEmulateTCPConnection) THEN
 			fbEtape.piSVal:=200; //all is ok;
-		ELSIF fbTCP.TxRx.sReceived='FAIL' THEN
+		ELSIF (FIND(fbTCP.TxRx.sReceived,'FAIL')>0) THEN
 			fbEtape.piVal:=800; //error taking the image
 			iID:=201;
 		 END_IF

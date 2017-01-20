@@ -41,8 +41,7 @@ END_VAR
       <ST><![CDATA[mConnect();
 mSend();
 mReceive();
-//this is old and was used to make a Telnet connection to the Camera - not used anymore
-//mCognex();
+mCognex();
 
 //******************************************
 //Output actions
