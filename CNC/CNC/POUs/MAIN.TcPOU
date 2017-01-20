@@ -111,7 +111,7 @@ fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.
 IF(fbCycleAuto.iEtape=140 OR fbCycleMan.iEtape=207) THEN
 	fbMotor.xOnOff:=TRUE;
 END_IF
-IF(fbCycleAuto.iEtape=170 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=208 OR fbCycleAuto.iEtape=800 OR fbMMA.iEtape=910) THEN
+IF(fbCycleAuto.iEtape=170 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=208 OR fbCycleAuto.iEtape=800 OR fbMMA.iEtape=910 OR fbMMA.iEtape=810) THEN
 	fbMotor.xOnOff:=FALSE;
 END_IF
 //Reset fbMotor
@@ -123,7 +123,10 @@ fbAct2.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
 fbAct3.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
 
 //Reset de la connexion TCIP
-fbTCP.xForceDisconnect:=fbMMA.iEtape=810;
+fbTCP.xForceDisconnect:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
+IF fbCycleInit.iEtape=102 THEN
+	fbTCP.xEnable:=TRUE;
+END_IF
 
 
 

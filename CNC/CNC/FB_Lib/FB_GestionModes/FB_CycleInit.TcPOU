@@ -26,8 +26,6 @@ CASE fbEtape.iNo OF
 			fbEtape.piVal:=100;
 		END_IF
 	100: fbEtape.psMess:='Init | Reset on Actuators and Motor';
-		fbTCP.xForceDisconnect:=TRUE;
-		fbTCP.xEnable:=FALSE;
 		fbEtape.piSVal:=101;
 	101: fbEtape.psMess:='Init | Wait disconnecting TCP';
 		IF fbTCP.xEnable=FALSE AND fbTCP.xForceDisconnect=FALSE THEN
@@ -35,7 +33,6 @@ CASE fbEtape.iNo OF
 		END_IF
 		
 	102:fbEtape.psMess:='Init | Init all positions';
-		fbTCP.xEnable:=TRUE;
 		IF  fbAct1.xInInPos AND fbAct2.xInInPos AND fbAct3.xInInPos AND fbTCP.TCPParam.xConnected THEN
 			fbEtape.piSVal:=999;
 		END_IF

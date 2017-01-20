@@ -151,8 +151,9 @@ fbDisconnect.sSrvNetId:=TCPPAram.NetID;
 fbDisconnect.bExecute:=FEdge.Q;
 fbDisconnect();
 OutputDisconnect.xBusy:=fbDisconnect.bBusy;
-OutputDisconnect.xError:=fbDisconnect.bError;
-OutputDisconnect.nErrID:=403; (* TODO: use the errors provided by the FB*)
+//TODO: Issue #1
+//OutputDisconnect.xError:=fbDisconnect.bError;
+OutputDisconnect.nErrID:=403; //TODO: use the errors provided by the FB: Issue #2
 IF (FEdge.Q) THEN
 	TCPParam.xConnected:=FALSE;
 	TCPParam.xConnectedCognex:=FALSE;
@@ -166,7 +167,7 @@ fbDisconnectAll.sSrvNetId:=TCPPAram.NetID;
 fbDisconnectAll();
 OutputDisconnectAll.xBusy:=fbDisconnectAll.bBusy;
 OutputDisconnectAll.xError:=fbDisconnectAll.bError;
-OutputDisconnectAll.nErrID:=403;	(* TODO: use the errors provided by the FB*)
+OutputDisconnectAll.nErrID:=403;	//TODO: use the errors provided by the FB: Issue #2
 IF (xForceDisconnect) THEN
 	TCPParam.xConnected:=FALSE;
 	xForceDisconnect:=FALSE;
@@ -184,7 +185,7 @@ fbConnect.bExecute:=REdge.Q;
 fbConnect();
 OutputConnect.xBusy:=fbConnect.bBusy;
 OutputConnect.xError:=fbConnect.bError;
-OutputConnect.nErrID:=403;	(* TODO: use the errors provided by the FB*)
+OutputConnect.nErrID:=403;	//TODO: use the errors provided by the FB: Issue #2
 IF FEdgeBusyConnect.Q THEN
 	TCPParam.xConnected:=TRUE;
 	TCPParam.hSocket:=fbConnect.hSocket;
@@ -231,10 +232,10 @@ fbReceive();
 OutputReceive.xBusy:=fbReceive.bBusy;
 IF xReceiveToFast THEN
 	OutputReceive.xError:=TRUE;
-	OutputReceive.nErrID:=401;	(* TODO: use the errors provided by the FB*)
+	OutputReceive.nErrID:=401;	//TODO: use the errors provided by the FB: Issue #2
 ELSE
 	OutputReceive.xError:=fbReceive.bError;
-	OutputReceive.nErrID:=404;	(* TODO: use the errors provided by the FB*)
+	OutputReceive.nErrID:=404;	//TODO: use the errors provided by the FB: Issue #2
 END_IF]]></ST>
       </Implementation>
     </Method>
@@ -276,7 +277,7 @@ END_VAR
 	
 	OutputSend.xBusy:=fbSend.bBusy;
 	OutputSend.xError:=fbSend.bError;
-	OutputSend.nErrID:=402;	(* TODO: use the errors provided by the FB*)
+	OutputSend.nErrID:=402;	//TODO: use the errors provided by the FB: Issue #2
 	
 END_IF]]></ST>
       </Implementation>
