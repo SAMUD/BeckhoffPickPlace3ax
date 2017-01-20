@@ -4,6 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_RegulMoteur
 VAR_INPUT
 		Consigne: LREAL;					//sets the desired speed of the Motor in rot/min
+		lrValeurDirection: LREAL;			//the converted value from Tachymeter with Direction added
 		xDirection: BOOL;					//Forward or Backward
 		xOnOff: BOOL;						//Motor On or Off
 		PARA : ST_CTRL_PID_PARAMS;			//Parameters for the PID
@@ -22,9 +23,11 @@ END_VAR
 fbConvertTachoToNumSpeed();
 
 //check the direction and reverse Consigne if needed
-IF xDirection THEN
-	Consigne:=-Consigne;
-END_IF
+(*IF xDirection THEN
+	lrValeurDirection:=-fbConvertTachoToNumSpeed.lrValeur;
+ELSE
+	lrValeurDirection:=fbConvertTachoToNumSpeed.lrValeur;
+END_IF*)
 
 //call the PID-Block if needed
 IF xOnOff THEN

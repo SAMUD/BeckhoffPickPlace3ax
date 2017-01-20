@@ -433,6 +433,10 @@
 							<Name>GVL.stIO.stOut.lMotorOut</Name>
 							<Type>DINT</Type>
 						</Var>
+						<Var>
+							<Name>GVL.stIO.stOut.QxMotorDirection</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2016-12-28T11:45:33">
 						<OwnerA Name="OutputSrc" Prefix="TIPC^CNC^CNC Instance" Type="2">
@@ -1175,6 +1179,7 @@
 				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxInOutput" VarB="Term 8 (KL2408)^Channel 8^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxOutOutput" VarB="Term 8 (KL2408)^Channel 7^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct3.QxOutOutput" VarB="Term 9 (KL2408)^Channel 1^Ausgang"/>
+				<Link VarA="PlcTask Outputs^GVL.stIO.stOut.QxMotorDirection" VarB="Term 8 (KL2408)^Channel 4^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.stIO.stOut.lMotorOut" VarB="Term 5 (KL4434)^Channel 2^Daten Aus"/>
 			</OwnerB>
 		</OwnerA>

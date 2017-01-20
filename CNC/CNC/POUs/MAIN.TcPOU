@@ -115,7 +115,9 @@ IF(fbCycleAuto.iEtape=170 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=208 OR 
 	fbMotor.xOnOff:=FALSE;
 END_IF
 //Reset fbMotor
-fbMotor.xReset:=fbMMA.iEtape=810;
+fbMotor.xReset:=fbMMA.iEtape=800;
+//Motor Direction Output
+stio.stOut.QxMotorDirection:=stio.stIn.xMotorDirection;
 
 //Reset des Actionneurs avan le init
 fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;

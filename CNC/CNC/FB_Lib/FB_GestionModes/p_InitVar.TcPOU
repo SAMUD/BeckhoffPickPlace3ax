@@ -50,7 +50,7 @@ fbMotor.PARA.tTn:=T#50MS; //I
 fbMotor.PARA.tTv:=T#0MS; //D
 fbMotor.PARA.tTd:=T#0MS; //Dämpfung
 fbMotor.PARA.fOutMaxLimit:=2998;
-fbMotor.PARA.fOutMinLimit:=-2998;
+fbMotor.PARA.fOutMinLimit:=0;
 fbMotor.PARA.bARWOnIPartOnly:=FALSE;
 fbMotor.PARA.bDInTheFeedbackPath:=FALSE;
 fbMotor.PARA.bPInTheFeedbackPath:=FALSE;
@@ -59,6 +59,7 @@ fbMotor.PARA.tTaskCycleTime:=T#3MS;
 fbMotor.PID.fManSyncValue:=0;
 
 stio.stIn.xMotorDirection:=FALSE;
+stio.stOut.QxMotorDirection:=FALSE;
 
 //Param TCP
 fbTCP.TCPParam.nRemotePort:=4000;
