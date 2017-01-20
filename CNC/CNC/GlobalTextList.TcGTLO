@@ -159,6 +159,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"92"</v>
+              <v n="TextDefault">"d: %s"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"63"</v>
               <v n="TextDefault">"Direction"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -174,6 +183,15 @@
                 <v>Désactiver Capteur In-Out</v>
                 <v>In-Out Sensor deaktivieren</v>
                 <v>Disable Sensor In-Out</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"90"</v>
+              <v n="TextDefault">"e: %s"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>
@@ -291,6 +309,15 @@
                 <v>étendre</v>
                 <v>aus-fahren</v>
                 <v>extend</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"91"</v>
+              <v n="TextDefault">"h: %s"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>

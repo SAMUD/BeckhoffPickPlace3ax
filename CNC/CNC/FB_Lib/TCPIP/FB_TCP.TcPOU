@@ -71,10 +71,18 @@ END_IF]]></ST>
     </Implementation>
     <Method Name="mCognex" Id="{9597371e-e516-4a62-bf56-42125412a386}">
       <Declaration><![CDATA[METHOD PUBLIC mCognex
-]]></Declaration>
+VAR
+	TempPos1 : INT;
+	TempPos2 : INT;
+	
+	Temp1: STRING;
+	Temp2 : STRING;
+	Temp3:STRING;
+	
+	
+END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[//etablish a Telnet-Connection to the Camera to communicate via the native Protocoll
-
 IF TCPParam.xConnected AND TCPParam.xCognexMode THEN
 	IF TxRx.sReceived='User: ' AND iCounter=0 THEN
 		TxRx.sSend:='admin';
@@ -87,6 +95,36 @@ IF TCPParam.xConnected AND TCPParam.xCognexMode THEN
 	IF TxRx.sReceived='User Logged In$R$N' AND iCounter=2 THEN
 		TCPParam.xConnectedCognex:=TRUE;
 	END_IF
+END_IF
+
+//when the camera sends the mesured data extract them from the String
+IF TCPParam.xConnected AND TCPParam.xCognexMode THEN
+	IF FIND(fbTCP.TxRx.sReceived,'PASS')>0 OR FIND(fbTCP.TxRx.sReceived,'FAIL')>0 THEN
+		//The camera has send the string with the Mesurement results
+		//extract mesured values
+		TempPos1:=FIND(fbTCP.TxRx.sReceived, ';e:');
+		TempPos2:=FIND(fbTCP.TxRx.sReceived, ';h:');
+		OutputGlobal.Resulte:=MID(fbTCP.TxRx.sReceived,TempPos2-(TempPos1+3),TempPos1+3);
+		
+		TempPos1:=FIND(fbTCP.TxRx.sReceived, ';h:');
+		TempPos2:=FIND(fbTCP.TxRx.sReceived, ';d:');
+		OutputGlobal.Resulth:=MID(fbTCP.TxRx.sReceived,TempPos2-(TempPos1+3),TempPos1+3);
+		
+		TempPos1:=FIND(fbTCP.TxRx.sReceived, ';d:');
+		TempPos2:=FIND(fbTCP.TxRx.sReceived, ';b1:');
+		OutputGlobal.Resultd:=MID(fbTCP.TxRx.sReceived,TempPos2-(TempPos1+3),TempPos1+3);
+		
+		//extract Bool 
+		TempPos1:=FIND(fbTCP.TxRx.sReceived, ';b1:');
+		OutputGlobal.Boole:=STRING_TO_INT(MID(fbTCP.TxRx.sReceived,1,TempPos1+4));
+		
+		TempPos1:=FIND(fbTCP.TxRx.sReceived, ';b2:');
+		OutputGlobal.Boolh:=STRING_TO_INT(MID(fbTCP.TxRx.sReceived,1,TempPos1+4));
+		
+		TempPos1:=FIND(fbTCP.TxRx.sReceived, ';b3:');
+		OutputGlobal.Boold:=STRING_TO_INT(MID(fbTCP.TxRx.sReceived,1,TempPos1+4));
+	END_IF
+	
 END_IF]]></ST>
       </Implementation>
     </Method>

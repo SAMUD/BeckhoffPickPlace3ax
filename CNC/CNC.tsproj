@@ -1159,6 +1159,7 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-0011-0101-1000-010110000403}" Id="#x03070010"/>
 		<OwnerA Name="TIPC^CNC^CNC Instance">
 			<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (BK1150)">
 				<Link VarA="PlcTask Inputs^GVL.fbAct1.IxSensIn" VarB="Term 6 (KL1408)^Channel 2^Eingang"/>
@@ -1168,6 +1169,7 @@
 				<Link VarA="PlcTask Inputs^GVL.fbAct3.IxSensOut" VarB="Term 6 (KL1408)^Channel 5^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.stIO.stIn.IxAruIO" VarB="Term 7 (KL1408)^Channel 1^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.stIO.stIn.lTachoValue" VarB="Term 4 (KL3404)^Channel 2^Daten Ein"/>
+				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxBlockingValve" VarB="Term 9 (KL2408)^Channel 2^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxInOutput" VarB="Term 8 (KL2408)^Channel 6^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxOutOutput" VarB="Term 8 (KL2408)^Channel 5^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxInOutput" VarB="Term 8 (KL2408)^Channel 8^Ausgang"/>

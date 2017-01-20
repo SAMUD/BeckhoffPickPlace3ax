@@ -76,13 +76,12 @@ CASE fbEtape.iNo OF
 	140:fbEtape.psMess:='Auto | Act3 go out, Turn on motor';
 		IF fbAct3.xInOutPos THEN
 			fbEtape.piSVal:=150;
-			fbEtape.tTimeQ:=T#5S;
+			fbEtape.tTimeQ:=T#10S;
 		END_IF
 	150:fbEtape.psMess:='Auto | Wait until Motor has right speed';
-		IF TRUE THEN
+		IF fbMotor.PID.bARWactive=FALSE THEN
 			//Motor has right speed
 			fbEtape.piSVal:=160;
-			fbEtape.tTimeQ:=T#5S;
 		END_IF
 		IF fbEtape.xTimeQ THEN
 			//Go to Error
