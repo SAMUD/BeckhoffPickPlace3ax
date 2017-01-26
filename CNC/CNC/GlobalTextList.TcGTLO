@@ -114,6 +114,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"93"</v>
+              <v n="TextDefault">"ARU - when there is no hardwarebutton present"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"71"</v>
               <v n="TextDefault">"AUTOMATIC"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -129,6 +138,15 @@
                 <v>Charge</v>
                 <v>Laden</v>
                 <v>Load</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"96"</v>
+              <v n="TextDefault">"Connected to Server"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>
@@ -195,6 +213,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"97"</v>
+              <v n="TextDefault">"Enabled"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"41"</v>
               <v n="TextDefault">"english"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -242,6 +269,15 @@
             <o>
               <v n="TextID">"32"</v>
               <v n="TextDefault">"fbConfig.udiNbreIncBus : %i"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"98"</v>
+              <v n="TextDefault">"Force Disconnect"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>
@@ -726,6 +762,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"95"</v>
+              <v n="TextDefault">"TCP Busy"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"54"</v>
               <v n="TextDefault">"Tighten"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -764,6 +809,15 @@
             <o>
               <v n="TextID">"86"</v>
               <v n="TextDefault">"xConnectedCognex"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"94"</v>
+              <v n="TextDefault">"xConnectedCognex Native"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>
