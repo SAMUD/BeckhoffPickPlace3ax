@@ -10,5 +10,5 @@
 	"CommBufferSize": 4096,
     "HasKeyboard": false,
     "TouchHandlingActive": false,
-    "ScaleTypeIsotropic": false
+    "ScaleTypeIsotropic": true
 }

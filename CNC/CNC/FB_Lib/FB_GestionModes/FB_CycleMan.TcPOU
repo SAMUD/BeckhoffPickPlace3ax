@@ -19,7 +19,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbEtape.mActualisation(stParam.stStatus.xModePasAPas,fbBtn.xNextPas);
+      <ST><![CDATA[fbEtape.mActualisation(FALSE,FALSE);
 
 fbRtrigStart(clk:=fbBtn.xStart);
 

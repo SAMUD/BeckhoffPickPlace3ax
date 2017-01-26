@@ -204,6 +204,24 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"114"</v>
+              <v n="TextDefault">"Do next step if Pas-a-Pas is enabled"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"113"</v>
+              <v n="TextDefault">"Do Step"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"90"</v>
               <v n="TextDefault">"e: %s"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -494,6 +512,15 @@
             <o>
               <v n="TextID">"14"</v>
               <v n="TextDefault">"Mode Manual"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"112"</v>
+              <v n="TextDefault">"Mode Pas-a-Pas"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>

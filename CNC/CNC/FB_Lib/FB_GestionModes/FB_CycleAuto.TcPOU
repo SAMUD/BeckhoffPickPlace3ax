@@ -51,20 +51,20 @@ CASE fbEtape.iNo OF
 		END_IF
 	111:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
 		fbTCP.TxRx.sSend:='TRIG';
-		fbEtape.piSVal:=112;
+		fbEtape.piVal:=112;
 	112:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
 		 IF (fbTCP.TxRx.sReceived='ACK') OR (fbBtn.xEmulateTCPConnection=1) THEN
-			fbEtape.piSVal:=113; //all is ok;
+			fbEtape.piVal:=113; //all is ok;
 		ELSIF fbTCP.TxRx.sReceived='NACK' THEN
 			fbEtape.piVal:=800; //error taking the image
 			iID:=202;
 		 END_IF
 	113:fbEtape.psMess:='Auto | sending "CHECK" to Camera';
 		fbTCP.TxRx.sSend:='CHECK';
-		fbEtape.piSVal:=120;
+		fbEtape.piVal:=120;
 	120:fbEtape.psMess:='Auto | Is the object ok';
 		IF fbTCP.TxRx.sReceived='START' OR fbBtn.xEmulateTCPConnection THEN
-			fbEtape.piSVal:=130; //all is ok;
+			fbEtape.piVal:=130; //all is ok;
 		ELSIF fbTCP.TxRx.sReceived='STOP' THEN
 			fbEtape.piVal:=800; //error taking the image
 			iID:=200;
@@ -81,11 +81,11 @@ CASE fbEtape.iNo OF
 	150:fbEtape.psMess:='Auto | Wait until Motor has right speed';
 		IF fbMotor.PID.bARWactive=FALSE THEN
 			//Motor has right speed
-			fbEtape.piSVal:=160;
+			fbEtape.piVal:=160;
 		END_IF
 		IF fbEtape.xTimeQ THEN
 			//Go to Error
-			fbEtape.piSVal:=800;
+			fbEtape.piVal:=800;
 			iId:=210;
 		END_IF
 	160:fbEtape.psMess:='Auto | Act2 go out';
@@ -107,20 +107,20 @@ CASE fbEtape.iNo OF
 		END_IF
 	190:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
 		fbTCP.TxRx.sSend:='TRIG';
-		fbEtape.piSVal:=191;
+		fbEtape.piVal:=191;
 	191:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
 		 IF (fbTCP.TxRx.sReceived='ACK') OR (fbBtn.xEmulateTCPConnection=1) THEN
-			fbEtape.piSVal:=192; //all is ok;
+			fbEtape.piVal:=192; //all is ok;
 		ELSIF fbTCP.TxRx.sReceived='NACK' THEN
 			fbEtape.piVal:=800; //error taking the image
 			iID:=202;
 		 END_IF
 	192:fbEtape.psMess:='Auto | sending "GETRES" to Camera';
 		fbTCP.TxRx.sSend:='GETRES';
-		fbEtape.piSVal:=193;
+		fbEtape.piVal:=193;
 	193:fbEtape.psMess:='Auto | Is the object ok';
 		IF (FIND(fbTCP.TxRx.sReceived,'PASS')>0) OR (fbBtn.xEmulateTCPConnection) THEN
-			fbEtape.piSVal:=200; //all is ok;
+			fbEtape.piVal:=200; //all is ok;
 		ELSIF (FIND(fbTCP.TxRx.sReceived,'FAIL')>0) THEN
 			fbEtape.piVal:=800; //error taking the image
 			iID:=201;
@@ -136,9 +136,9 @@ CASE fbEtape.iNo OF
 		END_IF
 	220:fbEtape.psMess:='Auto | Test if stop was asked';
 		IF xMemStop THEN
-		fbEtape.piSVal:=999;
+		fbEtape.piVal:=999;
 		ELSE
-		fbEtape.piSVal:=100;
+		fbEtape.piVal:=100;
 	END_IF
 	800:fbEtape.psMess:='Auto | Error occured - Going into stock state';
 		//turn off all motors and release all Actors
@@ -149,7 +149,7 @@ CASE fbEtape.iNo OF
 		//do nothing and wait
 	
 	999:fbEtape.psMess:='Auto | Finished';
-		fbEtape.piSVal:=0;
+		fbEtape.piVal:=0;
 END_CASE
 
 //***********************************
