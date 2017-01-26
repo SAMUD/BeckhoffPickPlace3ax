@@ -58,6 +58,8 @@ Id;Default;fr;de;en
 59;MOTOR;MOTEUR;MOTOR;MOTOR
 89;NetID: %s;;;
 39;None;;;
+110;Num Output: %d;;;
+111;Num Output: %i;;;
 73;Number produced: %d;Nombre produits: %d;Anzahl Produziert: %d;Number produced: %d
 75;On            Off;;;
 68;Open Admin Page;Page administrateur...;Admin-Seite;Admin Page...
