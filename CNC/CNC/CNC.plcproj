@@ -152,6 +152,9 @@
       <SubType>Code</SubType>
       <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
     </Compile>
+    <Compile Include="VISU_TASK.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
