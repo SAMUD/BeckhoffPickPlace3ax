@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.2" baseProfile="tiny" id="Ebene_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="104px" height="104px"
+	 viewBox="0 0 104 104" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  width="104" height="104" y="2.5" x="0.5" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g>
+	<path fill="#969696" d="M88.766,88.766c-20.313,20.313-53.225,20.313-73.537,0c-20.298-20.298-20.313-53.225,0-73.537
+		c20.312-20.313,53.239-20.298,73.537,0C109.078,35.541,109.078,68.453,88.766,88.766z"/>
+	<path fill="#E6E6E6" d="M86.33,86.33c-18.963,18.962-49.703,18.962-68.666,0c-18.957-18.956-18.962-49.704,0-68.666
+		c18.963-18.962,49.71-18.957,68.666,0C105.292,36.626,105.292,67.368,86.33,86.33z"/>
+	<path fill="#E62545" d="M71.233,71.233c-10.625,10.626-27.848,10.626-38.473,0c-10.621-10.62-10.625-27.848,0-38.473
+		c10.624-10.625,27.852-10.621,38.472,0C81.858,43.386,81.858,60.608,71.233,71.233z"/>
+	<path fill="#969696" d="M69.13,69.13c-9.462,9.461-24.803,9.461-34.265,0c-9.459-9.459-9.462-24.804,0-34.265
+		c9.462-9.463,24.805-9.459,34.263,0C78.591,44.328,78.591,59.669,69.13,69.13z"/>
+	<path fill="#646464" d="M75.616,66.852c1.614,1.614,1.614,4.229,0,5.844l-2.921,2.921c-1.613,1.614-4.23,1.614-5.845,0
+		L28.865,37.631c-1.613-1.614-1.613-4.231,0-5.843l2.923-2.923c1.613-1.612,4.23-1.612,5.843,0L75.616,66.852z"/>
+	<path fill="#E62545" d="M43.961,41.04c0.808,0.807,0.808,2.114,0,2.921l0,0c-0.806,0.807-2.115,0.807-2.921,0l-8.766-8.765
+		c-0.806-0.807-0.806-2.116,0-2.923l0,0c0.807-0.805,2.116-0.805,2.922,0L43.961,41.04z"/>
+</g>
+</svg>

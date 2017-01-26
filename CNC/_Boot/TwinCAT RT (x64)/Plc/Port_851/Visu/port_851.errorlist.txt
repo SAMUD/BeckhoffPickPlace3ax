@@ -1,0 +1,19 @@
+Id;Default;de;fr;en
+0;no error;kein Fehler;pas de Erreur;
+100;Actuator | Autorisation refused for action Go Out;Aktor | Keine Autorisation zum ausfahren;Actionneur | Pas de autorisation pour étendre;
+101;Actuator | Autorisation refused for action Go In;Aktor | Keine Autorisation zum einfahren;Actionneur | Pas de autorisation pour retracter;
+110;Actuator | Error timeout go-out;Aktor | Timeout ausfahren;Actionneur | Timeout  étendre;
+111;Actuator | Error timeout go-in;Aktor | Timeout einfahren;Actionneur | Timeout retracter;
+120;Actuator | Both sensors (IxSensIn & IxSensOut) at the same time;Aktor | Beide Sensoren sind gleichzeitig aktiv;Actionneur | Les deux capteurs sont vrai en meme temps;
+121;Actuator | Where shall I go? xSetSort=1 et xSetRentre=1;Aktor | Was soll ich tun? xSetSort=1 und xSetRentre=1;Actionneur | Sortir ou rentrer? xSetSort=1 et xSetRentre=1;
+200;Auto | Vision | Error while detecting original object;Auto | Vision | Fehler beim Erkennen des Start-Objektes;Auto | Vision | Erreur detecter l$'object de départ;
+210;Auto | Timeout - Motor did not reach desired speed;Auto | Timeout - Motor hat nicht schnell genug den Soll-Wert erreicht;Auto | Timeout - Moteur a pas atteint la vitesse de consigne assez rapide;
+201;Auto | Vision | Error detecting processed object;Auto | Vision | Fehler beim Erkennen des End-Objektes;Auto | Vision | Erreur detecter object de fin;
+300;fbMotor | Error in PID-Loop;fbMotor | Fehler in der PID-Schleife;fbMotor | Erreur dans boucle PID;
+301;fbMotor | Unable to reach Setpoint Speed;fbMotor | Kann Setpoint-Wert nicht erreichen;fbMoteur | Impossible d$'atteindre la vitesse de consigne;
+401;fbTCP | mReceive | Received Data was lost;fbTCP | mReceive | Verlust von eingehenden Daten ;fbTCP | mReceive | Perte de donnes en entree;
+402;fbTCP | Error sending data;fbTCP | Fehler beim Senden der Daten;fbTCP | Probleme lorsque de l$'envoi des données;
+403;fbTCP | Error connecting /disconnecting to Server;fbTCP | Fehler beim Verbinden / Trennen der Verbindung zum Server;fbTCP | Erreur lorsque de la (de-)connexion aux Serveur;
+404;fbTCP | mReceive | Error while Receiving data;fbTCP | mReceive | Fehler beim Empfangen von Daten;fbTCP | mReceive | Probleme de réception;
+202;Auto | Camera | Error while taking image;;;
+;;;;

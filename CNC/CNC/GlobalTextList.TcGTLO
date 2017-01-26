@@ -276,6 +276,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"105"</v>
+              <v n="TextDefault">"fbMotor.fbMotor.fbConvertNumToMotorOut.QaSortie"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"98"</v>
               <v n="TextDefault">"Force Disconnect"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -366,6 +375,24 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"102"</v>
+              <v n="TextDefault">"Ir Ecart : %.5f"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"103"</v>
+              <v n="TextDefault">"Ir Tension: %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"2"</v>
               <v n="TextDefault">"LANGUAGE"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -399,6 +426,42 @@
                 <v>PRINCIPAL</v>
                 <v>HAUPTSEITE</v>
                 <v>MAIN</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"109"</v>
+              <v n="TextDefault">"MAIN.fbCycleInit.fbEtape.sMess"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"108"</v>
+              <v n="TextDefault">"MAIN.fbCycleInit.iEtape"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"106"</v>
+              <v n="TextDefault">"MAIN.fbCycleMan.fbEtape.sMess"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"107"</v>
+              <v n="TextDefault">"MAIN.fbCycleMan.iEtape"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>
@@ -474,6 +537,24 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"110"</v>
+              <v n="TextDefault">"Num Output: %d"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"111"</v>
+              <v n="TextDefault">"Num Output: %i"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"73"</v>
               <v n="TextDefault">"Number produced: %d"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -528,6 +609,24 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"104"</v>
+              <v n="TextDefault">"Qa Sortie : %d"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"101"</v>
+              <v n="TextDefault">"Qa Sortie : %i"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"38"</v>
               <v n="TextDefault">"QaSortie : %2.5f"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -548,6 +647,15 @@
             <o>
               <v n="TextID">"31"</v>
               <v n="TextDefault">"QaSortie : %i"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"100"</v>
+              <v n="TextDefault">"QASortie: %i"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>
@@ -674,6 +782,15 @@
             <o>
               <v n="TextID">"1"</v>
               <v n="TextDefault">"SetSpeed of Motor: %.2f"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"99"</v>
+              <v n="TextDefault">"SetSpeed of Motor: %i"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>

@@ -604,19 +604,19 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">63</v>
+                      <v n="Value">66</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">102</v>
+                      <v n="Value">105</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">337</v>
+                      <v n="Value">327</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">33</v>
+                      <v n="Value">30</v>
                     </o>
                     <o>
                       <v n="Id">3729828405L</v>
@@ -648,7 +648,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"MAIN.fbCycleInit.fbEtape.sMess"</v>
+                      <v n="Value">"fbCycleInit.fbEtape.sMess"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -663,15 +663,15 @@
                 <v n="VisualElementName">"Textfield"</v>
                 <v n="VisualElementTypeName">"VisuFbElemTextfield"</v>
                 <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_10"</v>
+                <v n="VisualElementIdentifier">"GenElemInst_13"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
                 <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{2c066fd4-cd8f-4ec9-87cf-ada635dc55d2}</v>
+                <v n="VisualElementIdentification">{1644cc33-4fe2-4c2b-b0d3-3ac8095bef1a}</v>
                 <v n="VisualElementOwningObjectGuid">{328d1b28-1cb1-41b4-a0f7-1e71e74c49ed}</v>
                 <a n="LMGuids" et="Guid" />
                 <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">9</v>
+                <v n="VisualElementId">0</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
               </o>
               <o>
@@ -758,19 +758,19 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">5</v>
+                      <v n="Value">14</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">102</v>
+                      <v n="Value">103</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">55</v>
+                      <v n="Value">41</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">33</v>
+                      <v n="Value">31</v>
                     </o>
                     <o>
                       <v n="Id">3729828405L</v>
@@ -802,7 +802,7 @@
                     </o>
                     <o>
                       <v n="Id">2477733581L</v>
-                      <v n="Value">"MAIN.fbCycleInit.iEtape"</v>
+                      <v n="Value">"fbCycleInit.iEtape"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -817,15 +817,15 @@
                 <v n="VisualElementName">"Textfield"</v>
                 <v n="VisualElementTypeName">"VisuFbElemTextfield"</v>
                 <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_12"</v>
+                <v n="VisualElementIdentifier">"GenElemInst_17"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
                 <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{b568b3df-1dac-4129-9495-0c4260955649}</v>
+                <v n="VisualElementIdentification">{a6e89722-2c30-4270-bd59-3dde4896b183}</v>
                 <v n="VisualElementOwningObjectGuid">{328d1b28-1cb1-41b4-a0f7-1e71e74c49ed}</v>
                 <a n="LMGuids" et="Guid" />
                 <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">12</v>
+                <v n="VisualElementId">18</v>
                 <l n="UserManagementAccessRights" t="ArrayList" />
               </o>
             </l>
@@ -975,7 +975,7 @@
             </o>
             <v n="DialogDut">{5f345d6d-d26d-4974-ac99-96879eb20da7}</v>
           </o>
-          <v n="LastUsedIdForIdentifier">12</v>
+          <v n="LastUsedIdForIdentifier">17</v>
           <o n="TextDocument" t="TextDocument">
             <a n="TextLines" cet="TextLine">
               <o>

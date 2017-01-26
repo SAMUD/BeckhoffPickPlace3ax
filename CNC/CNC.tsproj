@@ -65,7 +65,7 @@
 	<ImageDatas>
 		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000c40e0000c40e0000100000001000000000000000ff0000000084000084848400c6c6c6000000ff00ff00ff0000ffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff0066333333333336666644444340403666664004434747366666405443444436666640044340403666664004434141366666400453444436666640042340403666664444444545366600044544444436660644454440403666004555554444366606444544424236660004454444443666</ImageData>
 	</ImageDatas>
-	<Project ProjectGUID="{68B614FD-BDF4-4EDD-A890-EDD57B09D215}" Target64Bit="true" ShowHideConfigurations="#x6">
+	<Project ProjectGUID="{68B614FD-BDF4-4EDD-A890-EDD57B09D215}" Target64Bit="true" AutoPrioManagement="true" ShowHideConfigurations="#x6">
 		<System>
 			<Settings MaxCpus="4">
 				<Cpu/>
@@ -79,13 +79,10 @@
 				</Target>
 			</Licenses>
 			<Tasks>
-				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
+				<Task Id="5" Priority="4" CycleTime="100000" AmsPort="351">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="3" Priority="4" CycleTime="100000" AmsPort="351">
-					<Name>PlcTask1</Name>
-				</Task>
-				<Task Id="4" Priority="30" CycleTime="2000000" AmsPort="352">
+				<Task Id="2" Priority="6" CycleTime="2000000" AmsPort="350">
 					<Name>VISU_TASK</Name>
 				</Task>
 			</Tasks>
@@ -461,8 +458,8 @@
 						</OwnerA>
 					</UnrestoredVarLinks>
 					<TaskPouOids>
-						<TaskPouOid Prio="30" OTCID="#x01010012"/>
-						<TaskPouOid Prio="4" OTCID="#x01010011"/>
+						<TaskPouOid Prio="4" OTCID="#x01010016"/>
+						<TaskPouOid Prio="6" OTCID="#x01010011"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

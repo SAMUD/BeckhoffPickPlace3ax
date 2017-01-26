@@ -1,0 +1,111 @@
+Id;Default;fr;de;en
+58;%d;;;
+37;%i;;;
+3;%s;;;
+60;Act1;;;
+62;Act2;;;
+61;Act3;;;
+15;Actionneur 1;Actionneur 1;Aktor 1;Actuator 1
+16;Actionneur 2;Actionneur 2;Aktor 2;Actuator 2
+17;Actionneur 3;Actionneur 3;Aktor 3;Actuator 3
+40;Admin;;;
+67;ADMIN;;;
+8;ARU;ARU;NOT-Aus;emergency Stop
+93;ARU - when there is no hardwarebutton present;;;
+71;AUTOMATIC;;;
+53;Charge;Charge;Laden;Load
+96;Connected to Server;;;
+25;Consigne: %.2f;;;
+0;Cycle Init;CYCLE INITIALISATION;INITIALISIERUNGSZYKLUS;INITIALISATION CYCLE
+5;Cycle Man;CYCLE MANUEL;MANUELLER ZYKLUS;MANUAL CYCLE
+92;d: %s;;;
+63;Direction;Sens rotation;Drehrichtung;Direction
+76;Disable Sensor In - Out;Désactiver Capteur In-Out;In-Out Sensor deaktivieren;Disable Sensor In-Out
+90;e: %s;;;
+97;Enabled;;;
+41;english;Anglais;Englisch;English
+78;ErrID: %d;;;
+7;Error;Erreur;Fehler;Error
+33;fbConfig.lrTemp : %.2f;;;
+36;fbConfig.lrValInc : %.2f;;;
+32;fbConfig.udiNbreIncBus : %i;;;
+105;fbMotor.fbMotor.fbConvertNumToMotorOut.QaSortie;;;
+98;Force Disconnect;;;
+19;french;Francais;Französisch;French
+43;Gain : %.2f;;;
+20;german;Allemand;Deutsch;German
+65;go back;retour...;zurück...;go back...
+66;go back...;retour...;zurück...;go back...
+22;Going in;rétracter;ein-fahren;retract
+21;Going out;étendre;aus-fahren;extend
+91;h: %s;;;
+48;ID: %d;;;
+102;Ir Ecart : %.5f;;;
+103;Ir Tension: %.2f;;;
+2;LANGUAGE;LANGUE;SPRACHE;LANGUAGE
+34;lrEcart : %.5f;;;
+35;lrTension : %.2f;;;
+4;MAIN;PRINCIPAL;HAUPTSEITE;MAIN
+109;MAIN.fbCycleInit.fbEtape.sMess;;;
+108;MAIN.fbCycleInit.iEtape;;;
+106;MAIN.fbCycleMan.fbEtape.sMess;;;
+107;MAIN.fbCycleMan.iEtape;;;
+6;MMA;;;
+13;Mode Auto;;;
+12;Mode Init;;;
+14;Mode Manual;;;
+55;Motor;Moteur;Motor;Motor
+59;MOTOR;MOTEUR;MOTOR;MOTOR
+89;NetID: %s;;;
+39;None;;;
+73;Number produced: %d;Nombre produits: %d;Anzahl Produziert: %d;Number produced: %d
+75;On            Off;;;
+68;Open Admin Page;Page administrateur...;Admin-Seite;Admin Page...
+64;open more...;plus d$'info...;mehr...;open more...
+46;Operator;;;
+47;Operator - Service - Admin;;;
+104;Qa Sortie : %d;;;
+101;Qa Sortie : %i;;;
+38;QaSortie : %2.5f;;;
+42;QaSortie : %2.5f tr/min;;;
+31;QaSortie : %i;;;
+100;QASortie: %i;;;
+70;Ready;Pret;Bereit;Ready
+57;RealSpeed: %d;;;
+85;Received Data: %s;;;
+80;Remote IP-Adress: %s;;;
+81;Remote Port: %d;;;
+72;Remote Socket: %d;;;
+10;Rentre       Sort;;;
+11;Rentre      Sort;;;
+9;Rentre     Sort;;;
+49;Reset;;;
+69;Running;Marche;Betrieb;Running
+82;Send Data: %s;;;
+45;Service;;;
+1;SetSpeed of Motor: %.2f;;;
+99;SetSpeed of Motor: %i;;;
+56;SetSpeed: %d;;;
+23;Start;;;
+26;stConfigBus.uiNbBits: %i;;;
+24;Stop;;;
+27;stTension.lrMax : %.2f;;;
+28;stTension.lrMin : %.2f;;;
+29;stValeur.lrMax : %.2f;;;
+30;stValeur.lrMin : %.2f;;;
+18;TachoInput: %.2f;;;
+95;TCP Busy;;;
+54;Tighten;Serrage;Spannen;Tighten
+44;WriteSpeed: %d;;;
+74;xBusy;;;
+83;xConnected;;;
+86;xConnectedCognex;;;
+94;xConnectedCognex Native;;;
+51;xEnable;;;
+87;xEnableCognexMode;;;
+88;xEnableEmulateTCP;;;
+77;xError;;;
+84;xForceDisconnect;;;
+79;xSend;;;
+50;xVonnected;;;
+52;Z-Axis;Axe Z;Z-Achse;Z-Axis

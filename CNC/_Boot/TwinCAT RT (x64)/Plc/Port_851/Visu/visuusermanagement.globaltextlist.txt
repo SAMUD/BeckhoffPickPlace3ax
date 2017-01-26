@@ -1,0 +1,52 @@
+Id;Default
+49;               User name
+50;          User name
+6;%s
+2;*****
+4;Acknowledge Password:
+40;Acknowledge password:
+35;Add or insert user
+31;Add/Insert user
+32;Add/Insert User
+13;Cancel
+16;Change Password
+46;Change password
+20;Change User Passwort
+19;Change UserManagement
+9;Checkbox
+1;Configure users
+28;CurrentUserGroup : %s
+29;Deactivate User:
+8;Deactivate:
+42;Deactivated:
+33;Delete User
+34;Delete user
+24;Fehlermeldungen
+37;Full name
+39;Full name:
+10;Fullname
+15;Fullname:
+27;g_VisuUserMgmt_Inst._arrErrorQueue[INDEX]
+21;Letzt Meldung
+22;Letzte Meldung
+26;Login
+12;Message
+17;New Password:
+45;New password:
+30;New/Insert
+14;Ok
+25;OK
+18;Old Password:
+44;Old password:
+5;Password:
+23;Reset Last Error
+48;sel2
+47;User group selection:
+41;User group:
+43;User management
+36;User name
+38;User name:
+3;Usergroup:
+0;Usermanagement
+11;Username
+7;Username:
