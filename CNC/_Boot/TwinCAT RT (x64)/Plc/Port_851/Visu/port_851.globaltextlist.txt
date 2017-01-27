@@ -21,6 +21,7 @@ Id;Default;fr;de;en
 92;d: %s;;;
 63;Direction;Sens rotation;Drehrichtung;Direction
 76;Disable Sensor In - Out;Désactiver Capteur In-Out;In-Out Sensor deaktivieren;Disable Sensor In-Out
+114;Do next step if Pas-a-Pas is enabled;;;
 113;Do Step;;;
 90;e: %s;;;
 97;Enabled;;;
