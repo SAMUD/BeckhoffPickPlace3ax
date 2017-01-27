@@ -12,6 +12,7 @@ VAR_INPUT
 		PID : FB_CTRL_PID;					//PID-Block
 		fbConvertNumToMotorOut : FB_Qa;		//Convert the PID-Output into numeric values send to the motor
 		fbConvertTachoToNumSpeed : FB_Ia;	//Convert the numeric values from the Tachymeter into rot/min
+		TimerOffAlarm : UINT;				//after enabling the Motor all Alarms will be blocked for 2sec
 END_VAR
 VAR_OUTPUT
 	xError : BOOL;							//Error state
@@ -26,8 +27,13 @@ fbConvertTachoToNumSpeed();
 IF xOnOff THEN
 	PID(fOut=>fbConvertNumToMotorOut.lrConsigne,fSetpointValue:=Consigne,
 		fActualValue:=fbConvertTachoToNumSpeed.lrValeur,eMode:=2,stParams:=PARA);
+	//decrese the delay for alarms
+	IF TimerOffAlarm>0 THEN
+		TimerOffAlarm:=TimerOffAlarm-1;
+	END_IF
 ELSE
 	fbConvertNumToMotorOut.lrConsigne:=0;
+	TimerOffAlarm:=200; //200 @ 10ms Cycle --> 2sec
 END_IF
 
 //Convert now to have the value as fast as possible written to the motor
@@ -44,10 +50,10 @@ END_IF
 //******************************************
 
 //Error management
-IF PID.bError AND xOnOff THEN
+IF PID.bError AND xOnOff AND TimerOffAlarm=0 THEN
 xError:=TRUE;
 iErrorID:=300;
-ELSIF PID.bARWactive AND xOnOff THEN
+ELSIF PID.bARWactive AND xOnOff AND TimerOffAlarm=0 THEN
 	xError:=TRUE;
 	iErrorId:=301;
 ELSE

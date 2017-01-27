@@ -5006,11 +5006,11 @@
                   <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                     <o>
                       <v n="Id">1404881523L</v>
-                      <v n="Value" t="Single">0</v>
+                      <v n="Value" t="Single">100</v>
                     </o>
                     <o>
                       <v n="Id">3837067714L</v>
-                      <v n="Value" t="Single">2500</v>
+                      <v n="Value" t="Single">1500</v>
                     </o>
                     <o>
                       <v n="Id">2867424708L</v>
@@ -5022,7 +5022,7 @@
                     </o>
                     <o>
                       <v n="Id">2608923542L</v>
-                      <v n="Value" t="Int16">50</v>
+                      <v n="Value" t="Int16">75</v>
                     </o>
                     <o>
                       <v n="Id">469634675L</v>
@@ -5066,7 +5066,7 @@
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">26</v>
+                      <v n="Value">45</v>
                     </o>
                     <o>
                       <v n="Id">2985826283L</v>
