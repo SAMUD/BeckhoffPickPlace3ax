@@ -19,6 +19,8 @@ VAR_INPUT
 	xManualCNCMotorTurnOff : BOOL;
 	
 	xEmulateTCPConnection : BOOL;
+	
+	xAirPressureOk : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>

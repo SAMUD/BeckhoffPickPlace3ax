@@ -16,4 +16,5 @@ Id;Default;de;fr;en
 403;fbTCP | Error connecting /disconnecting to Server;fbTCP | Fehler beim Verbinden / Trennen der Verbindung zum Server;fbTCP | Erreur lorsque de la (de-)connexion aux Serveur;
 404;fbTCP | mReceive | Error while Receiving data;fbTCP | mReceive | Fehler beim Empfangen von Daten;fbTCP | mReceive | Probleme de réception;
 202;Auto | Camera | Error while taking image;;;
+1;Air Pressure low;Luftdruck zu gering;Pression d$'air trop basse;
 ;;;;

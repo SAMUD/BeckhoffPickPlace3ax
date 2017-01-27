@@ -160,6 +160,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"1"</v>
+              <v n="TextDefault">"Air Pressure low"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v>Luftdruck zu gering</v>
+                <v>Pression d'air trop basse</v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">""</v>
               <v n="TextDefault">""</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">

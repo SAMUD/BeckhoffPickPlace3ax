@@ -24,6 +24,8 @@ STRUCT
 	lSetSpeedMotor : LREAL;
 	lTachoValue AT%I* : DINT;
 	xMotorDirection AT%I* : BOOL;
+	
+	xAirPressureOk AT%I* : BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

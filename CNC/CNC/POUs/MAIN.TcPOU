@@ -20,6 +20,7 @@ fbBtn.xAru:=stio.stIn.IxAruIO;
 fbBtn.xReset:=stio.stIn.xResetIO;
 fbBtn.xStart:=stio.stIn.xStartIO;
 fbBtn.xStop:=stio.stIn.xStopIO;
+fbBtn.xAirPressureOk:=stio.stIn.xAirPressureOk;
 fbBtn.xManualAct1GoIn:=stio.stIn.xManualAct1GoIn;
 fbBtn.xManualAct1GoOut:=stio.stIn.xManualAct1GoOut;
 fbBtn.xManualAct2GoIn:=stio.stIn.xManualAct2GoIn;
@@ -52,8 +53,11 @@ ELSIF (fbMotor.xError) THEN
 ELSIF (fbTCP.OutputGlobal.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbTCP.OutPutGlobal.nErrID;
+ELSIF NOT fbBtn.xAirPressureOk THEN
+	stParam.stStatus.xErreur:=TRUE;
+	stParam.stStatus.iId:=1;
 ELSE
-	//clear the error State. Do not clear the last error Message to have some ind of error history
+	//clear the error State. Do not clear the last error Message to have some kind of error history
 	stParam.stStatus.xErreur:=FALSE;
 END_IF
 
