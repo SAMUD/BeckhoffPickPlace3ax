@@ -420,6 +420,33 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"115"</v>
+              <v n="TextDefault">"Login"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"119"</v>
+              <v n="TextDefault">"login as another user"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"116"</v>
+              <v n="TextDefault">"Logout"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"34"</v>
               <v n="TextDefault">"lrEcart : %.5f"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -629,6 +656,15 @@
             <o>
               <v n="TextID">"47"</v>
               <v n="TextDefault">"Operator - Service - Admin"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"120"</v>
+              <v n="TextDefault">"Please login as another user"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>
@@ -924,6 +960,33 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"117"</v>
+              <v n="TextDefault">"User"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"121"</v>
+              <v n="TextDefault">"USER"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"122"</v>
+              <v n="TextDefault">"User Settings"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"44"</v>
               <v n="TextDefault">"WriteSpeed: %d"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -1025,6 +1088,15 @@
             <o>
               <v n="TextID">"50"</v>
               <v n="TextDefault">"xVonnected"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"118"</v>
+              <v n="TextDefault">"You are not allowed to see this page"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>

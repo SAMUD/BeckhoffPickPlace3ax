@@ -45,6 +45,8 @@ Id;Default;fr;de;en
 102;Ir Ecart : %.5f;;;
 103;Ir Tension: %.2f;;;
 2;LANGUAGE;LANGUE;SPRACHE;LANGUAGE
+115;Login;;;
+116;Logout;;;
 34;lrEcart : %.5f;;;
 35;lrTension : %.2f;;;
 4;MAIN;PRINCIPAL;HAUPTSEITE;MAIN
@@ -101,6 +103,7 @@ Id;Default;fr;de;en
 18;TachoInput: %.2f;;;
 95;TCP Busy;;;
 54;Tighten;Serrage;Spannen;Tighten
+117;User;;;
 44;WriteSpeed: %d;;;
 74;xBusy;;;
 83;xConnected;;;

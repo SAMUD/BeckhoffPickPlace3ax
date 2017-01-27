@@ -1,6 +1,6 @@
 
 {
-	"UpdateRate": 200,
+	"UpdateRate": 50,
 	"PlcAddress": "0101",
 	"UseLocalHost": true,
 	"Application": "Port_851",

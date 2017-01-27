@@ -83,7 +83,7 @@
 				<Task Id="5" Priority="6" CycleTime="100000" AmsPort="351">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="2" Priority="8" CycleTime="2000000" AmsPort="350">
+				<Task Id="2" Priority="8" CycleTime="500000" AmsPort="350">
 					<Name>VISU_TASK</Name>
 				</Task>
 			</Tasks>
@@ -463,8 +463,8 @@
 						</OwnerA>
 					</UnrestoredVarLinks>
 					<TaskPouOids>
-						<TaskPouOid Prio="8" OTCID="#x01010016"/>
-						<TaskPouOid Prio="6" OTCID="#x01010011"/>
+						<TaskPouOid Prio="8" OTCID="#x01010011"/>
+						<TaskPouOid Prio="6" OTCID="#x01010012"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>
@@ -1169,7 +1169,7 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-0011-0101-1000-010110000403}" Id="#x03070010"/>
+		<MappingInfo Identifier="{00000000-0012-0101-1000-010110000403}" Id="#x03070010"/>
 		<OwnerA Name="TIPC^CNC^CNC Instance">
 			<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (BK1150)">
 				<Link VarA="PlcTask Inputs^GVL.fbAct1.IxSensIn" VarB="Term 6 (KL1408)^Channel 2^Eingang"/>
