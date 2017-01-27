@@ -90,7 +90,7 @@ CASE fbEtape.iNo OF
 		END_IF
 		
 	350:fbEtape.psMess:='MMA | Auto | Production - Wait Stop Signal';
-		IF (fbBtn.xStop OR stParam.stStatus.xErreur ) THEN 
+		IF fbBtn.xStop THEN 
 			fbEtape.piVal:=390;
 		END_IF
 		
