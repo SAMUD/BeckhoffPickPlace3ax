@@ -22,13 +22,6 @@ END_VAR
       <ST><![CDATA[//convert Tacho speed into rot/min
 fbConvertTachoToNumSpeed();
 
-//check the direction and reverse Consigne if needed
-(*IF xDirection THEN
-	lrValeurDirection:=-fbConvertTachoToNumSpeed.lrValeur;
-ELSE
-	lrValeurDirection:=fbConvertTachoToNumSpeed.lrValeur;
-END_IF*)
-
 //call the PID-Block if needed
 IF xOnOff THEN
 	PID(fOut=>fbConvertNumToMotorOut.lrConsigne,fSetpointValue:=Consigne,
@@ -41,17 +34,20 @@ END_IF
 fbConvertNumToMotorOut();
 
 //Reset the PID block
-PID.bSync:=xReset;
+IF xReset THEN
+	PID.bSync:=xReset;
+END_IF
+
 
 //******************************************
 //Output actions
 //******************************************
 
 //Error management
-IF (PID.bError) THEN
+IF PID.bError AND xOnOff THEN
 xError:=TRUE;
 iErrorID:=300;
-ELSIF PID.bARWactive THEN
+ELSIF PID.bARWactive AND xOnOff THEN
 	xError:=TRUE;
 	iErrorId:=301;
 ELSE

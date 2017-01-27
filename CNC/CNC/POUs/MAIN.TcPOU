@@ -70,6 +70,7 @@ fbCycleAuto();
 //call Init mode and give over the needed parameters
 fbCycleInit.xStart:=(fbMMA.iEtape=110 OR fbMMA.iEtape=340);
 fbCycleInit.xStop:= NOT (fbMMA.iEtape=111 OR fbMMA.iEtape=341);
+fbCycleAuto.xReset:= fbMMA.iEtape=810 OR fbMMA.iEtape=910;
 fbCycleInit();
 	
 //call Manual mode and give over the needed parameters
@@ -119,7 +120,7 @@ IF(fbCycleAuto.iEtape=170 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=208 OR 
 	fbMotor.xOnOff:=FALSE;
 END_IF
 //Reset fbMotor
-fbMotor.xReset:=fbMMA.iEtape=800;
+fbMotor.xReset:=fbMMA.iEtape=810;
 //Motor Direction Output
 stio.stOut.QxMotorDirection:=stio.stIn.xMotorDirection;
 

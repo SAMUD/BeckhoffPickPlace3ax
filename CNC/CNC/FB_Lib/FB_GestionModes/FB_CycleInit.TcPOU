@@ -5,6 +5,7 @@
 VAR_INPUT
 	xStart : BOOL;
 	xStop : BOOL;
+	xReset:BOOL;
 END_VAR
 VAR_OUTPUT
 	fbRtrigStart:R_trig;
@@ -19,6 +20,11 @@ END_VAR
       <ST><![CDATA[fbEtape.mActualisation(stParam.stStatus.xModePasAPas,fbBtn.xNextPas);
 
 fbRtrigStart(clk:=fbBtn.xStart);
+
+IF xReset THEN
+	fbEtape.piVal:=0;
+	xBusy:=FALSE;
+END_IF
 
 CASE fbEtape.iNo OF
 	0:fbEtape.psMess:='Init | Wait';
