@@ -17,7 +17,7 @@ fbMMA();
 
 //copy physical Inputs in fbBtn
 fbBtn.xAru:=stio.stIn.IxAruIO;
-fbBtn.xReset:=stio.stIn.xResetIO;
+fbBtn.xReset:=stio.stIn.xResetIO OR NOT stio.stIn.xAirPressureOk;
 fbBtn.xStart:=stio.stIn.xStartIO;
 fbBtn.xStop:=stio.stIn.xStopIO;
 fbBtn.xAirPressureOk:=stio.stIn.xAirPressureOk;

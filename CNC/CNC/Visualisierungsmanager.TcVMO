@@ -556,7 +556,7 @@
                   <v n="Id">1</v>
                   <v n="Name">"Admin"</v>
                   <v n="AutoLogOff">true</v>
-                  <v n="LogOffTimeValue">1</v>
+                  <v n="LogOffTimeValue">5</v>
                   <v n="LogOffTimeUnit" t="TimeUnit">Minute</v>
                   <v n="RightToChangeUser">true</v>
                   <v n="Description">""</v>
@@ -687,7 +687,7 @@
               <v n="ClientSizeY">1024</v>
               <v n="ForceWebVisuClient">false</v>
               <v n="Antialiasing">true</v>
-              <v n="ClientOperationType" t="eDefaultInputSetting">Touchscreen</v>
+              <v n="ClientOperationType" t="eDefaultInputSetting">Keyboard</v>
               <v n="ScaleTypeIsotropic">true</v>
             </o>
           </o>

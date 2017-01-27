@@ -117,17 +117,17 @@
               <v n="TextID">"93"</v>
               <v n="TextDefault">"ARU - when there is no hardwarebutton present"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
-                <v></v>
+                <v>ARU - seulement si il y a pas de Bouton Hardware</v>
+                <v>NOT-Aus - nur wenn es kein Hardware-Button gibt</v>
+                <v>emergency Stop - only when there is no Hardware Button</v>
               </l>
             </o>
             <o>
               <v n="TextID">"71"</v>
               <v n="TextDefault">"AUTOMATIC"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>AUTOMATIQUE</v>
+                <v>AUTOMATISCH</v>
                 <v></v>
               </l>
             </o>
@@ -144,8 +144,8 @@
               <v n="TextID">"96"</v>
               <v n="TextDefault">"Connected to Server"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>Connecté aux Serveur</v>
+                <v>Verbunden mit Serveur</v>
                 <v></v>
               </l>
             </o>
@@ -153,9 +153,9 @@
               <v n="TextID">"25"</v>
               <v n="TextDefault">"Consigne: %.2f"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
-                <v></v>
+                <v>Consigne: %.2f</v>
+                <v>Soll-Wert: %.2f</v>
+                <v>Setpoint: %.2f</v>
               </l>
             </o>
             <o>
@@ -189,7 +189,7 @@
               <v n="TextID">"63"</v>
               <v n="TextDefault">"Direction"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v>Sens rotation</v>
+                <v>Sens de rotation</v>
                 <v>Drehrichtung</v>
                 <v>Direction</v>
               </l>
@@ -207,18 +207,18 @@
               <v n="TextID">"114"</v>
               <v n="TextDefault">"Do next step if Pas-a-Pas is enabled"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
-                <v></v>
+                <v>Faire le prochain pas si Pas-a-Pas est allumée</v>
+                <v>Nächster Schritt wenn Schritt-für-Schritt aktiviert ist</v>
+                <v>Do next step if Step-for-Step is turned on</v>
               </l>
             </o>
             <o>
               <v n="TextID">"113"</v>
               <v n="TextDefault">"Do Step"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
-                <v></v>
+                <v>Faire un pas</v>
+                <v>Schritt</v>
+                <v>Do Step</v>
               </l>
             </o>
             <o>
@@ -234,8 +234,8 @@
               <v n="TextID">"97"</v>
               <v n="TextDefault">"Enabled"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>Activé</v>
+                <v>Aktiviert</v>
                 <v></v>
               </l>
             </o>
@@ -307,7 +307,7 @@
               <v n="TextDefault">"Force Disconnect"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
-                <v></v>
+                <v>Zwangs-Trennen</v>
                 <v></v>
               </l>
             </o>
@@ -423,8 +423,8 @@
               <v n="TextID">"115"</v>
               <v n="TextDefault">"Login"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>Connecter</v>
+                <v>Einloggen</v>
                 <v></v>
               </l>
             </o>
@@ -432,8 +432,8 @@
               <v n="TextID">"119"</v>
               <v n="TextDefault">"login as another user"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>Login comme autre utilisateur</v>
+                <v>Als anderen Benutzer einloggen</v>
                 <v></v>
               </l>
             </o>
@@ -441,8 +441,8 @@
               <v n="TextID">"116"</v>
               <v n="TextDefault">"Logout"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>Déconnecter</v>
+                <v>Ausloggen</v>
                 <v></v>
               </l>
             </o>
@@ -666,8 +666,8 @@
               <v n="TextID">"120"</v>
               <v n="TextDefault">"Please login as another user"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>Veuillez utiliser un autre identifiant</v>
+                <v>Bitte mit anderen Benutzerkennung einloggen</v>
                 <v></v>
               </l>
             </o>
@@ -972,8 +972,8 @@
               <v n="TextID">"121"</v>
               <v n="TextDefault">"USER"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>UTILISATEUR</v>
+                <v>BENUTZER</v>
                 <v></v>
               </l>
             </o>
@@ -981,8 +981,8 @@
               <v n="TextID">"122"</v>
               <v n="TextDefault">"User Settings"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>Param. Utilisateur</v>
+                <v>Benutzer Einst.</v>
                 <v></v>
               </l>
             </o>
@@ -1098,8 +1098,8 @@
               <v n="TextID">"118"</v>
               <v n="TextDefault">"You are not allowed to see this page"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
-                <v></v>
-                <v></v>
+                <v>Yous avez pas le droit de voir cette page</v>
+                <v>Sie haben nicht die erforderlichen Recte diese Seite einzusehen</v>
                 <v></v>
               </l>
             </o>

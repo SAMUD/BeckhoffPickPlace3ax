@@ -959,7 +959,7 @@
                   <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                     <o>
                       <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
+                      <v n="Value">"LEFT"</v>
                     </o>
                     <o>
                       <v n="Id">2565699834L</v>
@@ -999,7 +999,7 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">12</v>
+                      <v n="Value">21</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
@@ -1225,7 +1225,7 @@
                   <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                     <o>
                       <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
+                      <v n="Value">"LEFT"</v>
                     </o>
                     <o>
                       <v n="Id">2565699834L</v>
@@ -1265,11 +1265,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">110</v>
+                      <v n="Value">150</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">237</v>
+                      <v n="Value">236</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1460,10 +1460,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>4d9e95c5-d535-46ee-9662-41cbf6bf69f2</v>
-                <v>FB_Exit</v>
-                <v>0f6126cd-9dda-4c6a-b9bd-88044535fce6</v>
                 <v>FB_Reinit</v>
                 <v>4a1e939a-1074-491d-a6ff-7113851c1c3f</v>
+                <v>FB_Exit</v>
+                <v>0f6126cd-9dda-4c6a-b9bd-88044535fce6</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{901d4d8a-828f-4573-b7cc-0642e5a4e2a9}</v>
