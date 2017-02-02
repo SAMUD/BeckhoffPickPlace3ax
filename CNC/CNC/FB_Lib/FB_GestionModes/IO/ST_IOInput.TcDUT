@@ -18,6 +18,9 @@ STRUCT
 	xManualAct3GoOut AT%I* : BOOL;
 	xManualCNCMotorTurnOn AT%I* : BOOL;
 	xManualCNCMotorTurnOff AT%I* : BOOL;
+	xManualSendTrig AT%I* : BOOL;
+	xManualSendCheck AT%I* : BOOL;
+	xManualSendGetres AT%I* : BOOL;
 	
 	xEmulateTCPConnection AT%I* : BOOL;
 	

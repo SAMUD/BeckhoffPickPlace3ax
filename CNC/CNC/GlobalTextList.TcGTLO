@@ -951,12 +951,39 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"123"</v>
+              <v n="TextDefault">"TCP Send"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"54"</v>
               <v n="TextDefault">"Tighten"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v>Serrage</v>
                 <v>Spannen</v>
                 <v>Tighten</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"125"</v>
+              <v n="TextDefault">"TRIG    CHECK   GETRES"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"124"</v>
+              <v n="TextDefault">"TRIG CHECK GETRES"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>

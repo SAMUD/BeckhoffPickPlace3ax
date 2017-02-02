@@ -62,6 +62,15 @@ CASE fbEtape.iNo OF
 		IF (fbBtn.xManualCNCMotorTurnOff) THEN
 			fbEtape.piVal:=208;
 		END_IF
+		IF (fbBtn.xManualSendTrig) THEN
+			fbEtape.piVal:=209;
+		END_IF
+		IF (fbBtn.xManualSendGetres) THEN
+			fbEtape.piVal:=210;
+		END_IF
+		IF (fbBtn.xManualSendCheck) THEN
+			fbEtape.piVal:=211;
+		END_IF
 		
 	201: fbEtape.psMess:='Manual | Action : Act 1 Go in';
 		IF (NOT fbBtn.xManualAct1GoIn) THEN
@@ -95,6 +104,12 @@ CASE fbEtape.iNo OF
 		IF (NOT fbBtn.xManualCNCMotorTurnOff) THEN
 			fbEtape.piVal:=100;
 		END_IF
+	209: fbEtape.psMess:='Manual | Action : Send Trig';
+		fbEtape.piVal:=100;
+	210: fbEtape.psMess:='Manual | Action : Send Getres';
+		fbEtape.piVal:=100;
+	211: fbEtape.psMess:='Manual | Action : Send Check';
+		fbEtape.piVal:=100;
 	
 	990:fbEtape.psMess:='Manual | Finishing';
 		//ici on fait des choses de fin (ex. eteindre un Motor qui tourne encore)

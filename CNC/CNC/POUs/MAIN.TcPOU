@@ -30,6 +30,9 @@ fbBtn.xManualAct3GoOut:=stio.stIn.xManualAct3GoOut;
 fbBtn.xManualCNCMotorTurnOn:=stio.stIn.xManualCNCMotorTurnOn;
 fbBtn.xManualCNCMotorTurnOff:=stio.stIn.xManualCNCMotorTurnOff;
 fbBtn.xEmulateTCPConnection:=stio.stIn.xEmulateTCPConnection;
+fbBtn.xManualSendTrig:=stio.stIn.xManualSendTrig;
+fbBtn.xManualSendCheck:=stio.stIn.xManualSendCheck;
+fbBtn.xManualSendGetres:=stio.stIn.xManualSendGetres;
 //and now call it
 fbBtn();
 
@@ -135,18 +138,21 @@ IF fbCycleInit.iEtape=102 THEN
 	fbTCP.xEnable:=TRUE;
 END_IF
 
-//TCP
-IF fbCycleAuto.iEtape=111 OR fbCycleAuto.iEtape=190 THEN
+//TCP send data
+IF fbCycleAuto.iEtape=111 OR fbCycleAuto.iEtape=190 OR fbCycleMan.iEtape=209 THEN
 	fbTCP.TxRx.sSend:='TRIG';
 END_IF
-IF fbCycleAuto.iEtape=192 THEN
+IF fbCycleAuto.iEtape=192 OR fbCycleMan.iEtape=210 THEN
 	fbTCP.TxRx.sSend:='GETRES';
 END_IF
-IF fbCycleAuto.iEtape=192 THEN
-	fbTCP.TxRx.sSend:='GETRES';
-END_IF
-IF fbCycleAuto.iEtape=113 THEN
+IF fbCycleAuto.iEtape=113 OR fbCycleMan.iEtape=211 THEN
 	fbTCP.TxRx.sSend:='CHECK';
+END_IF
+
+//clear received string
+IF fbCycleAuto.iEtape=113 OR fbCycleAuto.iEtape=800 OR fbCycleAuto.iEtape=130 OR fbCycleAuto.iEtape=192 OR fbCycleAuto.iEtape=200
+OR fbMMA.iEtape=810 OR fbCycleInit.iEtape=100 THEN
+	fbTCP.TxRx.sReceived:='';
 END_IF
 
 
