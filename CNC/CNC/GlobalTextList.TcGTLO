@@ -132,6 +132,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"126"</v>
+              <v n="TextDefault">"Camera Control"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"53"</v>
               <v n="TextDefault">"Charge"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
