@@ -50,7 +50,6 @@ CASE fbEtape.iNo OF
 			fbEtape.piSVal:=111;
 		END_IF
 	111:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
-		fbTCP.TxRx.sSend:='TRIG';
 		fbEtape.piVal:=112;
 	112:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
 		 IF (fbTCP.TxRx.sReceived='ACK') OR (fbBtn.xEmulateTCPConnection=1) THEN
@@ -60,7 +59,6 @@ CASE fbEtape.iNo OF
 			iID:=202;
 		 END_IF
 	113:fbEtape.psMess:='Auto | sending "CHECK" to Camera';
-		fbTCP.TxRx.sSend:='CHECK';
 		fbEtape.piVal:=120;
 	120:fbEtape.psMess:='Auto | Is the object ok';
 		IF fbTCP.TxRx.sReceived='START' OR fbBtn.xEmulateTCPConnection THEN
@@ -106,7 +104,6 @@ CASE fbEtape.iNo OF
 			fbEtape.piSVal:=190;
 		END_IF
 	190:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
-		fbTCP.TxRx.sSend:='TRIG';
 		fbEtape.piVal:=191;
 	191:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
 		 IF (fbTCP.TxRx.sReceived='ACK') OR (fbBtn.xEmulateTCPConnection=1) THEN
@@ -116,7 +113,6 @@ CASE fbEtape.iNo OF
 			iID:=202;
 		 END_IF
 	192:fbEtape.psMess:='Auto | sending "GETRES" to Camera';
-		fbTCP.TxRx.sSend:='GETRES';
 		fbEtape.piVal:=193;
 	193:fbEtape.psMess:='Auto | Is the object ok';
 		IF (FIND(fbTCP.TxRx.sReceived,'PASS')>0) OR (fbBtn.xEmulateTCPConnection) THEN

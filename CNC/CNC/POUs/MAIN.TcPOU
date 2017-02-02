@@ -70,7 +70,7 @@ fbCycleAuto();
 //call Init mode and give over the needed parameters
 fbCycleInit.xStart:=(fbMMA.iEtape=110 OR fbMMA.iEtape=340);
 fbCycleInit.xStop:= NOT (fbMMA.iEtape=111 OR fbMMA.iEtape=341);
-fbCycleAuto.xReset:= fbMMA.iEtape=810 OR fbMMA.iEtape=910;
+fbCycleInit.xReset:= fbMMA.iEtape=810 OR fbMMA.iEtape=910;
 fbCycleInit();
 	
 //call Manual mode and give over the needed parameters
@@ -134,6 +134,21 @@ fbTCP.xForceDisconnect:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
 IF fbCycleInit.iEtape=102 THEN
 	fbTCP.xEnable:=TRUE;
 END_IF
+
+//TCP
+IF fbCycleAuto.iEtape=111 OR fbCycleAuto.iEtape=190 THEN
+	fbTCP.TxRx.sSend:='TRIG';
+END_IF
+IF fbCycleAuto.iEtape=192 THEN
+	fbTCP.TxRx.sSend:='GETRES';
+END_IF
+IF fbCycleAuto.iEtape=192 THEN
+	fbTCP.TxRx.sSend:='GETRES';
+END_IF
+IF fbCycleAuto.iEtape=113 THEN
+	fbTCP.TxRx.sSend:='CHECK';
+END_IF
+
 
 
 
