@@ -4,21 +4,21 @@
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalImagePoolObject">
-          <v n="UniqueIdGenerator">"12"</v>
+          <v n="UniqueIdGenerator">"15"</v>
           <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
             <o>
               <v n="BitmapID">"Verinrentree"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\Semester5\ProjetAutomne\ProjetAutomneAutomatisme\Verinrentree.png"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\ProjetAutomne\Verinrentree.png"</v>
               <v n="ItemID">4</v>
             </o>
             <o>
               <v n="BitmapID">"Verinsortie"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\Semester5\ProjetAutomne\ProjetAutomneAutomatisme\verinsortie.png"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\ProjetAutomne\verinsortie.png"</v>
               <v n="ItemID">5</v>
             </o>
             <o>
               <v n="BitmapID">"Piece"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\Semester5\ProjetAutomne\ProjetAutomneAutomatisme\BatteryClampMesurement.jpg"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\Win10\OneDrive\Studium\Schweiz\ProjetAutomne\BatteryClampMesurement.jpg"</v>
               <v n="ItemID">6</v>
             </o>
             <o>

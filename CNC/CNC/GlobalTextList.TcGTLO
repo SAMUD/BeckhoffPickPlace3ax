@@ -105,6 +105,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"127"</v>
+              <v n="TextDefault">"Air pressure emulator"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"8"</v>
               <v n="TextDefault">"ARU"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">

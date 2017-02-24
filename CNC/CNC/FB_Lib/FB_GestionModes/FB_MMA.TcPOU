@@ -107,7 +107,10 @@ CASE fbEtape.iNo OF
 	810:fbEtape.psMess:='MMA | Reset | Stopp all';
 		fbEtape.piVal:=899;
 	899:fbEtape.psMess:='MMA | Reset | Finished';
-		fbEtape.piVal:=50;
+		IF fbBtn.xAirPressureOk THEN
+			fbEtape.piVal:=50;
+		END_IF
+		
 		
 	//--------------------------------------------------------------
 	//ARU

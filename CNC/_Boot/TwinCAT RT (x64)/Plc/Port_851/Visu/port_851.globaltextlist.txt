@@ -10,6 +10,7 @@ Id;Default;fr;de;en
 17;Actionneur 3;Actionneur 3;Aktor 3;Actuator 3
 40;Admin;;;
 67;ADMIN;;;
+127;Air pressure emulator;;;
 8;ARU;ARU;NOT-Aus;emergency Stop
 93;ARU - when there is no hardwarebutton present;ARU - seulement si il y a pas de Bouton Hardware;NOT-Aus - nur wenn es kein Hardware-Button gibt;emergency Stop - only when there is no Hardware Button
 71;AUTOMATIC;AUTOMATIQUE;AUTOMATISCH;
