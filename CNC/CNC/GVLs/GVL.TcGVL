@@ -26,9 +26,6 @@
 	fbMotorY : FB_Moteur;
 	fbMotorZ : FB_Moteur;
 	
-	//include TCP_LIB
-	fbTCP : FB_TCP;
-	
 
 	 
 END_VAR]]></Declaration>

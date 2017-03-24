@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="p_InitVar" Id="{bba454d6-76b8-4e3f-ac36-f5356768b4a9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK p_InitVar
 VAR_INPUT
@@ -33,48 +33,22 @@ fbAct3.stParam.tMoveOutTimeDelay:=T#0.2S;
 
 stParam.stStatus.eMMA:=Init;
 
-//Param MotorController and Conversion
-fbMotor.fbConvertNumToMotorOut.fbConfig.uiNbreBitBus:=16;
-fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMax:=10;
-fbMotor.fbConvertNumToMotorOut.fbConfig.stTension.lrMin:=-10;
-fbMotor.fbConvertNumToMotorOut.fbConfig.stValeur.lrMin:=-2998;
-fbMotor.fbConvertNumToMotorOut.fbConfig.stValeur.lrMax:=2998;
-fbMotor.fbConvertNumToMotorOut.lrConsigne:=0;
-
-fbMotor.fbConvertTachoToNumSpeed.fbConfig.uiNbreBitBus:=16;
-fbMotor.fbConvertTachoToNumSpeed.fbConfig.stValeur.lrMax:=5025;
-fbMotor.fbConvertTachoToNumSpeed.fbConfig.stValeur.lrMin:=-5025;
-
-fbMotor.PARA.fKp:=0.7;
-fbMotor.PARA.tTn:=T#50MS; //I
-fbMotor.PARA.tTv:=T#0MS; //D
-fbMotor.PARA.tTd:=T#0MS; //Dämpfung
-fbMotor.PARA.fOutMaxLimit:=2998;
-fbMotor.PARA.fOutMinLimit:=0;
-fbMotor.PARA.bARWOnIPartOnly:=FALSE;
-fbMotor.PARA.bDInTheFeedbackPath:=FALSE;
-fbMotor.PARA.bPInTheFeedbackPath:=FALSE;
-fbMotor.PARA.tCtrlCycleTime:=T#3MS;
-fbMotor.PARA.tTaskCycleTime:=T#3MS;
-fbMotor.PID.fManSyncValue:=0;
-
+(*
 stio.stIn.xMotorDirection:=FALSE;
-stio.stOut.QxMotorDirection:=FALSE;
+stio.stOut.QxMotorDirection:=FALSE;*)
 
-//Param TCP
-fbTCP.TCPParam.nRemotePort:=4000;
-fbTCP.TCPParam.sRemoteHost:='127.0.0.1';
-fbTCP.TCPParam.tTimeout:=T#30S;
-fbTCP.xForceDisconnect:=TRUE;
-fbTCP.TCPParam.sCognexUser:='admin';
-fbTCP.TCPParam.sCognexPW:='';
-fbTCP.TCPParam.xCognexMode:=TRUE;
-fbTCP.TCPParam.NetID:='192.168.56.1.1.1';
 
 
 
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="p_InitVar">
+      <LineId Id="3" Count="19" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="48" Count="3" />
+      <LineId Id="61" Count="4" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

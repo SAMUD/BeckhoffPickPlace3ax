@@ -16,6 +16,9 @@
     <CompilerDefines />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\E_ModeMMA.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_Param.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -162,6 +165,7 @@
     <Compile Include="VISUs\VisuMotor.TcVIS">
       <SubType>Code</SubType>
       <DependentUpon>Visualisierungsmanager.TcVMO</DependentUpon>
+      <ExcludeFromBuild>true</ExcludeFromBuild>
     </Compile>
     <Compile Include="VISU_TASK.TcTTO">
       <SubType>Code</SubType>
@@ -176,7 +180,9 @@
     <Folder Include="FB_Lib\FB_GestionModes" />
     <Folder Include="FB_Lib\FB_GestionModes\IO" />
     <Folder Include="FB_Lib\Motor" />
-    <Folder Include="FB_Lib\TCPIP" />
+    <Folder Include="FB_Lib\TCPIP">
+      <ExcludeFromBuild>true</ExcludeFromBuild>
+    </Folder>
     <Folder Include="GVLs" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

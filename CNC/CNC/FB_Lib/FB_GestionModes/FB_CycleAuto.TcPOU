@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_CycleAuto" Id="{1fbfed49-0f3f-4cfc-86b2-0a4b85d7cccf}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_CycleAuto
 VAR_INPUT
@@ -52,21 +52,11 @@ CASE fbEtape.iNo OF
 	111:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
 		fbEtape.piVal:=112;
 	112:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
-		 IF (fbTCP.TxRx.sReceived='ACK') OR (fbBtn.xEmulateTCPConnection=1) THEN
 			fbEtape.piVal:=113; //all is ok;
-		ELSIF fbTCP.TxRx.sReceived='NACK' THEN
-			fbEtape.piVal:=800; //error taking the image
-			iID:=202;
-		 END_IF
 	113:fbEtape.psMess:='Auto | sending "CHECK" to Camera';
 		fbEtape.piVal:=120;
 	120:fbEtape.psMess:='Auto | Is the object ok';
-		IF fbTCP.TxRx.sReceived='START' OR fbBtn.xEmulateTCPConnection THEN
 			fbEtape.piVal:=130; //all is ok;
-		ELSIF fbTCP.TxRx.sReceived='STOP' THEN
-			fbEtape.piVal:=800; //error taking the image
-			iID:=200;
-		 END_IF
 	130:fbEtape.psMess:='Auto | Act1 Go out';
 		IF fbAct1.xInOutPos THEN
 			fbEtape.piSVal:=140;
@@ -77,10 +67,10 @@ CASE fbEtape.iNo OF
 			fbEtape.tTimeQ:=T#10S;
 		END_IF
 	150:fbEtape.psMess:='Auto | Wait until Motor has right speed';
-		IF fbMotor.PID.bARWactive=FALSE THEN
+		//IF fbMotor.PID.bARWactive=FALSE THEN
 			//Motor has right speed
 			fbEtape.piVal:=160;
-		END_IF
+		//END_IF
 		IF fbEtape.xTimeQ THEN
 			//Go to Error
 			fbEtape.piVal:=800;
@@ -106,21 +96,11 @@ CASE fbEtape.iNo OF
 	190:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
 		fbEtape.piVal:=191;
 	191:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
-		 IF (fbTCP.TxRx.sReceived='ACK') OR (fbBtn.xEmulateTCPConnection=1) THEN
 			fbEtape.piVal:=192; //all is ok;
-		ELSIF fbTCP.TxRx.sReceived='NACK' THEN
-			fbEtape.piVal:=800; //error taking the image
-			iID:=202;
-		 END_IF
 	192:fbEtape.psMess:='Auto | sending "GETRES" to Camera';
 		fbEtape.piVal:=193;
 	193:fbEtape.psMess:='Auto | Is the object ok';
-		IF (FIND(fbTCP.TxRx.sReceived,'PASS')>0) OR (fbBtn.xEmulateTCPConnection) THEN
 			fbEtape.piVal:=200; //all is ok;
-		ELSIF (FIND(fbTCP.TxRx.sReceived,'FAIL')>0) THEN
-			fbEtape.piVal:=800; //error taking the image
-			iID:=201;
-		 END_IF
 	200:fbEtape.psMess:='Auto | Wait 3s';
 		//assigne le temps de comptage
 		fbEtape.tTimeQ:=T#3S;
@@ -157,5 +137,17 @@ xBusy:=fbEtape.iNo<>0;
 xReady:=fbEtape.iNo=0;
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>
+    <LineIds Name="FB_CycleAuto">
+      <LineId Id="3" Count="28" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="38" Count="2" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="47" Count="38" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="92" Count="2" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="101" Count="34" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

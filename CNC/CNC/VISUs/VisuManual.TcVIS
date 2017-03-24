@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <Visu Name="VisuManual" Id="{f28ef4db-7197-4f06-b587-d328527c7bba}">
     <XmlArchive>
       <Data>
@@ -2099,244 +2099,6 @@
                 <o n="VisualElemMemberList" t="VisualElemMemberList">
                   <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                     <o>
-                      <v n="Id">1931512087L</v>
-                      <v n="Value">"TAP"</v>
-                    </o>
-                    <o>
-                      <v n="Id">300685745L</v>
-                      <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">2812299069L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">494569607L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1649127785L</v>
-                      <v n="Value">356</v>
-                    </o>
-                    <o>
-                      <v n="Id">357335551L</v>
-                      <v n="Value">166</v>
-                    </o>
-                    <o>
-                      <v n="Id">2422045748L</v>
-                      <v n="Value">38</v>
-                    </o>
-                    <o>
-                      <v n="Id">2134141914L</v>
-                      <v n="Value">43</v>
-                    </o>
-                    <o>
-                      <v n="Id">4062784938L</v>
-                      <v n="Value">"Element-Switch-PushSwitch-Gray"</v>
-                    </o>
-                    <o>
-                      <v n="Id">493260384L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">135947015L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2678395525L</v>
-                      <v n="Value">1U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2565699834L</v>
-                      <v n="Value">"VCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">296037572L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">390574330L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">571893170L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">743958181L</v>
-                      <v n="Value">"stIO.stIn.xManualCNCMotorTurnOff"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
-                    </o>
-                  </l>
-                </o>
-                <v n="VisualElementName">"PushSwitch"</v>
-                <v n="VisualElementTypeName">"VisuFbElemPushSwitch"</v>
-                <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_36"</v>
-                <n n="VisualElementOfflinePaintCommands" />
-                <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{ae9e5b3c-4bd5-4c5b-8952-22963c532701}</v>
-                <v n="VisualElementOwningObjectGuid">{f28ef4db-7197-4f06-b587-d328527c7bba}</v>
-                <a n="LMGuids" et="Guid" />
-                <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">36</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
-              </o>
-              <o>
-                <a n="ConfiguredComplexInputs" et="ComplexInput" />
-                <l n="Elements" t="ArrayList" />
-                <n n="VisualElementDescription" />
-                <o n="VisualElemMemberList" t="VisualElemMemberList">
-                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
-                    <o>
-                      <v n="Id">1931512087L</v>
-                      <v n="Value">"TAP"</v>
-                    </o>
-                    <o>
-                      <v n="Id">300685745L</v>
-                      <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">2812299069L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">494569607L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1649127785L</v>
-                      <v n="Value">315</v>
-                    </o>
-                    <o>
-                      <v n="Id">357335551L</v>
-                      <v n="Value">167</v>
-                    </o>
-                    <o>
-                      <v n="Id">2422045748L</v>
-                      <v n="Value">38</v>
-                    </o>
-                    <o>
-                      <v n="Id">2134141914L</v>
-                      <v n="Value">43</v>
-                    </o>
-                    <o>
-                      <v n="Id">4062784938L</v>
-                      <v n="Value">"Element-Switch-PushSwitch-Gray"</v>
-                    </o>
-                    <o>
-                      <v n="Id">493260384L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">135947015L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2678395525L</v>
-                      <v n="Value">1U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2565699834L</v>
-                      <v n="Value">"VCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">296037572L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">390574330L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">571893170L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">743958181L</v>
-                      <v n="Value">"stIO.stIn.xManualCNCMotorTurnOn"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
-                    </o>
-                  </l>
-                </o>
-                <v n="VisualElementName">"PushSwitch"</v>
-                <v n="VisualElementTypeName">"VisuFbElemPushSwitch"</v>
-                <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_38"</v>
-                <n n="VisualElementOfflinePaintCommands" />
-                <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{aa839525-261b-400e-8dc3-da1d089ad43d}</v>
-                <v n="VisualElementOwningObjectGuid">{f28ef4db-7197-4f06-b587-d328527c7bba}</v>
-                <a n="LMGuids" et="Guid" />
-                <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">38</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
-              </o>
-              <o>
-                <a n="ConfiguredComplexInputs" et="ComplexInput" />
-                <l n="Elements" t="ArrayList" />
-                <n n="VisualElementDescription" />
-                <o n="VisualElemMemberList" t="VisualElemMemberList">
-                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
-                    <o>
                       <v n="Id">2340015797L</v>
                       <v n="Value">"HCENTER"</v>
                     </o>
@@ -2394,7 +2156,7 @@
                     </o>
                     <o>
                       <v n="Id">390574330L</v>
-                      <v n="Value">"On            Off"</v>
+                      <v n="Value">""</v>
                     </o>
                     <o>
                       <v n="Id">3729828405L</v>
@@ -2431,10 +2193,6 @@
                     <o>
                       <v n="Id">2597686782L</v>
                       <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">823443203L</v>
-                      <v n="Value">"75"</v>
                     </o>
                   </l>
                 </o>
@@ -2450,149 +2208,6 @@
                 <a n="LMGuids" et="Guid" />
                 <d n="SubElements" t="Hashtable" />
                 <v n="VisualElementId">40</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
-              </o>
-              <o>
-                <a n="ConfiguredComplexInputs" et="ComplexInput" />
-                <l n="Elements" t="ArrayList" />
-                <n n="VisualElementDescription" />
-                <o n="VisualElemMemberList" t="VisualElemMemberList">
-                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
-                    <o>
-                      <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2565699834L</v>
-                      <v n="Value">"VCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">4134387352L</v>
-                      <v n="Value">"NONE"</v>
-                    </o>
-                    <o>
-                      <v n="Id">1603690730L</v>
-                      <v n="Value">"Arial"</v>
-                    </o>
-                    <o>
-                      <v n="Id">4253639993L</v>
-                      <v n="Value" t="Int16">12</v>
-                    </o>
-                    <o>
-                      <v n="Id">2729990903L</v>
-                      <v n="Value">0U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1213979116L</v>
-                      <v n="Value">0U</v>
-                    </o>
-                    <o>
-                      <v n="Id">3488306084L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2812299069L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">494569607L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1649127785L</v>
-                      <v n="Value">303</v>
-                    </o>
-                    <o>
-                      <v n="Id">357335551L</v>
-                      <v n="Value">143</v>
-                    </o>
-                    <o>
-                      <v n="Id">2422045748L</v>
-                      <v n="Value">102</v>
-                    </o>
-                    <o>
-                      <v n="Id">2134141914L</v>
-                      <v n="Value">29</v>
-                    </o>
-                    <o>
-                      <v n="Id">390574330L</v>
-                      <v n="Value">"Motor"</v>
-                    </o>
-                    <o>
-                      <v n="Id">3729828405L</v>
-                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
-                        <o>
-                          <v n="FontStyle">0</v>
-                          <v n="ExplicitColor">-16777216</v>
-                          <v n="CanonicalName">"Font-Standard"</v>
-                          <v n="FontName">"Arial"</v>
-                          <v n="FontSize">12</v>
-                          <o n="NamedColor" t="NamedStyleColor">
-                            <v n="Color">-16777216</v>
-                            <v n="CanonicalName">"Font-Default-Color"</v>
-                          </o>
-                        </o>
-                      </l>
-                    </o>
-                    <o>
-                      <v n="Id">493260384L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">135947015L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2678395525L</v>
-                      <v n="Value">1U</v>
-                    </o>
-                    <o>
-                      <v n="Id">571893170L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">823443203L</v>
-                      <v n="Value">"55"</v>
-                    </o>
-                  </l>
-                </o>
-                <v n="VisualElementName">"Label"</v>
-                <v n="VisualElementTypeName">"VisuFbLabel"</v>
-                <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_42"</v>
-                <n n="VisualElementOfflinePaintCommands" />
-                <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{16aadba4-325f-41b3-86c7-356ba6e21cdd}</v>
-                <v n="VisualElementOwningObjectGuid">{f28ef4db-7197-4f06-b587-d328527c7bba}</v>
-                <a n="LMGuids" et="Guid" />
-                <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">42</v>
                 <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
                   <o>
                     <v n="GroupName">"Admin"</v>
@@ -2932,506 +2547,6 @@
                   <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
                     <o>
                       <v n="Id">2340015797L</v>
-                      <v n="Value">"LEFT"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2565699834L</v>
-                      <v n="Value">"VCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">4134387352L</v>
-                      <v n="Value">"NONE"</v>
-                    </o>
-                    <o>
-                      <v n="Id">1603690730L</v>
-                      <v n="Value">"Arial"</v>
-                    </o>
-                    <o>
-                      <v n="Id">4253639993L</v>
-                      <v n="Value" t="Int16">12</v>
-                    </o>
-                    <o>
-                      <v n="Id">2729990903L</v>
-                      <v n="Value">0U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1213979116L</v>
-                      <v n="Value">0U</v>
-                    </o>
-                    <o>
-                      <v n="Id">3488306084L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2812299069L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">494569607L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1649127785L</v>
-                      <v n="Value">12</v>
-                    </o>
-                    <o>
-                      <v n="Id">357335551L</v>
-                      <v n="Value">225</v>
-                    </o>
-                    <o>
-                      <v n="Id">2422045748L</v>
-                      <v n="Value">102</v>
-                    </o>
-                    <o>
-                      <v n="Id">2134141914L</v>
-                      <v n="Value">29</v>
-                    </o>
-                    <o>
-                      <v n="Id">390574330L</v>
-                      <v n="Value">"Camera Control"</v>
-                    </o>
-                    <o>
-                      <v n="Id">3729828405L</v>
-                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
-                        <o>
-                          <v n="FontStyle">0</v>
-                          <v n="ExplicitColor">-16777216</v>
-                          <v n="CanonicalName">"Font-Standard"</v>
-                          <v n="FontName">"Arial"</v>
-                          <v n="FontSize">12</v>
-                          <o n="NamedColor" t="NamedStyleColor">
-                            <v n="Color">-16777216</v>
-                            <v n="CanonicalName">"Font-Default-Color"</v>
-                          </o>
-                        </o>
-                      </l>
-                    </o>
-                    <o>
-                      <v n="Id">493260384L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">135947015L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2678395525L</v>
-                      <v n="Value">1U</v>
-                    </o>
-                    <o>
-                      <v n="Id">571893170L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">823443203L</v>
-                      <v n="Value">"126"</v>
-                    </o>
-                  </l>
-                </o>
-                <v n="VisualElementName">"Label"</v>
-                <v n="VisualElementTypeName">"VisuFbLabel"</v>
-                <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_50"</v>
-                <n n="VisualElementOfflinePaintCommands" />
-                <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{37fca184-153f-4f38-ab44-305eedb245aa}</v>
-                <v n="VisualElementOwningObjectGuid">{f28ef4db-7197-4f06-b587-d328527c7bba}</v>
-                <a n="LMGuids" et="Guid" />
-                <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">51</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
-              </o>
-              <o>
-                <a n="ConfiguredComplexInputs" et="ComplexInput" />
-                <l n="Elements" t="ArrayList" />
-                <n n="VisualElementDescription" />
-                <o n="VisualElemMemberList" t="VisualElemMemberList">
-                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
-                    <o>
-                      <v n="Id">1931512087L</v>
-                      <v n="Value">"TAP"</v>
-                    </o>
-                    <o>
-                      <v n="Id">300685745L</v>
-                      <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">2812299069L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">494569607L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1649127785L</v>
-                      <v n="Value">11</v>
-                    </o>
-                    <o>
-                      <v n="Id">357335551L</v>
-                      <v n="Value">252</v>
-                    </o>
-                    <o>
-                      <v n="Id">2422045748L</v>
-                      <v n="Value">38</v>
-                    </o>
-                    <o>
-                      <v n="Id">2134141914L</v>
-                      <v n="Value">43</v>
-                    </o>
-                    <o>
-                      <v n="Id">4062784938L</v>
-                      <v n="Value">"Element-Switch-PushSwitch-Gray"</v>
-                    </o>
-                    <o>
-                      <v n="Id">493260384L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">135947015L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2678395525L</v>
-                      <v n="Value">1U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2565699834L</v>
-                      <v n="Value">"VCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">296037572L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">390574330L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">571893170L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">743958181L</v>
-                      <v n="Value">"stIO.stIn.xManualSendTrig"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
-                    </o>
-                  </l>
-                </o>
-                <v n="VisualElementName">"PushSwitch"</v>
-                <v n="VisualElementTypeName">"VisuFbElemPushSwitch"</v>
-                <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_52"</v>
-                <n n="VisualElementOfflinePaintCommands" />
-                <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{8e1f04a1-4592-438d-b3d2-f31076b3e552}</v>
-                <v n="VisualElementOwningObjectGuid">{f28ef4db-7197-4f06-b587-d328527c7bba}</v>
-                <a n="LMGuids" et="Guid" />
-                <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">53</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
-              </o>
-              <o>
-                <a n="ConfiguredComplexInputs" et="ComplexInput" />
-                <l n="Elements" t="ArrayList" />
-                <n n="VisualElementDescription" />
-                <o n="VisualElemMemberList" t="VisualElemMemberList">
-                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
-                    <o>
-                      <v n="Id">1931512087L</v>
-                      <v n="Value">"TAP"</v>
-                    </o>
-                    <o>
-                      <v n="Id">300685745L</v>
-                      <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">2812299069L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">494569607L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1649127785L</v>
-                      <v n="Value">52</v>
-                    </o>
-                    <o>
-                      <v n="Id">357335551L</v>
-                      <v n="Value">253</v>
-                    </o>
-                    <o>
-                      <v n="Id">2422045748L</v>
-                      <v n="Value">38</v>
-                    </o>
-                    <o>
-                      <v n="Id">2134141914L</v>
-                      <v n="Value">43</v>
-                    </o>
-                    <o>
-                      <v n="Id">4062784938L</v>
-                      <v n="Value">"Element-Switch-PushSwitch-Gray"</v>
-                    </o>
-                    <o>
-                      <v n="Id">493260384L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">135947015L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2678395525L</v>
-                      <v n="Value">1U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2565699834L</v>
-                      <v n="Value">"VCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">296037572L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">390574330L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">571893170L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">743958181L</v>
-                      <v n="Value">"stIO.stIn.xManualSendCheck"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
-                    </o>
-                  </l>
-                </o>
-                <v n="VisualElementName">"PushSwitch"</v>
-                <v n="VisualElementTypeName">"VisuFbElemPushSwitch"</v>
-                <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_54"</v>
-                <n n="VisualElementOfflinePaintCommands" />
-                <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{f5e09003-0051-4044-8d26-e57d3f626be0}</v>
-                <v n="VisualElementOwningObjectGuid">{f28ef4db-7197-4f06-b587-d328527c7bba}</v>
-                <a n="LMGuids" et="Guid" />
-                <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">55</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
-              </o>
-              <o>
-                <a n="ConfiguredComplexInputs" et="ComplexInput" />
-                <l n="Elements" t="ArrayList" />
-                <n n="VisualElementDescription" />
-                <o n="VisualElemMemberList" t="VisualElemMemberList">
-                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
-                    <o>
-                      <v n="Id">1931512087L</v>
-                      <v n="Value">"TAP"</v>
-                    </o>
-                    <o>
-                      <v n="Id">300685745L</v>
-                      <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">2812299069L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">494569607L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">1649127785L</v>
-                      <v n="Value">97</v>
-                    </o>
-                    <o>
-                      <v n="Id">357335551L</v>
-                      <v n="Value">253</v>
-                    </o>
-                    <o>
-                      <v n="Id">2422045748L</v>
-                      <v n="Value">38</v>
-                    </o>
-                    <o>
-                      <v n="Id">2134141914L</v>
-                      <v n="Value">43</v>
-                    </o>
-                    <o>
-                      <v n="Id">4062784938L</v>
-                      <v n="Value">"Element-Switch-PushSwitch-Gray"</v>
-                    </o>
-                    <o>
-                      <v n="Id">493260384L</v>
-                      <v n="Value">4294967295U</v>
-                    </o>
-                    <o>
-                      <v n="Id">135947015L</v>
-                      <v n="Value">4278190080U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2678395525L</v>
-                      <v n="Value">1U</v>
-                    </o>
-                    <o>
-                      <v n="Id">2340015797L</v>
-                      <v n="Value">"HCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2565699834L</v>
-                      <v n="Value">"VCENTER"</v>
-                    </o>
-                    <o>
-                      <v n="Id">296037572L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">390574330L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">571893170L</v>
-                      <v n="Value">""</v>
-                    </o>
-                    <o>
-                      <v n="Id">743958181L</v>
-                      <v n="Value">"stIO.stIn.xManualSendGetres"</v>
-                    </o>
-                    <o>
-                      <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
-                    </o>
-                  </l>
-                </o>
-                <v n="VisualElementName">"PushSwitch"</v>
-                <v n="VisualElementTypeName">"VisuFbElemPushSwitch"</v>
-                <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_56"</v>
-                <n n="VisualElementOfflinePaintCommands" />
-                <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{bb760ecd-23ce-4028-adcd-9fce1bef32cb}</v>
-                <v n="VisualElementOwningObjectGuid">{f28ef4db-7197-4f06-b587-d328527c7bba}</v>
-                <a n="LMGuids" et="Guid" />
-                <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">57</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
-              </o>
-              <o>
-                <a n="ConfiguredComplexInputs" et="ComplexInput" />
-                <l n="Elements" t="ArrayList" />
-                <n n="VisualElementDescription" />
-                <o n="VisualElemMemberList" t="VisualElemMemberList">
-                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
-                    <o>
-                      <v n="Id">2340015797L</v>
                       <v n="Value">"HCENTER"</v>
                     </o>
                     <o>
@@ -3488,7 +2603,7 @@
                     </o>
                     <o>
                       <v n="Id">390574330L</v>
-                      <v n="Value">"TRIG    CHECK   GETRES"</v>
+                      <v n="Value">""</v>
                     </o>
                     <o>
                       <v n="Id">3729828405L</v>
@@ -3525,10 +2640,6 @@
                     <o>
                       <v n="Id">2597686782L</v>
                       <v n="Value">false</v>
-                    </o>
-                    <o>
-                      <v n="Id">823443203L</v>
-                      <v n="Value">"125"</v>
                     </o>
                   </l>
                 </o>
@@ -3581,8 +2692,8 @@
                       <v n="Id">494569607L</v>
                       <l n="Value" t="ArrayList" cet="NamedStyleColor">
                         <o>
-                          <v n="Color">-16777216</v>
-                          <v n="CanonicalName">"BasicElement-Frame-Color"</v>
+                          <v n="Color">-2830136</v>
+                          <v n="CanonicalName">"Element-Frame-Color"</v>
                         </o>
                       </l>
                     </o>
@@ -3591,7 +2702,7 @@
                       <l n="Value" t="ArrayList" cet="NamedStyleColor">
                         <o>
                           <v n="Color">-1</v>
-                          <v n="CanonicalName">"BasicElement-Fill-Color"</v>
+                          <v n="CanonicalName">"Element-Fill-Color"</v>
                         </o>
                       </l>
                     </o>
@@ -3600,7 +2711,7 @@
                       <l n="Value" t="ArrayList" cet="NamedStyleColor">
                         <o>
                           <v n="Color">-65536</v>
-                          <v n="CanonicalName">"BasicElement-Alarm-Frame-Color"</v>
+                          <v n="CanonicalName">"Element-Alarm-Frame-Color"</v>
                         </o>
                       </l>
                     </o>
@@ -3609,7 +2720,7 @@
                       <l n="Value" t="ArrayList" cet="NamedStyleColor">
                         <o>
                           <v n="Color">-12337</v>
-                          <v n="CanonicalName">"BasicElement-Alarm-Fill-Color"</v>
+                          <v n="CanonicalName">"Element-Alarm-Fill-Color"</v>
                         </o>
                       </l>
                     </o>
@@ -3620,6 +2731,10 @@
                     <o>
                       <v n="Id">2565699834L</v>
                       <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4134387352L</v>
+                      <v n="Value">"NONE"</v>
                     </o>
                     <o>
                       <v n="Id">1603690730L</v>
@@ -3642,16 +2757,20 @@
                       <v n="Value">4278190080U</v>
                     </o>
                     <o>
+                      <v n="Id">1999528970L</v>
+                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                    </o>
+                    <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">155</v>
+                      <v n="Value">256</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">258</v>
+                      <v n="Value">255</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">236</v>
+                      <v n="Value">119</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
@@ -3674,46 +2793,38 @@
                       </l>
                     </o>
                     <o>
-                      <v n="Id">550940142L</v>
-                      <v n="Value">273</v>
-                    </o>
-                    <o>
-                      <v n="Id">1473355128L</v>
-                      <v n="Value">273</v>
+                      <v n="Id">1337389588L</v>
+                      <v n="Value">"FROM_STYLE"</v>
                     </o>
                     <o>
                       <v n="Id">2678395525L</v>
                       <v n="Value">1U</v>
                     </o>
                     <o>
-                      <v n="Id">564465120L</v>
-                      <v n="Value">"VISU_ST_RECTANGLE"</v>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">"%d"</v>
                     </o>
                     <o>
-                      <v n="Id">390574330L</v>
-                      <v n="Value">"Received Data: %s"</v>
+                      <v n="Id">2477733581L</v>
+                      <v n="Value">"fbMotorX.mcMoveAbsolute.Position"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
                       <v n="Value">false</v>
                     </o>
                     <o>
-                      <v n="Id">2477733581L</v>
-                      <v n="Value">"fbTCP.TxRx.sReceived"</v>
-                    </o>
-                    <o>
                       <v n="Id">823443203L</v>
-                      <v n="Value">"85"</v>
+                      <v n="Value">"58"</v>
                     </o>
                   </l>
                 </o>
-                <v n="VisualElementName">"Rectangle"</v>
-                <v n="VisualElementTypeName">"VisuFbElemSimple"</v>
+                <v n="VisualElementName">"Textfield"</v>
+                <v n="VisualElementTypeName">"VisuFbElemTextfield"</v>
                 <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_60"</v>
+                <v n="VisualElementIdentifier">"GenElemInst_62"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
-                <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="InputBoxInputAction[]">
+                <d n="VisualElementInputActions" t="Hashtable" ckt="String" cvt="IInputAction[]">
                   <v>OnMouseClick</v>
                   <a cet="InputBoxInputAction">
                     <o>
@@ -3724,39 +2835,18 @@
                       <v n="InputBoxDialogTitle">""</v>
                       <v n="Password">false</v>
                       <v n="UseTextOutputVariable">true</v>
-                      <v n="TextOutputVariableInitialized">true</v>
+                      <v n="TextOutputVariableInitialized">false</v>
                       <v n="OtherVarConversion">""</v>
                       <v n="Format">""</v>
                     </o>
                   </a>
                 </d>
-                <v n="VisualElementIdentification">{c0619031-b355-464b-8024-ec99c851fd6f}</v>
+                <v n="VisualElementIdentification">{7f66b674-ce88-4df2-83d7-dd85f2ff3acb}</v>
                 <v n="VisualElementOwningObjectGuid">{f28ef4db-7197-4f06-b587-d328527c7bba}</v>
                 <a n="LMGuids" et="Guid" />
                 <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">61</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
+                <v n="VisualElementId">64</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
               </o>
             </l>
             <v n="BackgroundBitmapId">""</v>
@@ -3858,10 +2948,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>91633d1d-7c1e-474d-96ab-5e0efadf2494</v>
-                <v>FB_Exit</v>
-                <v>a5a02df0-1bf7-4ed5-9f3f-30308e75ea0a</v>
                 <v>FB_Reinit</v>
                 <v>25957852-7106-49f1-8dc0-708357784405</v>
+                <v>FB_Exit</v>
+                <v>a5a02df0-1bf7-4ed5-9f3f-30308e75ea0a</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{eef4b33f-44cf-4e9d-8cd2-cb05d879518d}</v>
@@ -3905,7 +2995,7 @@
             </o>
             <v n="DialogDut">{4f1986a4-6d08-4333-af33-40094b306529}</v>
           </o>
-          <v n="LastUsedIdForIdentifier">60</v>
+          <v n="LastUsedIdForIdentifier">62</v>
           <o n="TextDocument" t="TextDocument">
             <a n="TextLines" cet="TextLine">
               <o>
@@ -3952,8 +3042,8 @@
         <Type n="Guid">System.Guid</Type>
         <Type n="Hashtable">System.Collections.Hashtable</Type>
         <Type n="HotkeyConfiguration">{6b108d46-58af-4e41-a3f4-174d8f160cc4}</Type>
+        <Type n="IInputAction[]">_3S.CoDeSys.VisualElem.IInputAction[], VisualElem, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="InputBoxInputAction">{e8e7e747-f76f-4dee-ab1c-b9637e41ac26}</Type>
-        <Type n="InputBoxInputAction[]">_3S.CoDeSys.VisualElem.InputBoxInputAction[], VisualElem.plugin, Version=3.5.8.40, Culture=neutral, PublicKeyToken=null</Type>
         <Type n="Int16">System.Int16</Type>
         <Type n="Int32">System.Int32</Type>
         <Type n="Int64">System.Int64</Type>

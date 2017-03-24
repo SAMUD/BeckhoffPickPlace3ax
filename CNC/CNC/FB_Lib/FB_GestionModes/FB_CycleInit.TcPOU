@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_CycleInit" Id="{78f8b3c7-c7ef-4e76-a081-037ca3472bc0}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_CycleInit
 VAR_INPUT
@@ -32,14 +32,10 @@ CASE fbEtape.iNo OF
 			fbEtape.piVal:=100;
 		END_IF
 	100: fbEtape.psMess:='Init | Reset on Actuators and Motor';
-		fbEtape.piVal:=101;
-	101: fbEtape.psMess:='Init | Wait disconnecting TCP';
-		IF fbTCP.xEnable=FALSE AND fbTCP.xForceDisconnect=FALSE THEN
-			fbEtape.piVal:=102;
-		END_IF
+		fbEtape.piVal:=102;
 		
 	102:fbEtape.psMess:='Init | Init all positions';
-		IF  fbAct1.xInInPos AND fbAct2.xInInPos AND fbAct3.xInInPos AND fbTCP.TCPParam.xConnected THEN
+		IF  fbAct1.xInInPos AND fbAct2.xInInPos AND fbAct3.xInInPos THEN
 			fbEtape.piSVal:=999;
 		END_IF
 	
@@ -52,5 +48,10 @@ END_CASE
 xBusy:=fbEtape.iNo<>0;
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>
+    <LineIds Name="FB_CycleInit">
+      <LineId Id="3" Count="14" />
+      <LineId Id="22" Count="13" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

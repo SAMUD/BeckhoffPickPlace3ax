@@ -55,12 +55,6 @@ ELSIF (fbAct3.stError.xState) THEN
 ELSIF (fbCycleAuto.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbCycleAuto.iId;
-(*ELSIF (fbMotor.xError) THEN
-	stParam.stStatus.xErreur:=TRUE;
-	stParam.stStatus.iId:=fbMotor.iErrorID;*)
-ELSIF (fbTCP.OutputGlobal.xError) THEN
-	stParam.stStatus.xErreur:=TRUE;
-	stParam.stStatus.iId:=fbTCP.OutPutGlobal.nErrID;
 ELSIF NOT fbBtn.xAirPressureOk THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=1;
@@ -93,8 +87,7 @@ fbCycleMan();
 //fbMotor();
 //stio.stOut.lMotorOut:=fbMotor.fbConvertNumToMotorOut.QaSortie;
 
-//call TCP Block
-fbTCP();
+
 
 //******************************************
 //Output actions
@@ -130,6 +123,7 @@ fbMotorX.mcPower.Override:=100;
 fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=99;
 //pilotage Rest
 fbMotorX.mcReset.Execute:=fbMMA.iEtape=810;
+fbMotorX.mSetMoveAbsLent();
 //pilotage déplacement absolu
 //fbMoteur1.mcMoveAbsolute.Execute:=fbCycleAuto.iStep=125
 //						OR fbCycleAuto.iStep=125
@@ -145,29 +139,6 @@ fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
 fbAct2.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
 fbAct3.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
 
-//Reset de la connexion TCIP
-fbTCP.xForceDisconnect:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
-IF fbCycleInit.iEtape=102 THEN
-	fbTCP.xEnable:=TRUE;
-END_IF
-
-//TCP send data
-IF fbCycleAuto.iEtape=111 OR fbCycleAuto.iEtape=190 OR fbCycleMan.iEtape=209 THEN
-	fbTCP.TxRx.sSend:='TRIG';
-END_IF
-IF fbCycleAuto.iEtape=192 OR fbCycleMan.iEtape=210 THEN
-	fbTCP.TxRx.sSend:='GETRES';
-END_IF
-IF fbCycleAuto.iEtape=113 OR fbCycleMan.iEtape=211 THEN
-	fbTCP.TxRx.sSend:='CHECK';
-END_IF
-
-//clear received string
-IF fbCycleAuto.iEtape=113 OR fbCycleAuto.iEtape=800 OR fbCycleAuto.iEtape=130 OR fbCycleAuto.iEtape=192 OR fbCycleAuto.iEtape=200
-OR fbMMA.iEtape=810 OR fbCycleInit.iEtape=100 THEN
-	fbTCP.TxRx.sReceived:='';
-END_IF
-
 
 
 
@@ -177,16 +148,20 @@ END_IF
       <LineId Id="3" Count="5" />
       <LineId Id="161" Count="3" />
       <LineId Id="160" Count="0" />
-      <LineId Id="9" Count="101" />
+      <LineId Id="9" Count="36" />
+      <LineId Id="52" Count="32" />
+      <LineId Id="86" Count="24" />
       <LineId Id="158" Count="0" />
       <LineId Id="165" Count="4" />
       <LineId Id="171" Count="1" />
       <LineId Id="174" Count="1" />
+      <LineId Id="185" Count="0" />
       <LineId Id="177" Count="4" />
       <LineId Id="184" Count="0" />
       <LineId Id="120" Count="1" />
       <LineId Id="182" Count="0" />
-      <LineId Id="122" Count="32" />
+      <LineId Id="122" Count="4" />
+      <LineId Id="150" Count="4" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
