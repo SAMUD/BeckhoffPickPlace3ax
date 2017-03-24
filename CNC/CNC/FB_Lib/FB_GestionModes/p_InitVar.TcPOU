@@ -19,23 +19,10 @@ fbAct1.stParam.tTimeOut:=T#5S;
 fbAct1.stParam.tMoveInTimeDelay:=T#0.2S;
 fbAct1.stParam.tMoveOutTimeDelay:=T#0.2S;
 
-fbAct2.stParam.xPresenceSensIn:=TRUE;
-fbAct2.stParam.xPresenceSensOut:=TRUE;
-fbAct2.stParam.tTimeOut:=T#5S;
-fbAct2.stParam.tMoveInTimeDelay:=T#0.2S;
-fbAct2.stParam.tMoveOutTimeDelay:=T#0.2S;
-
-fbAct3.stParam.xPresenceSensIn:=FALSE;
-fbAct3.stParam.xPresenceSensOut:=TRUE;
-fbAct3.stParam.tTimeOut:=T#5S;
-fbAct3.stParam.tMoveInTimeDelay:=T#3S;
-fbAct3.stParam.tMoveOutTimeDelay:=T#0.2S;
 
 stParam.stStatus.eMMA:=Init;
 
-(*
-stio.stIn.xMotorDirection:=FALSE;
-stio.stOut.QxMotorDirection:=FALSE;*)
+
 
 
 
@@ -44,9 +31,12 @@ stio.stOut.QxMotorDirection:=FALSE;*)
 ]]></ST>
     </Implementation>
     <LineIds Name="p_InitVar">
-      <LineId Id="3" Count="19" />
+      <LineId Id="3" Count="5" />
+      <LineId Id="75" Count="1" />
+      <LineId Id="22" Count="0" />
       <LineId Id="74" Count="0" />
-      <LineId Id="48" Count="3" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="51" Count="0" />
       <LineId Id="61" Count="4" />
       <LineId Id="2" Count="0" />
     </LineIds>

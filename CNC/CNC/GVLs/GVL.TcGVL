@@ -3,9 +3,7 @@
   <GVL Name="GVL" Id="{29e74ae1-1e66-43a7-ba4b-1961dad16adc}">
     <Declaration><![CDATA[VAR_GLOBAL
 
-	fbAct1:FB_ActionneurSimple;	//Act1 corresponds to charging
-	fbAct2:FB_ActionneurSimple;	//Act2 corresponds to engraving
-	fbAct3:FB_ActionneurSimple;	//Act3 corresponds to tightening
+	fbAct1:FB_ActionneurSimple;	//Act1 corresponds to holding the object
 	
 	xModeStepForStep :BOOL;
 	xNextStep : BOOL;

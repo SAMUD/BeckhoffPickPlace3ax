@@ -9,14 +9,8 @@ END_VAR
       <ST><![CDATA[//******************************************
 //cyclic call of all needed FB
 //******************************************
-
-fbAct1();	//Act1 corresponds to charging
-fbAct2();	//Act2 corresponds to engraving
-fbAct3();	//Act3 corresponds to tightening
-//exécution de l'appel du bloc moteur
-fbMotorX(stParam:=stParam.stMachine.stParamMotX);
-fbMotorY(stParam:=stParam.stMachine.stParamMotY);
-fbMotorZ(stParam:=stParam.stMachine.stParamMotZ);
+ACT_Moteur();
+ACT_Actor();
 
 fbMMA();
 
@@ -26,18 +20,8 @@ fbBtn.xReset:=stio.stIn.xResetIO OR NOT stio.stIn.xAirPressureOk;
 fbBtn.xStart:=stio.stIn.xStartIO;
 fbBtn.xStop:=stio.stIn.xStopIO;
 fbBtn.xAirPressureOk:=stio.stIn.xAirPressureOk;
-fbBtn.xManualAct1GoIn:=stio.stIn.xManualAct1GoIn;
-fbBtn.xManualAct1GoOut:=stio.stIn.xManualAct1GoOut;
 fbBtn.xManualAct2GoIn:=stio.stIn.xManualAct2GoIn;
 fbBtn.xManualAct2GoOut:=stio.stIn.xManualAct2GoOut;
-fbBtn.xManualAct3GoIn:=stio.stIn.xManualAct3GoIn;
-fbBtn.xManualAct3GoOut:=stio.stIn.xManualAct3GoOut;
-fbBtn.xManualCNCMotorTurnOn:=stio.stIn.xManualCNCMotorTurnOn;
-fbBtn.xManualCNCMotorTurnOff:=stio.stIn.xManualCNCMotorTurnOff;
-fbBtn.xEmulateTCPConnection:=stio.stIn.xEmulateTCPConnection;
-fbBtn.xManualSendTrig:=stio.stIn.xManualSendTrig;
-fbBtn.xManualSendCheck:=stio.stIn.xManualSendCheck;
-fbBtn.xManualSendGetres:=stio.stIn.xManualSendGetres;
 //and now call it
 fbBtn();
 
@@ -46,12 +30,6 @@ fbBtn();
 IF (fbAct1.stError.xState) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbAct1.stError.iId;
-ELSIF (fbAct2.stError.xState) THEN
-	stParam.stStatus.xErreur:=TRUE;
-	stParam.stStatus.iId:=fbAct2.stError.iId;
-ELSIF (fbAct3.stError.xState) THEN
-	stParam.stStatus.xErreur:=TRUE;
-	stParam.stStatus.iId:=fbAct3.stError.iId;
 ELSIF (fbCycleAuto.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbCycleAuto.iId;
@@ -80,14 +58,6 @@ fbCycleMan.xStart:= fbMMA.iEtape=210;
 fbCycleMan.xStop:=  fbMMa.iEtape<>210;
 fbCycleMan();
 
-//call Motor Controller
-//fbMotor.Consigne:=stIO.stIn.lSetSpeedMotor;
-//fbMotor.fbConvertTachoToNumSpeed.IaEntree:=stio.stIn.lTachoValue;
-//fbMotor.xDirection:=stio.stIn.xMotorDirection;
-//fbMotor();
-//stio.stOut.lMotorOut:=fbMotor.fbConvertNumToMotorOut.QaSortie;
-
-
 
 //******************************************
 //Output actions
@@ -96,73 +66,116 @@ fbCycleMan();
 //activate Lamp1
 stIo.stOut.QxLampeRed:=fbCycleAuto.iEtape<800 AND fbCycleAuto.iEtape>0;
 
-//actuator movement autorize only if not in ARU
-fbAct1.xAutorizeIn:=fbBtn.xAru;
-fbAct1.xAutorizeOut:=fbBtn.xAru;
-fbAct2.xAutorizeIn:=fbBtn.xAru;
-fbAct2.xAutorizeOut:=fbBtn.xAru;
-fbAct3.xAutorizeIn:=fbBtn.xAru;
-fbAct3.xAutorizeOut:=fbBtn.xAru;
 
-//move in and out each actuator
-fbAct1.xInGoOut:=fbCycleAuto.iEtape=130 OR fbCycleMan.iEtape=202;
-fbAct2.xInGoOut:=fbCycleAuto.iEtape=160 OR fbCycleMan.iEtape=204;
-fbAct3.xInGoOut:=fbCycleAuto.iEtape=140 OR fbCycleMan.iEtape=206;
-
-fbAct3.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=205;
-fbAct2.xInGoIn:=fbCycleAuto.iEtape=170 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=203;
-fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
-
-//Motor
-//pilotage mise en puissance
-fbMotorX.mcPower.Enable:=stIO.stIn.IxAruIO;
-fbMotorX.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
-fbMotorX.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
-fbMotorX.mcPower.Override:=100;
-//pilotage homing (prise d'origine)
-fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=99;
-//pilotage Rest
-fbMotorX.mcReset.Execute:=fbMMA.iEtape=810;
-fbMotorX.mSetMoveAbsLent();
-//pilotage déplacement absolu
-//fbMoteur1.mcMoveAbsolute.Execute:=fbCycleAuto.iStep=125
-//						OR fbCycleAuto.iStep=125
-//						OR fbCycleAuto.iStep=235
-//						OR fbCycleAuto.iStep=245;
-
-//Motor Direction Output
-//stio.stOut.QxMotorDirection:=stio.stIn.xMotorDirection;
-
-
-//Reset des Actionneurs avan le init
-fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
-fbAct2.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
-fbAct3.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
 
 
 
 
 ]]></ST>
     </Implementation>
+    <Action Name="ACT_Actor" Id="{414eda35-1edd-4eba-bf1d-081b5c6b8c4d}">
+      <Implementation>
+        <ST><![CDATA[//Air-Actor controlling part
+//cyclic call of the FB-blocs
+fbAct1();	//Act2 corresponds to taking the object
+
+//actuator movement autorize only if not in ARU
+fbAct1.xAutorizeIn:=fbBtn.xAru;
+fbAct1.xAutorizeOut:=fbBtn.xAru;
+
+//move in and out each actuator
+fbAct1.xInGoOut:=fbCycleAuto.iEtape=130 OR fbCycleMan.iEtape=202;
+
+fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
+
+//Reset des Actionneurs avan le init
+fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_Moteur" Id="{5fefa910-7333-41fc-b96a-1b2084cd9d5e}">
+      <Implementation>
+        <ST><![CDATA[//Motor controlling part
+//exécution de l'appel du bloc moteur
+fbMotorX(stParam:=stParam.stMachine.stParamMotX);
+fbMotorY(stParam:=stParam.stMachine.stParamMotY);
+fbMotorZ(stParam:=stParam.stMachine.stParamMotZ);
+
+
+//pilotage mise en puissance
+fbMotorX.mcPower.Enable:=stIO.stIn.IxAruIO;
+fbMotorX.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
+fbMotorX.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
+fbMotorX.mcPower.Override:=100;
+fbMotorX.mSetMoveAbsLent();
+
+fbMotorY.mcPower.Enable:=stIO.stIn.IxAruIO;
+fbMotorY.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
+fbMotorY.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
+fbMotorY.mcPower.Override:=100;
+fbMotorY.mSetMoveAbsLent();
+
+fbMotorZ.mcPower.Enable:=stIO.stIn.IxAruIO;
+fbMotorZ.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
+fbMotorZ.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
+fbMotorZ.mcPower.Override:=100;
+fbMotorY.mSetMoveAbsLent();
+
+
+//pilotage homing (prise d'origine)
+//fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=99;
+
+
+//pilotage Rest
+fbMotorX.mcReset.Execute:=fbMMA.iEtape=810;
+
+//pilotage déplacement absolu
+//fbMoteur1.mcMoveAbsolute.Execute:=fbCycleAuto.iStep=125
+//						OR fbCycleAuto.iStep=125
+//						OR fbCycleAuto.iStep=235
+//						OR fbCycleAuto.iStep=245;]]></ST>
+      </Implementation>
+    </Action>
     <LineIds Name="MAIN">
-      <LineId Id="3" Count="5" />
-      <LineId Id="161" Count="3" />
-      <LineId Id="160" Count="0" />
-      <LineId Id="9" Count="36" />
-      <LineId Id="52" Count="32" />
-      <LineId Id="86" Count="24" />
-      <LineId Id="158" Count="0" />
-      <LineId Id="165" Count="4" />
-      <LineId Id="171" Count="1" />
-      <LineId Id="174" Count="1" />
-      <LineId Id="185" Count="0" />
-      <LineId Id="177" Count="4" />
-      <LineId Id="184" Count="0" />
-      <LineId Id="120" Count="1" />
-      <LineId Id="182" Count="0" />
-      <LineId Id="122" Count="4" />
+      <LineId Id="3" Count="2" />
+      <LineId Id="188" Count="1" />
+      <LineId Id="9" Count="7" />
+      <LineId Id="19" Count="1" />
+      <LineId Id="29" Count="7" />
+      <LineId Id="43" Count="2" />
+      <LineId Id="52" Count="23" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="86" Count="8" />
       <LineId Id="150" Count="4" />
       <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.ACT_Actor">
+      <LineId Id="4" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="6" Count="3" />
+      <LineId Id="12" Count="2" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="25" Count="1" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.ACT_Moteur">
+      <LineId Id="20" Count="0" />
+      <LineId Id="43" Count="2" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="2" Count="1" />
+      <LineId Id="24" Count="2" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="27" Count="4" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="32" Count="4" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="37" Count="1" />
+      <LineId Id="9" Count="7" />
+      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
