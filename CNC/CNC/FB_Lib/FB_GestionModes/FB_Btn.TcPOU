@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_Btn" Id="{9d1b347e-0701-4dd1-a9e2-079105cb34be}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Btn
 VAR_INPUT
@@ -11,24 +11,19 @@ VAR_INPUT
 	
 	xManualAct1GoIn: BOOL;
 	xManualAct1GoOut : BOOL;
-	xManualAct2GoIn: BOOL;
-	xManualAct2GoOut : BOOL;
-	xManualAct3GoIn: BOOL;
-	xManualAct3GoOut : BOOL;
-	xManualCNCMotorTurnOn : BOOL;
-	xManualCNCMotorTurnOff : BOOL;
-	xManualSendTrig : BOOL;
-	xManualSendCheck : BOOL;
-	xManualSendGetres : BOOL;
-	
-	xEmulateTCPConnection : BOOL;
 	
 	xAirPressureOk : BOOL;
+	
+	xHomingPosReached : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 ]]></ST>
     </Implementation>
+    <LineIds Name="FB_Btn">
+      <LineId Id="3" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

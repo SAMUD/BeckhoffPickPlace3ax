@@ -43,6 +43,7 @@ Id;Default;fr;de;en
 22;Going in;rétracter;ein-fahren;retract
 21;Going out;étendre;aus-fahren;extend
 91;h: %s;;;
+128;HomingPos Emulator;;;
 48;ID: %d;;;
 102;Ir Ecart : %.5f;;;
 103;Ir Tension: %.2f;;;

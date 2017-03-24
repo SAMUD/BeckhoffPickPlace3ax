@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <Visu Name="VisuInit" Id="{328d1b28-1cb1-41b4-a0f7-1e71e74c49ed}">
     <XmlArchive>
       <Data>
@@ -92,11 +92,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">-1</v>
+                      <v n="Value">0</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">-2</v>
+                      <v n="Value">0</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -124,11 +124,11 @@
                     </o>
                     <o>
                       <v n="Id">550940142L</v>
-                      <v n="Value">203</v>
+                      <v n="Value">204</v>
                     </o>
                     <o>
                       <v n="Id">1473355128L</v>
-                      <v n="Value">157</v>
+                      <v n="Value">159</v>
                     </o>
                     <o>
                       <v n="Id">2678395525L</v>
@@ -852,11 +852,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">24</v>
+                      <v n="Value">93</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">193</v>
+                      <v n="Value">21</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -999,11 +999,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">21</v>
+                      <v n="Value">90</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">237</v>
+                      <v n="Value">65</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1118,11 +1118,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">142</v>
+                      <v n="Value">13</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">197</v>
+                      <v n="Value">173</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1170,7 +1170,7 @@
                     </o>
                     <o>
                       <v n="Id">743958181L</v>
-                      <v n="Value">"fbBtn.xNextPas"</v>
+                      <v n="Value">"stIO.stIn.xHomingPosReached"</v>
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
@@ -1265,23 +1265,23 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">150</v>
+                      <v n="Value">20</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">236</v>
+                      <v n="Value">216</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">111</v>
+                      <v n="Value">139</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">30</v>
+                      <v n="Value">27</v>
                     </o>
                     <o>
                       <v n="Id">390574330L</v>
-                      <v n="Value">"Do Step"</v>
+                      <v n="Value">"HomingPos Emulator"</v>
                     </o>
                     <o>
                       <v n="Id">3729828405L</v>
@@ -1321,7 +1321,7 @@
                     </o>
                     <o>
                       <v n="Id">823443203L</v>
-                      <v n="Value">"113"</v>
+                      <v n="Value">"128"</v>
                     </o>
                   </l>
                 </o>
@@ -1460,10 +1460,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>4d9e95c5-d535-46ee-9662-41cbf6bf69f2</v>
-                <v>FB_Reinit</v>
-                <v>4a1e939a-1074-491d-a6ff-7113851c1c3f</v>
                 <v>FB_Exit</v>
                 <v>0f6126cd-9dda-4c6a-b9bd-88044535fce6</v>
+                <v>FB_Reinit</v>
+                <v>4a1e939a-1074-491d-a6ff-7113851c1c3f</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{901d4d8a-828f-4573-b7cc-0642e5a4e2a9}</v>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{0527ee1f-3b29-4196-8c2e-8ce9c49db0bb}</ProjectGuid>
+    <AssemblyName>XY-Position</AssemblyName>
+    <Name>XY-Position</Name>
+    <RootNamespace>XY-Position</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Scope XY Project.tcscope">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

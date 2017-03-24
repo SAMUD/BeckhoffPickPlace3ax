@@ -402,6 +402,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"128"</v>
+              <v n="TextDefault">"HomingPos Emulator"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"48"</v>
               <v n="TextDefault">"ID: %d"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">

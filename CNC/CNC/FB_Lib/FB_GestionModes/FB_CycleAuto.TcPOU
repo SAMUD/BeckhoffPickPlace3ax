@@ -62,10 +62,8 @@ CASE fbEtape.iNo OF
 			fbEtape.piSVal:=140;
 		END_IF
 	140:fbEtape.psMess:='Auto | Act3 go out, Turn on motor';
-		IF fbAct3.xInOutPos THEN
 			fbEtape.piSVal:=150;
 			fbEtape.tTimeQ:=T#10S;
-		END_IF
 	150:fbEtape.psMess:='Auto | Wait until Motor has right speed';
 		//IF fbMotor.PID.bARWactive=FALSE THEN
 			//Motor has right speed
@@ -77,22 +75,16 @@ CASE fbEtape.iNo OF
 			iId:=210;
 		END_IF
 	160:fbEtape.psMess:='Auto | Act2 go out';
-	IF fbAct2.xInOutPos THEN
 		fbEtape.piSVal:=161;
 		fbEtape.tTimeQ:=T#1S;
-	END_IF
 	161:fbEtape.psMess:='Auto | Wait 1s';
 		IF fbEtape.xTimeQ THEN
 			fbEtape.piSVal:=170;
 		END_IF		
 	170:fbEtape.psMess:='Auto | Actor2 go In, Turn off motor';
-		IF fbAct2.xInInPos THEN
 			fbEtape.piSVal:=180;
-		END_IF
 	180:fbEtape.psMess:='Auto | Actor1 and 3 go In';
-		IF fbAct2.xInInPos THEN
 			fbEtape.piSVal:=190;
-		END_IF
 	190:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
 		fbEtape.piVal:=191;
 	191:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
@@ -118,9 +110,7 @@ CASE fbEtape.iNo OF
 	END_IF
 	800:fbEtape.psMess:='Auto | Error occured - Going into stock state';
 		//turn off all motors and release all Actors
-		IF (fbAct1.xInInPos AND fbAct2.xInInPos AND fbAct3.xInInPos) THEN
 			fbEtape.piVal:=810;
-		END_IF
 	810:fbEtape.psMess:='Auto | Error occured - Press Reset to recover';
 		//do nothing and wait
 	
@@ -142,11 +132,21 @@ iEtape:=fbEtape.iNo;]]></ST>
       <LineId Id="33" Count="0" />
       <LineId Id="38" Count="2" />
       <LineId Id="42" Count="0" />
-      <LineId Id="47" Count="38" />
+      <LineId Id="47" Count="4" />
+      <LineId Id="53" Count="1" />
+      <LineId Id="56" Count="10" />
+      <LineId Id="68" Count="1" />
+      <LineId Id="71" Count="4" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="83" Count="2" />
       <LineId Id="87" Count="0" />
       <LineId Id="92" Count="2" />
       <LineId Id="96" Count="0" />
-      <LineId Id="101" Count="34" />
+      <LineId Id="101" Count="16" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="121" Count="14" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

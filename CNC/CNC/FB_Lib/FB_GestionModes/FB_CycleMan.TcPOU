@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_CycleMan" Id="{0a4059b2-71e6-4341-9059-42714db8bec8}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_CycleMan
 VAR_INPUT
@@ -41,36 +41,9 @@ CASE fbEtape.iNo OF
 		IF (fbBtn.xManualAct1GoOut) THEN
 			fbEtape.piVal:=202;
 		END_IF
-		//Act2:
-		IF (fbBtn.xManualAct2GoIn) THEN
-			fbEtape.piVal:=203;
-		END_IF
-		IF (fbBtn.xManualAct2GoOut) THEN
-			fbEtape.piVal:=204;
-		END_IF
-		//Act3:
-		IF (fbBtn.xManualAct3GoIn) THEN
-			fbEtape.piVal:=205;
-		END_IF
-		IF (fbBtn.xManualAct3GoOut) THEN
-			fbEtape.piVal:=206;
-		END_IF
-		IF (fbBtn.xManualCNCMotorTurnOn) THEN
-			fbEtape.piVal:=207;
-			inc:=inc+1;		
-		END_IF
-		IF (fbBtn.xManualCNCMotorTurnOff) THEN
-			fbEtape.piVal:=208;
-		END_IF
-		IF (fbBtn.xManualSendTrig) THEN
-			fbEtape.piVal:=209;
-		END_IF
-		IF (fbBtn.xManualSendGetres) THEN
-			fbEtape.piVal:=210;
-		END_IF
-		IF (fbBtn.xManualSendCheck) THEN
-			fbEtape.piVal:=211;
-		END_IF
+		
+		
+		
 		
 	201: fbEtape.psMess:='Manual | Action : Act 1 Go in';
 		IF (NOT fbBtn.xManualAct1GoIn) THEN
@@ -80,30 +53,12 @@ CASE fbEtape.iNo OF
 		IF (NOT fbBtn.xManualAct1GoOut) THEN
 			fbEtape.piVal:=100;
 		END_IF
-	203: fbEtape.psMess:='Manual | Action : Act 2 Go in';
-		IF (NOT fbBtn.xManualAct2GoIn) THEN
-			fbEtape.piVal:=100;
-		END_IF
-	204: fbEtape.psMess:='Manual | Action : Act 2 Go out';
-		IF (NOT fbBtn.xManualAct2GoOut) THEN
-			fbEtape.piVal:=100;
-		END_IF
-	205: fbEtape.psMess:='Manual | Action : Act 3 Go in';
-		IF (NOT fbBtn.xManualAct3GoIn) THEN
-			fbEtape.piVal:=100;
-		END_IF
-	206: fbEtape.psMess:='Manual | Action : Act 3 Go out';
-		IF (NOT fbBtn.xManualAct3GoOut) THEN
-			fbEtape.piVal:=100;
-		END_IF
-	207: fbEtape.psMess:='Manual | Action : CNC Motor On';
-		IF (NOT fbBtn.xManualCNCMotorTurnOn) THEN
-			fbEtape.piVal:=100;
-		END_IF
-	208: fbEtape.psMess:='Manual | Action : CNC Motor Off';
-		IF (NOT fbBtn.xManualCNCMotorTurnOff) THEN
-			fbEtape.piVal:=100;
-		END_IF
+	
+	
+	
+	
+	
+	
 	209: fbEtape.psMess:='Manual | Action : Send Trig';
 		fbEtape.piVal:=100;
 	210: fbEtape.psMess:='Manual | Action : Send Getres';
@@ -126,5 +81,20 @@ END_CASE
 xBusy:=fbEtape.iNo<>0;
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>
+    <LineIds Name="FB_CycleMan">
+      <LineId Id="3" Count="21" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="54" Count="5" />
+      <LineId Id="124" Count="2" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="87" Count="20" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

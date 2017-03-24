@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <DUT Name="ST_IOInput" Id="{9cd39bb8-075d-45c1-8479-47b6e0b379ec}">
     <Declaration><![CDATA[TYPE ST_IOInput :
 STRUCT
@@ -12,23 +12,13 @@ STRUCT
 	
 	xManualAct1GoIn AT%I* : BOOL;
 	xManualAct1GoOut AT%I* : BOOL;
-	xManualAct2GoIn AT%I* : BOOL;
-	xManualAct2GoOut AT%I* : BOOL;
-	xManualAct3GoIn AT%I* : BOOL;
-	xManualAct3GoOut AT%I* : BOOL;
-	xManualCNCMotorTurnOn AT%I* : BOOL;
-	xManualCNCMotorTurnOff AT%I* : BOOL;
-	xManualSendTrig AT%I* : BOOL;
-	xManualSendCheck AT%I* : BOOL;
-	xManualSendGetres AT%I* : BOOL;
-	
-	xEmulateTCPConnection AT%I* : BOOL;
 	
 	lSetSpeedMotor : LREAL;
-	lTachoValue AT%I* : DINT;
-	xMotorDirection AT%I* : BOOL;
 	
 	xAirPressureOk AT%I* : BOOL;
+	
+	xHomingPosReached AT%I* : BOOL;
+	
 END_STRUCT
 END_TYPE
 ]]></Declaration>

@@ -1490,8 +1490,9 @@ External Setpoint Generation:
 					<Name>Axis 1</Name>
 					<AxisPara>
 						<Dynamic Acceleration="6090.01" Deceleration="6090.01" Jerk="14319.7"/>
-						<Velo FastManual="3500" Maximum="3500"/>
+						<Velo RefSync="10" FastManual="3500" Maximum="3500"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
+						<ParameterChanged>7</ParameterChanged>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="25">
 						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="12800" MaxCount="#x0000ffff"/>
@@ -1647,7 +1648,7 @@ External Setpoint Generation:
 					<AxisPara>
 						<General UnitName="°"/>
 						<Dynamic Acceleration="127260" Deceleration="127260" Jerk="25706400"/>
-						<Velo SlowManual="15000" FastManual="40000" Maximum="58000"/>
+						<Velo RefSearch="500" RefSync="100" SlowManual="15000" FastManual="40000" Maximum="58000"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="26">
@@ -2110,6 +2111,46 @@ External Setpoint Generation:
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
+							<Name>GVL.stIO.stIn.IxAruIO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xStartIO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xStopIO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xResetIO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xAuto</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xManual</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xManualAct1GoIn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xManualAct1GoOut</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xAirPressureOk</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stIn.xHomingPosReached</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL.fbAct1.xInGoOut</Name>
 							<Comment>
 								<![CDATA[input for going out]]>
@@ -2156,188 +2197,6 @@ External Setpoint Generation:
 							<Comment>
 								<![CDATA[Sensor for the reached Out-Pos]]>
 							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.xInGoOut</Name>
-							<Comment>
-								<![CDATA[input for going out]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.xInGoIn</Name>
-							<Comment>
-								<![CDATA[input for going in]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.xReset</Name>
-							<Comment>
-								<![CDATA[Reset all (go back to init state]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.xAutorizeOut</Name>
-							<Comment>
-								<![CDATA[allowed to do the move requested with xInGoOut, If this is false Programm will return an error]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.xAutorizeIn</Name>
-							<Comment>
-								<![CDATA[allowed to do the move requested with xInGoIn, If this is false Programm will return an error]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.IxSensOut</Name>
-							<Comment>
-								<![CDATA[Sensor for the reached In-Pos]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.IxSensIn</Name>
-							<Comment>
-								<![CDATA[Sensor for the reached Out-Pos]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.xInGoOut</Name>
-							<Comment>
-								<![CDATA[input for going out]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.xInGoIn</Name>
-							<Comment>
-								<![CDATA[input for going in]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.xReset</Name>
-							<Comment>
-								<![CDATA[Reset all (go back to init state]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.xAutorizeOut</Name>
-							<Comment>
-								<![CDATA[allowed to do the move requested with xInGoOut, If this is false Programm will return an error]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.xAutorizeIn</Name>
-							<Comment>
-								<![CDATA[allowed to do the move requested with xInGoIn, If this is false Programm will return an error]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.IxSensOut</Name>
-							<Comment>
-								<![CDATA[Sensor for the reached In-Pos]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.IxSensIn</Name>
-							<Comment>
-								<![CDATA[Sensor for the reached Out-Pos]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.IxAruIO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xStartIO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xStopIO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xResetIO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xAuto</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManual</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualAct1GoIn</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualAct1GoOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualAct2GoIn</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualAct2GoOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualAct3GoIn</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualAct3GoOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualCNCMotorTurnOn</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualCNCMotorTurnOff</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualSendTrig</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualSendCheck</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xManualSendGetres</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xEmulateTCPConnection</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.lTachoValue</Name>
-							<Type>DINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xMotorDirection</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stIn.xAirPressureOk</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -2491,6 +2350,26 @@ External Setpoint Generation:
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
 						<Var>
+							<Name>GVL.stIO.stOut.QxLampeRed</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stOut.QxLampeVerte</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stOut.QxLampeOrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stOut.lMotorOut</Name>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL.stIO.stOut.QxMotorDirection</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL.fbAct1.xGoingOutNow</Name>
 							<Comment>
 								<![CDATA[indication that actor is going in Out-Pos]]>
@@ -2523,96 +2402,6 @@ External Setpoint Generation:
 							<Comment>
 								<![CDATA[Blocking valve. Only TRUE when autorisation is present.]]>
 							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.xGoingOutNow</Name>
-							<Comment>
-								<![CDATA[indication that actor is going in Out-Pos]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.xGoingInNow</Name>
-							<Comment>
-								<![CDATA[indication that actor is going in In-Pos]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.QxOutOutput</Name>
-							<Comment>
-								<![CDATA[Output to actuator for going Out]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.QxInOutput</Name>
-							<Comment>
-								<![CDATA[Output to actuator for going In]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct2.QxBlockingValve</Name>
-							<Comment>
-								<![CDATA[Blocking valve. Only TRUE when autorisation is present.]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.xGoingOutNow</Name>
-							<Comment>
-								<![CDATA[indication that actor is going in Out-Pos]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.xGoingInNow</Name>
-							<Comment>
-								<![CDATA[indication that actor is going in In-Pos]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.QxOutOutput</Name>
-							<Comment>
-								<![CDATA[Output to actuator for going Out]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.QxInOutput</Name>
-							<Comment>
-								<![CDATA[Output to actuator for going In]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.fbAct3.QxBlockingValve</Name>
-							<Comment>
-								<![CDATA[Blocking valve. Only TRUE when autorisation is present.]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stOut.QxLampeRed</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stOut.QxLampeVerte</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stOut.QxLampeOrange</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stOut.lMotorOut</Name>
-							<Type>DINT</Type>
-						</Var>
-						<Var>
-							<Name>GVL.stIO.stOut.QxMotorDirection</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -3354,6 +3143,7 @@ External Setpoint Generation:
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{01010011-0010-0304-1000-010110000403}" Id="#x02030030" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{05000010-0011-0101-3000-040310000101}" Id="#x02030020" Watchdog="14000000040000000400000004000000"/>
 		<MappingInfo Identifier="{00000000-0010-0304-3000-040310000403}" Id="#x02030010"/>
 		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Achse 2 - Y">
@@ -3380,18 +3170,16 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (BK1150)">
 				<Link VarA="PlcTask Inputs^GVL.fbAct1.IxSensIn" VarB="Term 6 (KL1408)^Channel 2^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.fbAct1.IxSensOut" VarB="Term 6 (KL1408)^Channel 1^Eingang"/>
-				<Link VarA="PlcTask Inputs^GVL.fbAct2.IxSensIn" VarB="Term 6 (KL1408)^Channel 4^Eingang"/>
-				<Link VarA="PlcTask Inputs^GVL.fbAct2.IxSensOut" VarB="Term 6 (KL1408)^Channel 3^Eingang"/>
-				<Link VarA="PlcTask Inputs^GVL.fbAct3.IxSensOut" VarB="Term 6 (KL1408)^Channel 5^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.stIO.stIn.IxAruIO" VarB="Term 7 (KL1408)^Channel 1^Eingang"/>
 				<Link VarA="PlcTask Inputs^GVL.stIO.stIn.xAirPressureOk" VarB="Term 7 (KL1408)^Channel 4^Eingang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxBlockingValve" VarB="Term 9 (KL2408)^Channel 2^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxInOutput" VarB="Term 8 (KL2408)^Channel 6^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.fbAct1.QxOutOutput" VarB="Term 8 (KL2408)^Channel 5^Ausgang"/>
-				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxInOutput" VarB="Term 8 (KL2408)^Channel 8^Ausgang"/>
-				<Link VarA="PlcTask Outputs^GVL.fbAct2.QxOutOutput" VarB="Term 8 (KL2408)^Channel 7^Ausgang"/>
-				<Link VarA="PlcTask Outputs^GVL.fbAct3.QxOutOutput" VarB="Term 9 (KL2408)^Channel 1^Ausgang"/>
 				<Link VarA="PlcTask Outputs^GVL.stIO.stOut.QxMotorDirection" VarB="Term 8 (KL2408)^Channel 4^Ausgang"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Achse 2 - Y">
+				<Link VarA="PlcTask Inputs^GVL.fbMotorY.fbAxisRef.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL.fbMotorY.fbAxisRef.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 				<Link VarA="PlcTask Inputs^GVL.fbMotorX.fbAxisRef.NcToPlc" VarB="Outputs^ToPlc"/>

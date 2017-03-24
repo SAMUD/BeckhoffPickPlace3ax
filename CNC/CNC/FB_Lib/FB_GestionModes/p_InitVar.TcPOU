@@ -22,7 +22,7 @@ fbAct1.stParam.tMoveOutTimeDelay:=T#0.2S;
 
 stParam.stStatus.eMMA:=Init;
 
-
+stParam.stMachine.stParamMotY.stMoveLent.lrVitesse:=500;
 
 
 

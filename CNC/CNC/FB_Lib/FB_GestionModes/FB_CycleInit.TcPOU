@@ -31,11 +31,34 @@ CASE fbEtape.iNo OF
 		IF xStart THEN
 			fbEtape.piVal:=100;
 		END_IF
-	100: fbEtape.psMess:='Init | Reset on Actuators and Motor';
-		fbEtape.piVal:=102;
 		
-	102:fbEtape.psMess:='Init | Init all positions';
-		IF  fbAct1.xInInPos AND fbAct2.xInInPos AND fbAct3.xInInPos THEN
+	100: fbEtape.psMess:='Init | Reset on Actuators and Motor';
+		fbEtape.piVal:=101;
+		fbEtape.tTimeQ:=T#100MS;
+	101:fbEtape.psMess:='Init | Wait 100MS';
+		IF fbEtape.xTimeQ THEN
+			fbEtape.piSVal:=102;
+		END_IF
+	102: fbEtape.psMess:='Init | Waiting for Homing Axis X';
+		IF NOT fbMotorX.mcHome.Active AND NOT fbBtn.xHomingPosReached THEN
+			fbEtape.piVal:=200;
+		END_IF
+		
+	200:fbEtape.psMess:='Init | Start Homing Axis Y';
+		fbEtape.piVal:=201;
+		fbEtape.tTimeQ:=T#100MS;
+	201:fbEtape.psMess:='Init | Wait 100MS';
+		IF fbEtape.xTimeQ THEN
+			fbEtape.piSVal:=202;
+		END_IF
+	202: fbEtape.psMess:='Init | Waiting for Homing Axis Y';
+		IF NOT fbMotorY.mcHome.Active AND NOT fbBtn.xHomingPosReached THEN
+			fbEtape.piVal:=400;
+		END_IF
+		
+		
+	400:fbEtape.psMess:='Init | Init Actor1';
+		IF  fbAct1.xInInPos THEN
 			fbEtape.piSVal:=999;
 		END_IF
 	
@@ -49,7 +72,18 @@ xBusy:=fbEtape.iNo<>0;
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>
     <LineIds Name="FB_CycleInit">
-      <LineId Id="3" Count="14" />
+      <LineId Id="3" Count="12" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="56" Count="4" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="52" Count="2" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="65" Count="1" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="75" Count="3" />
+      <LineId Id="69" Count="3" />
+      <LineId Id="61" Count="0" />
       <LineId Id="22" Count="13" />
       <LineId Id="2" Count="0" />
     </LineIds>

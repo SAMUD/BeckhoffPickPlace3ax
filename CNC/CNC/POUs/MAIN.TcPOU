@@ -20,8 +20,9 @@ fbBtn.xReset:=stio.stIn.xResetIO OR NOT stio.stIn.xAirPressureOk;
 fbBtn.xStart:=stio.stIn.xStartIO;
 fbBtn.xStop:=stio.stIn.xStopIO;
 fbBtn.xAirPressureOk:=stio.stIn.xAirPressureOk;
-fbBtn.xManualAct2GoIn:=stio.stIn.xManualAct2GoIn;
-fbBtn.xManualAct2GoOut:=stio.stIn.xManualAct2GoOut;
+fbBtn.xManualAct1GoIn:=stio.stIn.xManualAct1GoIn;
+fbBtn.xManualAct1GoOut:=stio.stIn.xManualAct1GoOut;
+fbBtn.xHomingPosReached:=stio.stIn.xHomingPosReached;
 //and now call it
 fbBtn();
 
@@ -86,7 +87,7 @@ fbAct1.xAutorizeOut:=fbBtn.xAru;
 //move in and out each actuator
 fbAct1.xInGoOut:=fbCycleAuto.iEtape=130 OR fbCycleMan.iEtape=202;
 
-fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
+fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=400 OR fbCycleMan.iEtape=201;
 
 //Reset des Actionneurs avan le init
 fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;]]></ST>
@@ -122,11 +123,17 @@ fbMotorY.mSetMoveAbsLent();
 
 
 //pilotage homing (prise d'origine)
-//fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=99;
+fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=101;
+fbMotorX.mcHome.bCalibrationCam:=fbBtn.xHomingPosReached;
+
+//pilotage homing (prise d'origine)
+fbMotorY.mcHome.Execute:=fbCycleInit.iEtape=201;
+fbMotorY.mcHome.bCalibrationCam:=fbBtn.xHomingPosReached;
 
 
 //pilotage Rest
-fbMotorX.mcReset.Execute:=fbMMA.iEtape=810;
+fbMotorX.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
+fbMotorY.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
 
 //pilotage déplacement absolu
 //fbMoteur1.mcMoveAbsolute.Execute:=fbCycleAuto.iStep=125
@@ -140,6 +147,7 @@ fbMotorX.mcReset.Execute:=fbMMA.iEtape=810;
       <LineId Id="188" Count="1" />
       <LineId Id="9" Count="7" />
       <LineId Id="19" Count="1" />
+      <LineId Id="190" Count="0" />
       <LineId Id="29" Count="7" />
       <LineId Id="43" Count="2" />
       <LineId Id="52" Count="23" />
@@ -173,8 +181,12 @@ fbMotorX.mcReset.Execute:=fbMMA.iEtape=810;
       <LineId Id="22" Count="0" />
       <LineId Id="39" Count="0" />
       <LineId Id="7" Count="1" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="49" Count="3" />
       <LineId Id="37" Count="1" />
-      <LineId Id="9" Count="7" />
+      <LineId Id="9" Count="1" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="11" Count="5" />
       <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
