@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_Moteur" Id="{32e76ab2-e2bb-4404-835a-5b07b3af4f59}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Moteur
+VAR_INPUT
+	mcPower:MC_Power;					//mise ne puissance
+	mcReset:MC_Reset;					//reset alarmes
+	mcStop:MC_Stop;						//stop l'axe si en mouvement, après MC_Movevelocity
+	mcHome:MC_Home;						//recherche de position initiale
+	mcJog:MC_Jog;						//déplacemement en mode manuel
+	mcMoveVelocity:MC_MoveVelocity;		//mise en vitesse
+	mcMoveRelative:MC_MoveRelative;		//déplacement relatif
+	mcMoveAbsolute:MC_MoveAbsolute;		//déplacement absolu
+END_VAR
+VAR_IN_OUT
+	stParam:ST_ParamMoteur;
+END_VAR
+VAR_OUTPUT
+	fbAxisRef:Axis_Ref;//lien avec le module NCPTP
+	(*TYPE NCTOPLC_AXIS_REF
+	STRUCT
+	   StateDWord             : DWORD; (* Status double word *)
+	   ErrorCode              : DWORD; (* Axis error code *)
+	   AxisState              : DWORD; (* Axis moving status *)
+	   AxisModeConfirmation   : DWORD; (* Axis mode confirmation (feedback from NC) *)
+	   HomingState            : DWORD; (* State of axis calibration (homing) *)
+	   CoupleState            : DWORD; (* Axis coupling state *)
+	   SvbEntries             : DWORD; (* SVB entries/orders (SVB = Set preparation task) *)
+	   SafEntries             : DWORD; (* SAF entries/orders (SAF = Set execution task) *)
+	   AxisId                 : DWORD; (* Axis ID *)
+	   OpModeDWord            : DWORD; (* Current operation mode *)
+	   ActiveControlLoopIndex : WORD; (* Active control loop index *)
+	   ControlLoopIndex       : WORD; (* Axis control loop index (0, 1, 2, when multiple control loops are used) *)
+	   ActPos                 : LREAL; (* Actual position (absolut value from NC) *)
+	   ModuloActPos           : LREAL; (* Actual modulo position *)
+	   ModuloActTurns         : DINT; (* Actual modulo turns *)
+	   ActVelo                : LREAL; (* Actual velocity *)
+	   PosDiff                : LREAL; (* Position difference (lag distance) *)
+	   SetPos                 : LREAL; (* Setpoint position *)
+	   SetVelo                : LREAL; (* Setpoint velocity *)
+	   SetAcc                 : LREAL; (* Setpoint acceleration *)
+	   TargetPos              : LREAL; (* Estimated target position *)
+	   ModuloSetPos           : LREAL; (* Setpoint modulo position *)
+	   ModuloSetTurns         : DINT; (* Setpoint modulo turns *)
+	   CmdNo                  : WORD; (* Continuous actual command number *)
+	   CmdState               : WORD; (* Command state *)
+	END_STRUCT
+	END_TYPE*)
+	xError:BOOL;//indique une erreur
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[mcPower(Axis:=fbAxisRef);
+mcReset(Axis:=fbAxisRef);
+mcStop(Axis:=fbAxisRef);
+mcHome(Axis:=fbAxisRef);
+mcJog(Axis:=fbAxisRef);
+mcMoveVelocity(Axis:=fbAxisRef);
+mcMoveRelative(Axis:=fbAxisRef);
+mcMoveAbsolute(Axis:=fbAxisRef);
+//refresh des status de moteur contenu dans fbAxisRef.Status
+fbAxisRef.ReadStatus();
+
+xError:=fbAxisRef.Status.Error
+		OR mcPower.Error AND mcPower.Active 
+		OR mcReset.Error AND mcReset.Execute
+		OR mcStop.Error  AND mcStop.Active
+		OR mcHome.Error  AND (mcHome.Execute OR mcHome.Active)
+		OR mcJog.Error   AND (mcJog.JogBackwards OR mcJog.JogForward OR mcJog.Active)
+		OR mcMoveVelocity.Error   AND (mcMoveVelocity.Execute OR mcMoveVelocity.Active)
+		OR mcMoveRelative.Error  AND (mcMoveRelative.Execute OR mcMoveRelative.Active)
+		OR mcMoveAbsolute.Error  AND (mcMoveAbsolute.Execute OR mcMoveAbsolute.Active);]]></ST>
+    </Implementation>
+    <Method Name="mSetMoveAbsLent" Id="{2d3fc9d7-cfa4-4dc0-b91d-bc800eaae931}">
+      <Declaration><![CDATA[METHOD mSetMoveAbsLent
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[mcMoveAbsolute.Acceleration:=stParam.stMoveLent.lrAcceleration;
+mcMoveAbsolute.Deceleration:=stParam.stMoveLent.lrDecceleration;
+mcMoveAbsolute.Velocity:=stParam.stMoveLent.lrVitesse;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mSetMoveAbsRapide" Id="{2ddb14e9-0aee-40b1-b0ee-dd5e9888b9e3}">
+      <Declaration><![CDATA[METHOD mSetMoveAbsRapide
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[mcMoveAbsolute.Acceleration:=stParam.stMoveRapide.lrAcceleration;
+mcMoveAbsolute.Deceleration:=stParam.stMoveRapide.lrDecceleration;
+mcMoveAbsolute.Velocity:=stParam.stMoveRapide.lrVitesse;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Moteur">
+      <LineId Id="3" Count="18" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Moteur.mSetMoveAbsLent">
+      <LineId Id="3" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Moteur.mSetMoveAbsRapide">
+      <LineId Id="3" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

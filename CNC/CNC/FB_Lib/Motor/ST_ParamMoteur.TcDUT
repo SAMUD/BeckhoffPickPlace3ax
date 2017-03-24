@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_ParamMoteur" Id="{73731e12-72cf-4115-a80e-32c743b204bb}">
+    <Declaration><![CDATA[TYPE ST_ParamMoteur :
+STRUCT
+	stMoveLent:ST_ParamMoveMoteur;//paramètre déplacement lent
+	stMoveRapide:ST_ParamMoveMoteur;//paramètre déplacement rapide
+	lrPositionInitiale:LREAL:=0;//valeur de position initiale après un MC_Home;
+	mcHomingMode:MC_HomingMode:=MC_Direct;//type homing
+	(*HomingMode determines in which way the calibration is carried out.
+    MC_DefaultHoming
+    Initiates standard homing.
+    MC_Direct
+    Sets the axis position directly to Position without executing a movement.
+    MC_ForceCalibration
+    Enforces the "axis is calibrated" state. No movement takes place, and the position remains unchanged.
+    MC_ResetCalibration
+    Resets the calibration state of the axis. No movement takes place, and the position remains unchanged.*)
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

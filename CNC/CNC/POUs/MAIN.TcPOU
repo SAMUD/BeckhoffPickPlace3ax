@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="MAIN" Id="{1e704377-3948-4a60-acf5-cdd6dbd4512e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -13,6 +13,11 @@ END_VAR
 fbAct1();	//Act1 corresponds to charging
 fbAct2();	//Act2 corresponds to engraving
 fbAct3();	//Act3 corresponds to tightening
+//exécution de l'appel du bloc moteur
+fbMotorX(stParam:=stParam.stMachine.stParamMotX);
+fbMotorY(stParam:=stParam.stMachine.stParamMotY);
+fbMotorZ(stParam:=stParam.stMachine.stParamMotZ);
+
 fbMMA();
 
 //copy physical Inputs in fbBtn
@@ -50,9 +55,9 @@ ELSIF (fbAct3.stError.xState) THEN
 ELSIF (fbCycleAuto.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbCycleAuto.iId;
-ELSIF (fbMotor.xError) THEN
+(*ELSIF (fbMotor.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
-	stParam.stStatus.iId:=fbMotor.iErrorID;
+	stParam.stStatus.iId:=fbMotor.iErrorID;*)
 ELSIF (fbTCP.OutputGlobal.xError) THEN
 	stParam.stStatus.xErreur:=TRUE;
 	stParam.stStatus.iId:=fbTCP.OutPutGlobal.nErrID;
@@ -82,11 +87,11 @@ fbCycleMan.xStop:=  fbMMa.iEtape<>210;
 fbCycleMan();
 
 //call Motor Controller
-fbMotor.Consigne:=stIO.stIn.lSetSpeedMotor;
-fbMotor.fbConvertTachoToNumSpeed.IaEntree:=stio.stIn.lTachoValue;
-fbMotor.xDirection:=stio.stIn.xMotorDirection;
-fbMotor();
-stio.stOut.lMotorOut:=fbMotor.fbConvertNumToMotorOut.QaSortie;
+//fbMotor.Consigne:=stIO.stIn.lSetSpeedMotor;
+//fbMotor.fbConvertTachoToNumSpeed.IaEntree:=stio.stIn.lTachoValue;
+//fbMotor.xDirection:=stio.stIn.xMotorDirection;
+//fbMotor();
+//stio.stOut.lMotorOut:=fbMotor.fbConvertNumToMotorOut.QaSortie;
 
 //call TCP Block
 fbTCP();
@@ -116,16 +121,24 @@ fbAct2.xInGoIn:=fbCycleAuto.iEtape=170 OR fbCycleAuto.iEtape=800 OR fbCycleInit.
 fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=201;
 
 //Motor
-IF(fbCycleAuto.iEtape=140 OR fbCycleMan.iEtape=207) THEN
-	fbMotor.xOnOff:=TRUE;
-END_IF
-IF(fbCycleAuto.iEtape=170 OR fbCycleInit.iEtape=100 OR fbCycleMan.iEtape=208 OR fbCycleAuto.iEtape=800 OR fbMMA.iEtape=910 OR fbMMA.iEtape=810) THEN
-	fbMotor.xOnOff:=FALSE;
-END_IF
-//Reset fbMotor
-fbMotor.xReset:=fbMMA.iEtape=810;
+//pilotage mise en puissance
+fbMotorX.mcPower.Enable:=stIO.stIn.IxAruIO;
+fbMotorX.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
+fbMotorX.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
+fbMotorX.mcPower.Override:=100;
+//pilotage homing (prise d'origine)
+fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=99;
+//pilotage Rest
+fbMotorX.mcReset.Execute:=fbMMA.iEtape=810;
+//pilotage déplacement absolu
+//fbMoteur1.mcMoveAbsolute.Execute:=fbCycleAuto.iStep=125
+//						OR fbCycleAuto.iStep=125
+//						OR fbCycleAuto.iStep=235
+//						OR fbCycleAuto.iStep=245;
+
 //Motor Direction Output
-stio.stOut.QxMotorDirection:=stio.stIn.xMotorDirection;
+//stio.stOut.QxMotorDirection:=stio.stIn.xMotorDirection;
+
 
 //Reset des Actionneurs avan le init
 fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;
@@ -160,5 +173,21 @@ END_IF
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="3" Count="5" />
+      <LineId Id="161" Count="3" />
+      <LineId Id="160" Count="0" />
+      <LineId Id="9" Count="101" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="165" Count="4" />
+      <LineId Id="171" Count="1" />
+      <LineId Id="174" Count="1" />
+      <LineId Id="177" Count="4" />
+      <LineId Id="184" Count="0" />
+      <LineId Id="120" Count="1" />
+      <LineId Id="182" Count="0" />
+      <LineId Id="122" Count="32" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

@@ -16,6 +16,21 @@
     <CompilerDefines />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\ST_Param.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_ParamFixed.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_ParamMachine.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_ParamRecipe.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_ParamStatus.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ErrorList.TcTLO">
       <SubType>Code</SubType>
     </Compile>
@@ -73,25 +88,20 @@
     <Compile Include="FB_Lib\FB_GestionModes\IO\ST_IOOutputSimul.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FB_Lib\FB_GestionModes\Param\E_ModeMMA.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="FB_Lib\FB_GestionModes\Param\ST_Param.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="FB_Lib\FB_GestionModes\Param\ST_ParamFixed.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="FB_Lib\FB_GestionModes\Param\ST_ParamRecipe.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="FB_Lib\FB_GestionModes\Param\ST_ParamStatus.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="FB_Lib\FB_GestionModes\p_InitVar.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FB_Lib\FB_RegulMoteur.TcPOU">
+      <SubType>Code</SubType>
+      <ExcludeFromBuild>true</ExcludeFromBuild>
+    </Compile>
+    <Compile Include="FB_Lib\Motor\FB_Moteur.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FB_Lib\Motor\ST_ParamMoteur.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FB_Lib\Motor\ST_ParamMoveMoteur.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FB_Lib\TCPIP\FB_TCP.TcPOU">
@@ -159,12 +169,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
+    <Folder Include="DUTs\Param" />
     <Folder Include="FB_Lib" />
     <Folder Include="FB_Lib\Conversion" />
     <Folder Include="FB_Lib\FB_ActionneurSimple" />
     <Folder Include="FB_Lib\FB_GestionModes" />
     <Folder Include="FB_Lib\FB_GestionModes\IO" />
-    <Folder Include="FB_Lib\FB_GestionModes\Param" />
+    <Folder Include="FB_Lib\Motor" />
     <Folder Include="FB_Lib\TCPIP" />
     <Folder Include="GVLs" />
     <Folder Include="VISUs" />
@@ -217,6 +228,10 @@
       <DefaultResolution>Tc2_ControllerToolbox, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_ControllerToolbox</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_MC2">
+      <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_MC2</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -255,8 +270,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -308,14 +323,14 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Boolean">System.Boolean</Type>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Boolean">System.Boolean</Type>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

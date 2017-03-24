@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <GVL Name="GVL" Id="{29e74ae1-1e66-43a7-ba4b-1961dad16adc}">
     <Declaration><![CDATA[VAR_GLOBAL
 
@@ -21,7 +21,10 @@
 	stIO:ST_IO;
 	
 	//Tachymetre moteur
-	fbMotor : FB_RegulMoteur;
+	//fbMotor : FB_RegulMoteur;
+	fbMotorX : FB_Moteur;
+	fbMotorY : FB_Moteur;
+	fbMotorZ : FB_Moteur;
 	
 	//include TCP_LIB
 	fbTCP : FB_TCP;
