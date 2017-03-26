@@ -17,7 +17,11 @@ STRUCT
 	
 	xAirPressureOk AT%I* : BOOL;
 	
+	//Btn in manual mode
 	xHomingPosReached AT%I* : BOOL;
+	
+	//Btn in init mode
+	xSetHomePos AT%I* : BOOL;
 	
 END_STRUCT
 END_TYPE

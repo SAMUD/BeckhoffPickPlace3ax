@@ -19,6 +19,12 @@
     <Compile Include="DUTs\E_ModeMMA.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\Param\ST_Palette.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\Param\ST_Position.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_Param.TcDUT">
       <SubType>Code</SubType>
     </Compile>

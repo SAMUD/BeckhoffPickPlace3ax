@@ -15,6 +15,9 @@ VAR_INPUT
 	xAirPressureOk : BOOL;
 	
 	xHomingPosReached : BOOL;
+	
+	//Btn used in Manual-Mode
+	xSetHomePos : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>

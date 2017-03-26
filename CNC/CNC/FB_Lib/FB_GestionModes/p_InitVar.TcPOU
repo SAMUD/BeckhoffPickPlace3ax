@@ -24,6 +24,20 @@ stParam.stStatus.eMMA:=Init;
 
 stParam.stMachine.stParamMotY.stMoveLent.lrVitesse:=500;
 
+//setup all reference positions. Except Position 0 cause this one needs to be calibrated
+stParam.stMachine.stPosition1.Initialized:=TRUE;
+stParam.stMachine.stPosition1.PosX:=300;
+stParam.stMachine.stPosition1.PosY:=300;
+stParam.stMachine.stPosition2.Initialized:=TRUE;
+stParam.stMachine.stPosition2.PosX:=1300;
+stParam.stMachine.stPosition2.PosY:=300;
+stParam.stMachine.stPosition3.Initialized:=TRUE;
+stParam.stMachine.stPosition3.PosX:=300;
+stParam.stMachine.stPosition3.PosY:=1300;
+stParam.stMachine.stPosition4.Initialized:=TRUE;
+stParam.stMachine.stPosition4.PosX:=1800;
+stParam.stMachine.stPosition4.PosY:=1800;
+
 
 
 
@@ -36,6 +50,11 @@ stParam.stMachine.stParamMotY.stMoveLent.lrVitesse:=500;
       <LineId Id="22" Count="0" />
       <LineId Id="74" Count="0" />
       <LineId Id="48" Count="0" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="86" Count="3" />
+      <LineId Id="91" Count="6" />
+      <LineId Id="99" Count="0" />
       <LineId Id="51" Count="0" />
       <LineId Id="61" Count="4" />
       <LineId Id="2" Count="0" />

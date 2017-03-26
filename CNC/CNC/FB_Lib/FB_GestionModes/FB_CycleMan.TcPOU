@@ -41,6 +41,9 @@ CASE fbEtape.iNo OF
 		IF (fbBtn.xManualAct1GoOut) THEN
 			fbEtape.piVal:=202;
 		END_IF
+		IF fbBtn.xSetHomePos THEN
+			fbEtape.piVal:=300;
+		END_IF
 		
 		
 		
@@ -53,17 +56,10 @@ CASE fbEtape.iNo OF
 		IF (NOT fbBtn.xManualAct1GoOut) THEN
 			fbEtape.piVal:=100;
 		END_IF
-	
-	
-	
-	
-	
-	
-	209: fbEtape.psMess:='Manual | Action : Send Trig';
-		fbEtape.piVal:=100;
-	210: fbEtape.psMess:='Manual | Action : Send Getres';
-		fbEtape.piVal:=100;
-	211: fbEtape.psMess:='Manual | Action : Send Check';
+	300: fbEtape.psMess:='Manual | Set Home Position';
+		stParam.stMachine.stPosition0.Initialized:=TRUE;
+		stParam.stMachine.stPosition0.PosX:=fbMotorX.fbAxisRef.NcToPlc.ActPos;
+		stParam.stMachine.stPosition0.PosY:=fbMotorY.fbAxisRef.NcToPlc.ActPos;
 		fbEtape.piVal:=100;
 	
 	990:fbEtape.psMess:='Manual | Finishing';
@@ -82,18 +78,16 @@ xBusy:=fbEtape.iNo<>0;
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>
     <LineIds Name="FB_CycleMan">
-      <LineId Id="3" Count="21" />
+      <LineId Id="3" Count="20" />
+      <LineId Id="143" Count="2" />
+      <LineId Id="24" Count="0" />
       <LineId Id="32" Count="0" />
       <LineId Id="42" Count="0" />
       <LineId Id="54" Count="5" />
       <LineId Id="124" Count="2" />
       <LineId Id="63" Count="0" />
-      <LineId Id="67" Count="0" />
-      <LineId Id="71" Count="0" />
-      <LineId Id="75" Count="0" />
-      <LineId Id="79" Count="0" />
-      <LineId Id="83" Count="0" />
-      <LineId Id="87" Count="20" />
+      <LineId Id="146" Count="3" />
+      <LineId Id="93" Count="14" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

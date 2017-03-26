@@ -6,6 +6,14 @@ STRUCT
 	stParamMotX:ST_ParamMoteur;		//parametres des trois Moteurs
 	stParamMotY:ST_ParamMoteur;
 	stParamMotZ:ST_ParamMoteur;
+	
+	stPosition0: ST_Position;		//Position Home
+	stPosition1: ST_Position;		//Position Palette bottom left
+	stPosition2: ST_Position;		//Position Palette bottom right
+	stPosition3: ST_Position;		//Position Palette top left
+	stPosition4: ST_Position;		//Position Prise Piece
+
+
 END_STRUCT
 END_TYPE
 ]]></Declaration>
