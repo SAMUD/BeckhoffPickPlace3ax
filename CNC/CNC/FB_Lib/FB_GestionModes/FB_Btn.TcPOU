@@ -8,16 +8,19 @@ VAR_INPUT
 	xReset:BOOL;
 	xNextPas:BOOL;
 	xAru:BOOL;
+		xAirPressureOk : BOOL;
 	
-	xManualAct1GoIn: BOOL;
-	xManualAct1GoOut : BOOL;
+	//Auto mode
+	xAllowedGetPiece: BOOL;
+	xPiecePresent : BOOL;
 	
-	xAirPressureOk : BOOL;
-	
+	//Init Mode
 	xHomingPosReached : BOOL;
 	
 	//Btn used in Manual-Mode
 	xSetHomePos : BOOL;
+	xManualAct1GoIn: BOOL;
+	xManualAct1GoOut : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>

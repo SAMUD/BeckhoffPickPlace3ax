@@ -86,9 +86,9 @@ fbAct1.xAutorizeIn:=fbBtn.xAru;
 fbAct1.xAutorizeOut:=fbBtn.xAru;
 
 //move in and out each actuator
-fbAct1.xInGoOut:=fbCycleAuto.iEtape=130 OR fbCycleMan.iEtape=202;
+fbAct1.xInGoOut:=fbCycleAuto.iEtape=113 OR fbCycleMan.iEtape=202;
 
-fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=400 OR fbCycleMan.iEtape=201;
+fbAct1.xInGoIn:=fbCycleAuto.iEtape=180 OR fbCycleAuto.iEtape=122 OR fbCycleAuto.iEtape=150 OR fbCycleAuto.iEtape=800 OR fbCycleInit.iEtape=400 OR fbCycleMan.iEtape=201;
 
 //Reset des Actionneurs avan le init
 fbAct1.xReset:=fbCycleInit.iEtape=99 OR fbMMA.iEtape=810;]]></ST>
@@ -137,10 +137,17 @@ fbMotorX.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
 fbMotorY.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
 
 //pilotage déplacement absolu
-//fbMoteur1.mcMoveAbsolute.Execute:=fbCycleAuto.iStep=125
-//						OR fbCycleAuto.iStep=125
-//						OR fbCycleAuto.iStep=235
-//						OR fbCycleAuto.iStep=245;]]></ST>
+fbMotorX.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=110 OR fbCycleAuto.iEtape=131;
+
+fbMotorY.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=110 OR fbCycleAuto.iEtape=131;
+
+fbMotorZ.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=112 OR fbCycleAuto.iEtape=120 OR fbCycleAuto.iEtape=141 OR fbCycleAuto.iEtape=161;
+
+
+
+
+
+]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="MAIN">
@@ -188,7 +195,11 @@ fbMotorY.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
       <LineId Id="37" Count="1" />
       <LineId Id="9" Count="1" />
       <LineId Id="53" Count="0" />
-      <LineId Id="11" Count="5" />
+      <LineId Id="11" Count="2" />
+      <LineId Id="54" Count="3" />
+      <LineId Id="60" Count="3" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="58" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
   </POU>

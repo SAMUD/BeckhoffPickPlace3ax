@@ -98,6 +98,7 @@ Id;Default;fr;de;en
 69;Running;Marche;Betrieb;Running
 82;Send Data: %s;;;
 45;Service;;;
+132;Set HomePosition;;;
 1;SetSpeed of Motor: %.2f;;;
 99;SetSpeed of Motor: %i;;;
 56;SetSpeed: %d;;;

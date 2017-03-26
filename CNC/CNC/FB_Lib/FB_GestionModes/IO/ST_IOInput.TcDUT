@@ -10,8 +10,7 @@ STRUCT
 	xAuto AT%I* : BOOL;
 	xManual AT%I* : BOOL;
 	
-	xManualAct1GoIn AT%I* : BOOL;
-	xManualAct1GoOut AT%I* : BOOL;
+	
 	
 	lSetSpeedMotor : LREAL;
 	
@@ -19,9 +18,15 @@ STRUCT
 	
 	//Btn in manual mode
 	xHomingPosReached AT%I* : BOOL;
+	xManualAct1GoIn AT%I* : BOOL;
+	xManualAct1GoOut AT%I* : BOOL;
 	
 	//Btn in init mode
 	xSetHomePos AT%I* : BOOL;
+	
+	//Auto mode
+	xAllowedGetPiece AT%I* : BOOL;
+	xPiecePresent AT%I* : BOOL;
 	
 END_STRUCT
 END_TYPE

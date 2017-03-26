@@ -19,6 +19,7 @@ VAR
 	fbEtape:FB_Etape;
 	fbRtrigStart:R_trig;
 	xMemStop:BOOL:=FALSE;		//Memorise the Stop-Flag
+	fbMoteur: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -36,78 +37,103 @@ IF xReset THEN
 END_IF
 
 CASE fbEtape.iNo OF
-	0:	fbEtape.psMess:='Auto | Wait';
+	0:	fbEtape.psMess:='Auto | Start Cycle';
 		IF fbRtrigStart.Q THEN
 			xMemStop:=FALSE;
-			fbEtape.piVal:=100;
+			fbEtape.piVal:=1;
 			iNumberProduced:=0;
 		END_IF
-	100:fbEtape.psMess:='Auto | Turn on Lamp1';
-		fbEtape.tTimeQ:=T#500MS;
-		fbEtape.piVal:=110;
-	110:fbEtape.psMess:='Auto | wait until timeout';
-		IF fbEtape.xTimeQ THEN
+	1: fbEtape.psMess:='Auto | Check if initialized';
+		IF  stParam.stMachine.stPosition0.Initialized AND stParam.stMachine.stPosition1.Initialized AND stParam.stMachine.stPosition2.Initialized AND stParam.stMachine.stPosition3.Initialized AND stParam.stMachine.stPosition4.Initialized THEN
+			fbEtape.piSVal:=100;
+		ELSE
+			fbEtape.piSVal:=800;	
+		END_IF
+	100:fbEtape.psMess:='Auto | Wait UNTIL allowed TO go TO Pos4';
+		IF fbBtn.xAllowedGetPiece THEN
+			fbMotorX.mSetMoveAbsLent();
+			fbMotorX.mcMoveAbsolute.Position:=stParam.stMachine.stPosition0.PosX + stParam.stMachine.stPosition4.PosX;
+			fbMotorY.mSetMoveAbsLent();
+			fbMotorY.mcMoveAbsolute.Position:=stParam.stMachine.stPosition0.PosY + stParam.stMachine.stPosition4.PosY;
+			fbEtape.piSVal:=110;
+		END_IF		
+	110:fbEtape.psMess:='Auto | Wait until in Pos 4';
+		IF fbMotorX.mcMoveAbsolute.Done AND fbMotorY.mcMoveAbsolute.Done THEN
 			fbEtape.piSVal:=111;
 		END_IF
-	111:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
-		fbEtape.piVal:=112;
-	112:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
-			fbEtape.piVal:=113; //all is ok;
-	113:fbEtape.psMess:='Auto | sending "CHECK" to Camera';
-		fbEtape.piVal:=120;
-	120:fbEtape.psMess:='Auto | Is the object ok';
-			fbEtape.piVal:=130; //all is ok;
-	130:fbEtape.psMess:='Auto | Act1 Go out';
+	111:fbEtape.psMess:='Auto | Putting down Z ';
+		fbMotorZ.mSetMoveAbsLent();
+		fbMotorZ.mcMoveAbsolute.Position:=100;
+		fbEtape.piSVal:=112;
+	112:fbEtape.psMess:='Auto | Waiting until Z is down';
+		IF fbMotorZ.mcMoveAbsolute.Done THEN
+			fbEtape.piSVal:=111;
+		END_IF
+	113:fbEtape.psMess:='Auto | Closing Act1';
+		IF fbAct1.xInOutPos		THEN
+			fbEtape.piVal:=120;
+		END_IF
+	120:fbEtape.psMess:='Auto | Z go up';
+		fbMotorZ.mSetMoveAbsLent();
+		fbMotorZ.mcMoveAbsolute.Position:=0;
+		fbEtape.piVal:=121; //all is ok;
+	121:fbEtape.psMess:='Auto | Wait until Z is up and make a presence check';
+		IF fbMotorZ.mcMoveAbsolute.Done AND fbBtn.xPiecePresent THEN
+			fbEtape.piSVal:=130;
+		END_IF
+		IF fbMotorZ.mcMoveAbsolute.Done AND NOT fbBtn.xPiecePresent THEN
+			fbEtape.piSVal:=122;
+		END_IF
+	122: fbEtape.psMess:='Auto | Open Act1 and go back one step';
 		IF fbAct1.xInOutPos THEN
+			fbEtape.piSVal:=111;
+		END_IF
+	130:fbEtape.psMess:='Auto | Go back to palette position';
+			//check and calculate Palette dimensions and position where to put the object
+			IF stParam.stRecipe.stPalette1.ActualPalettePositionY >= stParam.stRecipe.stPalette1.PaletteDimensionY THEN
+				stParam.stRecipe.stPalette1.ActualPalettePositionY :=0;
+				stParam.stRecipe.stPalette1.ActualPalettePositionX := stParam.stRecipe.stPalette1.ActualPalettePositionX +1;
+				IF stParam.stRecipe.stPalette1.ActualPalettePositionX >= stParam.stRecipe.stPalette1.PaletteDimensionX THEN
+					fbEtape.piSVal:=800;		//nous sommes hors des butees de la palette
+				END_IF
+			END_IF
+			//calculate X-Position. (Xmax-Xmin) / Nombre de pos en X = increment par positionX
+			//						Xactualle*increments + XminPosition =Position de cible
+			fbMotorX.mSetMoveAbsLent();
+			fbMotorX.mcMoveAbsolute.Position:=(stParam.stMachine.stPosition0.PosX + stParam.stMachine.stPosition1.PosX)
+											+  stParam.stRecipe.stPalette1.ActualPalettePositionX
+													* ( (stParam.stMachine.stPosition2.PosX-stParam.stMachine.stPosition0.PosX) / stParam.stRecipe.stPalette1.PaletteDimensionX );
+			//meme chose pour Y
+			fbMotorY.mSetMoveAbsLent();
+			fbMotorY.mcMoveAbsolute.Position:=(stParam.stMachine.stPosition0.PosY + stParam.stMachine.stPosition1.PosY)
+											+  stParam.stRecipe.stPalette1.ActualPalettePositionY
+													* ( (stParam.stMachine.stPosition3.PosY-stParam.stMachine.stPosition0.PosY) / stParam.stRecipe.stPalette1.PaletteDimensionY );
+			fbEtape.piSVal:=131;
+	131:fbEtape.psMess:='Auto | Wait until in Pos 4';
+		IF fbMotorX.mcMoveAbsolute.Done AND fbMotorY.mcMoveAbsolute.Done THEN
 			fbEtape.piSVal:=140;
 		END_IF
-	140:fbEtape.psMess:='Auto | Act3 go out, Turn on motor';
+	140:fbEtape.psMess:='Auto | Putting down Z ';
+		fbMotorZ.mSetMoveAbsLent();
+		fbMotorZ.mcMoveAbsolute.Position:=100;
+		fbEtape.piSVal:=141;
+	141:fbEtape.psMess:='Auto | Waiting until Z is down';
+		IF fbMotorZ.mcMoveAbsolute.Done THEN
 			fbEtape.piSVal:=150;
-			fbEtape.tTimeQ:=T#10S;
-	150:fbEtape.psMess:='Auto | Wait until Motor has right speed';
-		//IF fbMotor.PID.bARWactive=FALSE THEN
-			//Motor has right speed
+		END_IF
+	150:fbEtape.psMess:='Auto | Opening Act1';
+		IF fbAct1.xInInPos		THEN
 			fbEtape.piVal:=160;
-		//END_IF
-		IF fbEtape.xTimeQ THEN
-			//Go to Error
-			fbEtape.piVal:=800;
-			iId:=210;
 		END_IF
-	160:fbEtape.psMess:='Auto | Act2 go out';
-		fbEtape.piSVal:=161;
-		fbEtape.tTimeQ:=T#1S;
-	161:fbEtape.psMess:='Auto | Wait 1s';
-		IF fbEtape.xTimeQ THEN
-			fbEtape.piSVal:=170;
-		END_IF		
-	170:fbEtape.psMess:='Auto | Actor2 go In, Turn off motor';
-			fbEtape.piSVal:=180;
-	180:fbEtape.psMess:='Auto | Actor1 and 3 go In';
-			fbEtape.piSVal:=190;
-	190:fbEtape.psMess:='Auto | sending "TRIG" to Camera';
-		fbEtape.piVal:=191;
-	191:fbEtape.psMess:='Auto | waiting for "ACK" from camera';
-			fbEtape.piVal:=192; //all is ok;
-	192:fbEtape.psMess:='Auto | sending "GETRES" to Camera';
-		fbEtape.piVal:=193;
-	193:fbEtape.psMess:='Auto | Is the object ok';
-			fbEtape.piVal:=200; //all is ok;
-	200:fbEtape.psMess:='Auto | Wait 3s';
-		//assigne le temps de comptage
-		fbEtape.tTimeQ:=T#3S;
-		fbEtape.piVal:=210;
-	210:fbEtape.psMess:='Auto | Wait 3 sec';
-		IF fbEtape.xTimeQ THEN
-			fbEtape.piSVal:=220;
-			iNumberProduced:=iNumberProduced+1;
-		END_IF
-	220:fbEtape.psMess:='Auto | Test if stop was asked';
-		IF xMemStop THEN
-		fbEtape.piVal:=999;
-		ELSE
-		fbEtape.piVal:=100;
-	END_IF
+	160:fbEtape.psMess:='Auto | Z go up';
+		fbMotorZ.mSetMoveAbsLent();
+		fbMotorZ.mcMoveAbsolute.Position:=0;
+		fbEtape.piVal:=161; //all is ok;
+	161:fbEtape.psMess:='Auto | Wait until Z is up';
+		IF fbMotorZ.mcMoveAbsolute.Done THEN
+			fbEtape.piSVal:=100;
+		END_IF	
+	
 	800:fbEtape.psMess:='Auto | Error occured - Going into stock state';
 		//turn off all motors and release all Actors
 			fbEtape.piVal:=810;
@@ -128,23 +154,49 @@ xReady:=fbEtape.iNo=0;
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>
     <LineIds Name="FB_CycleAuto">
-      <LineId Id="3" Count="28" />
+      <LineId Id="3" Count="18" />
+      <LineId Id="168" Count="0" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="173" Count="1" />
+      <LineId Id="171" Count="1" />
+      <LineId Id="167" Count="0" />
+      <LineId Id="158" Count="1" />
+      <LineId Id="163" Count="1" />
+      <LineId Id="156" Count="1" />
+      <LineId Id="25" Count="5" />
+      <LineId Id="175" Count="1" />
+      <LineId Id="31" Count="0" />
       <LineId Id="33" Count="0" />
-      <LineId Id="38" Count="2" />
+      <LineId Id="177" Count="1" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="182" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="183" Count="1" />
       <LineId Id="42" Count="0" />
-      <LineId Id="47" Count="4" />
-      <LineId Id="53" Count="1" />
-      <LineId Id="56" Count="10" />
-      <LineId Id="68" Count="1" />
-      <LineId Id="71" Count="4" />
-      <LineId Id="77" Count="0" />
-      <LineId Id="79" Count="0" />
-      <LineId Id="81" Count="0" />
-      <LineId Id="83" Count="2" />
-      <LineId Id="87" Count="0" />
-      <LineId Id="92" Count="2" />
-      <LineId Id="96" Count="0" />
-      <LineId Id="101" Count="16" />
+      <LineId Id="47" Count="1" />
+      <LineId Id="185" Count="8" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="194" Count="0" />
+      <LineId Id="198" Count="0" />
+      <LineId Id="195" Count="0" />
+      <LineId Id="197" Count="0" />
+      <LineId Id="199" Count="0" />
+      <LineId Id="202" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="196" Count="0" />
+      <LineId Id="204" Count="3" />
+      <LineId Id="210" Count="1" />
+      <LineId Id="208" Count="0" />
+      <LineId Id="216" Count="0" />
+      <LineId Id="209" Count="0" />
+      <LineId Id="212" Count="1" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="218" Count="23" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="116" Count="1" />
       <LineId Id="119" Count="0" />
       <LineId Id="121" Count="14" />
       <LineId Id="2" Count="0" />

@@ -38,6 +38,10 @@ stParam.stMachine.stPosition4.Initialized:=TRUE;
 stParam.stMachine.stPosition4.PosX:=1800;
 stParam.stMachine.stPosition4.PosY:=1800;
 
+//setup the Palette
+stParam.stRecipe.stPalette1.PaletteDimensionX:=10;
+stParam.stRecipe.stPalette1.PaletteDimensionY:=10;
+
 
 
 
@@ -55,6 +59,7 @@ stParam.stMachine.stPosition4.PosY:=1800;
       <LineId Id="86" Count="3" />
       <LineId Id="91" Count="6" />
       <LineId Id="99" Count="0" />
+      <LineId Id="101" Count="3" />
       <LineId Id="51" Count="0" />
       <LineId Id="61" Count="4" />
       <LineId Id="2" Count="0" />

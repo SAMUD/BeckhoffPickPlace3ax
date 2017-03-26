@@ -3,7 +3,7 @@
   <DUT Name="ST_ParamRecipe" Id="{d7b97810-f7a3-4f07-8edf-3767a14d55f3}">
     <Declaration><![CDATA[TYPE ST_ParamRecipe :
 STRUCT
-	
+	stPalette1 : ST_Palette;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
