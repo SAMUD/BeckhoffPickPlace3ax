@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <POU Name="FB_MMA" Id="{0e7ce976-5b63-45cb-af38-a3b8fef59482}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_MMA
 VAR_OUTPUT
@@ -76,7 +76,7 @@ CASE fbEtape.iNo OF
 	//--------------------------------------------------------------
 	300:fbEtape.psMess:='MMA | Auto | Wait for fbBtn.xStart';
 		IF (fbBtn.xStart) THEN
-			fbEtape.piVal:=340;
+			fbEtape.piVal:=350;
 		ELSIF (stParam.stStatus.eMMA<>Auto) THEN
 			fbEtape.piVal:=50;
 		END_IF
@@ -129,5 +129,9 @@ END_CASE
 
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>
+    <LineIds Name="FB_MMA">
+      <LineId Id="3" Count="115" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

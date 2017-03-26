@@ -24,6 +24,10 @@ fbBtn.xManualAct1GoIn:=stio.stIn.xManualAct1GoIn;
 fbBtn.xManualAct1GoOut:=stio.stIn.xManualAct1GoOut;
 fbBtn.xHomingPosReached:=stio.stIn.xHomingPosReached;
 fbBtn.xSetHomePos:=stio.stIn.xSetHomePos;
+fbBtn.xAllowedGetPiece:=stio.stIn.xAllowedGetPiece;
+fbBtn.xPiecePresent:=stio.stIn.xPiecePresent;
+fbBtn.xEmulateZDone:=stio.stIn.xEmulateZDone;
+
 //and now call it
 fbBtn();
 
@@ -108,7 +112,7 @@ fbMotorX.mcPower.Enable:=stIO.stIn.IxAruIO;
 fbMotorX.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
 fbMotorX.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
 fbMotorX.mcPower.Override:=100;
-fbMotorX.mSetMoveAbsLent();
+fbMotorX.mSetMoveAbsRapide();
 
 fbMotorY.mcPower.Enable:=stIO.stIn.IxAruIO;
 fbMotorY.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
@@ -128,13 +132,18 @@ fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=101;
 fbMotorX.mcHome.bCalibrationCam:=fbBtn.xHomingPosReached;
 
 //pilotage homing (prise d'origine)
-fbMotorY.mcHome.Execute:=fbCycleInit.iEtape=201;
+fbMotorY.mcHome.Execute:=fbCycleInit.iEtape=200;
 fbMotorY.mcHome.bCalibrationCam:=fbBtn.xHomingPosReached;
+
+//pilotage homing (prise d'origine)
+fbMotorZ.mcHome.Execute:=fbCycleInit.iEtape=300;
+fbMotorZ.mcHome.bCalibrationCam:=fbBtn.xHomingPosReached;
 
 
 //pilotage Rest
 fbMotorX.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
 fbMotorY.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
+fbMotorZ.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
 
 //pilotage déplacement absolu
 fbMotorX.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=110 OR fbCycleAuto.iEtape=131;
@@ -157,6 +166,9 @@ fbMotorZ.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=112 OR fbCycleAuto.iEtape=12
       <LineId Id="19" Count="1" />
       <LineId Id="190" Count="0" />
       <LineId Id="194" Count="0" />
+      <LineId Id="198" Count="1" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="200" Count="0" />
       <LineId Id="29" Count="7" />
       <LineId Id="43" Count="2" />
       <LineId Id="52" Count="23" />
@@ -192,9 +204,11 @@ fbMotorZ.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=112 OR fbCycleAuto.iEtape=12
       <LineId Id="7" Count="1" />
       <LineId Id="47" Count="0" />
       <LineId Id="49" Count="3" />
+      <LineId Id="65" Count="3" />
       <LineId Id="37" Count="1" />
       <LineId Id="9" Count="1" />
       <LineId Id="53" Count="0" />
+      <LineId Id="69" Count="0" />
       <LineId Id="11" Count="2" />
       <LineId Id="54" Count="3" />
       <LineId Id="60" Count="3" />

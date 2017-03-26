@@ -51,14 +51,14 @@ CASE fbEtape.iNo OF
 		END_IF
 	100:fbEtape.psMess:='Auto | Wait UNTIL allowed TO go TO Pos4';
 		IF fbBtn.xAllowedGetPiece THEN
-			fbMotorX.mSetMoveAbsLent();
+			fbMotorX.mSetMoveAbsRapide();
 			fbMotorX.mcMoveAbsolute.Position:=stParam.stMachine.stPosition0.PosX + stParam.stMachine.stPosition4.PosX;
 			fbMotorY.mSetMoveAbsLent();
 			fbMotorY.mcMoveAbsolute.Position:=stParam.stMachine.stPosition0.PosY + stParam.stMachine.stPosition4.PosY;
 			fbEtape.piSVal:=110;
 		END_IF		
 	110:fbEtape.psMess:='Auto | Wait until in Pos 4';
-		IF fbMotorX.mcMoveAbsolute.Done AND fbMotorY.mcMoveAbsolute.Done THEN
+		IF (fbMotorX.mcMoveAbsolute.Done AND fbMotorY.mcMoveAbsolute.Done) OR fbBtn.xEmulateZDone THEN
 			fbEtape.piSVal:=111;
 		END_IF
 	111:fbEtape.psMess:='Auto | Putting down Z ';
@@ -66,26 +66,26 @@ CASE fbEtape.iNo OF
 		fbMotorZ.mcMoveAbsolute.Position:=100;
 		fbEtape.piSVal:=112;
 	112:fbEtape.psMess:='Auto | Waiting until Z is down';
-		IF fbMotorZ.mcMoveAbsolute.Done THEN
-			fbEtape.piSVal:=111;
+		IF fbMotorZ.mcMoveAbsolute.Done OR fbBtn.xEmulateZDone THEN
+			fbEtape.piSVal:=113;
 		END_IF
 	113:fbEtape.psMess:='Auto | Closing Act1';
 		IF fbAct1.xInOutPos		THEN
 			fbEtape.piVal:=120;
 		END_IF
 	120:fbEtape.psMess:='Auto | Z go up';
-		fbMotorZ.mSetMoveAbsLent();
+		fbMotorZ.mSetMoveAbsRapide();
 		fbMotorZ.mcMoveAbsolute.Position:=0;
 		fbEtape.piVal:=121; //all is ok;
 	121:fbEtape.psMess:='Auto | Wait until Z is up and make a presence check';
-		IF fbMotorZ.mcMoveAbsolute.Done AND fbBtn.xPiecePresent THEN
+		IF (fbMotorZ.mcMoveAbsolute.Done OR fbBtn.xEmulateZDone) AND fbBtn.xPiecePresent THEN
 			fbEtape.piSVal:=130;
 		END_IF
-		IF fbMotorZ.mcMoveAbsolute.Done AND NOT fbBtn.xPiecePresent THEN
+		IF (fbMotorZ.mcMoveAbsolute.Done OR fbBtn.xEmulateZDone) AND NOT fbBtn.xPiecePresent THEN
 			fbEtape.piSVal:=122;
 		END_IF
 	122: fbEtape.psMess:='Auto | Open Act1 and go back one step';
-		IF fbAct1.xInOutPos THEN
+		IF fbAct1.xInInPos THEN
 			fbEtape.piSVal:=111;
 		END_IF
 	130:fbEtape.psMess:='Auto | Go back to palette position';
@@ -99,7 +99,7 @@ CASE fbEtape.iNo OF
 			END_IF
 			//calculate X-Position. (Xmax-Xmin) / Nombre de pos en X = increment par positionX
 			//						Xactualle*increments + XminPosition =Position de cible
-			fbMotorX.mSetMoveAbsLent();
+			fbMotorX.mSetMoveAbsRapide();
 			fbMotorX.mcMoveAbsolute.Position:=(stParam.stMachine.stPosition0.PosX + stParam.stMachine.stPosition1.PosX)
 											+  stParam.stRecipe.stPalette1.ActualPalettePositionX
 													* ( (stParam.stMachine.stPosition2.PosX-stParam.stMachine.stPosition0.PosX) / stParam.stRecipe.stPalette1.PaletteDimensionX );
@@ -108,9 +108,11 @@ CASE fbEtape.iNo OF
 			fbMotorY.mcMoveAbsolute.Position:=(stParam.stMachine.stPosition0.PosY + stParam.stMachine.stPosition1.PosY)
 											+  stParam.stRecipe.stPalette1.ActualPalettePositionY
 													* ( (stParam.stMachine.stPosition3.PosY-stParam.stMachine.stPosition0.PosY) / stParam.stRecipe.stPalette1.PaletteDimensionY );
+			//increase the row number
+			stparam.stRecipe.stPalette1.ActualPalettePositionY := 	stparam.stRecipe.stPalette1.ActualPalettePositionY +1;
 			fbEtape.piSVal:=131;
 	131:fbEtape.psMess:='Auto | Wait until in Pos 4';
-		IF fbMotorX.mcMoveAbsolute.Done AND fbMotorY.mcMoveAbsolute.Done THEN
+		IF (fbMotorX.mcMoveAbsolute.Done AND fbMotorY.mcMoveAbsolute.Done) OR fbBtn.xEmulateZDone THEN
 			fbEtape.piSVal:=140;
 		END_IF
 	140:fbEtape.psMess:='Auto | Putting down Z ';
@@ -118,7 +120,7 @@ CASE fbEtape.iNo OF
 		fbMotorZ.mcMoveAbsolute.Position:=100;
 		fbEtape.piSVal:=141;
 	141:fbEtape.psMess:='Auto | Waiting until Z is down';
-		IF fbMotorZ.mcMoveAbsolute.Done THEN
+		IF fbMotorZ.mcMoveAbsolute.Done OR fbBtn.xEmulateZDone THEN
 			fbEtape.piSVal:=150;
 		END_IF
 	150:fbEtape.psMess:='Auto | Opening Act1';
@@ -126,11 +128,11 @@ CASE fbEtape.iNo OF
 			fbEtape.piVal:=160;
 		END_IF
 	160:fbEtape.psMess:='Auto | Z go up';
-		fbMotorZ.mSetMoveAbsLent();
+		fbMotorZ.mSetMoveAbsRapide();
 		fbMotorZ.mcMoveAbsolute.Position:=0;
 		fbEtape.piVal:=161; //all is ok;
 	161:fbEtape.psMess:='Auto | Wait until Z is up';
-		IF fbMotorZ.mcMoveAbsolute.Done THEN
+		IF fbMotorZ.mcMoveAbsolute.Done OR fbBtn.xEmulateZDone THEN
 			fbEtape.piSVal:=100;
 		END_IF	
 	
@@ -194,6 +196,7 @@ iEtape:=fbEtape.iNo;]]></ST>
       <LineId Id="209" Count="0" />
       <LineId Id="212" Count="1" />
       <LineId Id="53" Count="0" />
+      <LineId Id="262" Count="1" />
       <LineId Id="218" Count="23" />
       <LineId Id="56" Count="0" />
       <LineId Id="116" Count="1" />

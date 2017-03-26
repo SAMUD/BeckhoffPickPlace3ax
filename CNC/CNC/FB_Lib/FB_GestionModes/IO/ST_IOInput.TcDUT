@@ -27,6 +27,7 @@ STRUCT
 	//Auto mode
 	xAllowedGetPiece AT%I* : BOOL;
 	xPiecePresent AT%I* : BOOL;
+	xEmulateZDone AT%I* :Bool;
 	
 END_STRUCT
 END_TYPE

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <VisuManager Name="Visualisierungsmanager" Id="{404e59b3-b91e-440b-bf93-367c66424a4c}">
     <XmlArchive>
       <Data>
@@ -40,10 +40,10 @@
             <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
               <v>FB_Init</v>
               <v>34f38952-86bd-4aaa-a0fd-1904298261c7</v>
-              <v>FB_Reinit</v>
-              <v>d2eb7792-9842-48fe-b4ff-60562bcbb9b0</v>
               <v>FB_Exit</v>
               <v>fed098e9-1fd4-4646-8f9a-c0543aee5d40</v>
+              <v>FB_Reinit</v>
+              <v>d2eb7792-9842-48fe-b4ff-60562bcbb9b0</v>
             </d>
             <v n="FbName">"__VisuInitInstantiation_Fb"</v>
             <v n="FbGuid">{db540460-b7e1-4ff8-84f7-11da94172630}</v>
@@ -542,7 +542,7 @@
                   <v n="Id">0</v>
                   <v n="Name">"AD"</v>
                   <v n="FullName">"Administrator"</v>
-                  <v n="Password">"7EB3BDD7848155AC72ACE4B733EA2395"</v>
+                  <v n="Password">"FEAD052EEEDCFB31C49B19F91EDDED24"</v>
                   <v n="Group">"Admin"</v>
                   <v n="IsDeactivated">false</v>
                   <v n="Description">""</v>
@@ -552,7 +552,7 @@
                   <v n="Id">1</v>
                   <v n="Name">"Service"</v>
                   <v n="FullName">"Service"</v>
-                  <v n="Password">"7EB3BDD7848155AC72ACE4B733EA2395"</v>
+                  <v n="Password">"FEAD052EEEDCFB31C49B19F91EDDED24"</v>
                   <v n="Group">"Service"</v>
                   <v n="IsDeactivated">true</v>
                   <v n="Description">""</v>
@@ -562,7 +562,7 @@
                   <v n="Id">2</v>
                   <v n="Name">"OP"</v>
                   <v n="FullName">"Operator"</v>
-                  <v n="Password">"7EB3BDD7848155AC72ACE4B733EA2395"</v>
+                  <v n="Password">"FEAD052EEEDCFB31C49B19F91EDDED24"</v>
                   <v n="Group">"Operator"</v>
                   <v n="IsDeactivated">false</v>
                   <v n="Description">""</v>

@@ -13,6 +13,7 @@ VAR_INPUT
 	//Auto mode
 	xAllowedGetPiece: BOOL;
 	xPiecePresent : BOOL;
+	xEmulateZDone : BOOL;
 	
 	//Init Mode
 	xHomingPosReached : BOOL;

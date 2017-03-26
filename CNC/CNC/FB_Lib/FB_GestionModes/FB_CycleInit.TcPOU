@@ -53,6 +53,18 @@ CASE fbEtape.iNo OF
 		END_IF
 	202: fbEtape.psMess:='Init | Waiting for Homing Axis Y';
 		IF NOT fbMotorY.mcHome.Active AND NOT fbBtn.xHomingPosReached THEN
+			fbEtape.piVal:=300;
+		END_IF
+		
+	300:fbEtape.psMess:='Init | Start Homing Axis Z';
+		fbEtape.piVal:=301;
+		fbEtape.tTimeQ:=T#100MS;
+	301:fbEtape.psMess:='Init | Wait 100MS';
+		IF fbEtape.xTimeQ THEN
+			fbEtape.piSVal:=302;
+		END_IF
+	302: fbEtape.psMess:='Init | Waiting for Homing Axis Z';
+		IF NOT fbMotorZ.mcHome.Active AND NOT fbBtn.xHomingPosReached THEN
 			fbEtape.piVal:=400;
 		END_IF
 		
@@ -83,6 +95,7 @@ iEtape:=fbEtape.iNo;]]></ST>
       <LineId Id="73" Count="0" />
       <LineId Id="75" Count="3" />
       <LineId Id="69" Count="3" />
+      <LineId Id="93" Count="11" />
       <LineId Id="61" Count="0" />
       <LineId Id="22" Count="13" />
       <LineId Id="2" Count="0" />

@@ -3,7 +3,7 @@
   <DUT Name="ST_ParamMoveMoteur" Id="{2f68113a-67cd-4d71-bd93-e86bd88e1a9b}">
     <Declaration><![CDATA[TYPE ST_ParamMoveMoteur :
 STRUCT
-	lrVitesse:LREAL:=100;			//vitesse
+	lrVitesse:LREAL:=900;			//vitesse
 	lrAcceleration:LREAL:=0;		//accélération standard, 0 si standard
 	lrDecceleration:LREAL:=0;		//accélération standard, 0 si standard
 END_STRUCT

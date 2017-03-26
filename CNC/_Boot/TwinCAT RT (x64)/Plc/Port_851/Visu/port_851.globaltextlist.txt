@@ -26,6 +26,7 @@ Id;Default;fr;de;en
 114;Do next step if Pas-a-Pas is enabled;Faire le prochain pas si Pas-a-Pas est allumée;Nächster Schritt wenn Schritt-für-Schritt aktiviert ist;Do next step if Step-for-Step is turned on
 113;Do Step;Faire un pas;Schritt;Do Step
 90;e: %s;;;
+133;Emulate Z Done;;;
 97;Enabled;Activé;Aktiviert;
 41;english;Anglais;Englisch;English
 78;ErrID: %d;;;

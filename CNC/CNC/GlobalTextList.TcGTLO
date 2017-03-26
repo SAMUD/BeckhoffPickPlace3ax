@@ -249,6 +249,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"133"</v>
+              <v n="TextDefault">"Emulate Z Done"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"97"</v>
               <v n="TextDefault">"Enabled"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
