@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <DUT Name="ST_IOOutput" Id="{d69b4ab8-e57a-466e-85fc-d2391d517834}">
     <Declaration><![CDATA[TYPE ST_IOOutput :
 STRUCT
@@ -7,8 +7,7 @@ STRUCT
 	QxLampeVerte AT%Q* : BOOL;
 	QxLampeOrange AT%Q* :BOOL;
 	
-	lMotorOut AT%Q* : DINT;
-	QxMotorDirection AT%Q* : BOOL;
+	
 END_STRUCT
 END_TYPE
 ]]></Declaration>

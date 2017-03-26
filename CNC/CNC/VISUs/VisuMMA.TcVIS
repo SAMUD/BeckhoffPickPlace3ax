@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <Visu Name="VisuMMA" Id="{22beceb3-43c5-47f8-a6b8-79a61dbbe16d}">
     <XmlArchive>
       <Data>
@@ -104,7 +104,7 @@
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">176</v>
+                      <v n="Value">128</v>
                     </o>
                     <o>
                       <v n="Id">3729828405L</v>
@@ -128,7 +128,7 @@
                     </o>
                     <o>
                       <v n="Id">1473355128L</v>
-                      <v n="Value">113</v>
+                      <v n="Value">89</v>
                     </o>
                     <o>
                       <v n="Id">2678395525L</v>
@@ -716,10 +716,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>bc574022-1a26-4da3-a67b-319a65f42875</v>
-                <v>FB_Exit</v>
-                <v>9d5994de-840f-488c-ab7b-5d2136f1b959</v>
                 <v>FB_Reinit</v>
                 <v>4040a2c6-5bf0-4966-a19f-d7700589d6fe</v>
+                <v>FB_Exit</v>
+                <v>9d5994de-840f-488c-ab7b-5d2136f1b959</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{c17c8f03-1d78-44b1-b951-13e8fda1c842}</v>

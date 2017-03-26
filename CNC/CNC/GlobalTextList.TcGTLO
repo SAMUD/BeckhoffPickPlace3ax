@@ -582,6 +582,33 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"130"</v>
+              <v n="TextDefault">"Mot X"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"131"</v>
+              <v n="TextDefault">"Mot Y"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"129"</v>
+              <v n="TextDefault">"Mot Z"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"55"</v>
               <v n="TextDefault">"Motor"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">

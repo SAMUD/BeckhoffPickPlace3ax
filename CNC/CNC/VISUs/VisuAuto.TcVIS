@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <Visu Name="VisuAuto" Id="{cb0fb055-ed28-45d9-b86b-1dc781074ad7}">
     <XmlArchive>
       <Data>
@@ -104,7 +104,7 @@
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">319</v>
+                      <v n="Value">377</v>
                     </o>
                     <o>
                       <v n="Id">3729828405L</v>
@@ -128,7 +128,7 @@
                     </o>
                     <o>
                       <v n="Id">1473355128L</v>
-                      <v n="Value">158</v>
+                      <v n="Value">187</v>
                     </o>
                     <o>
                       <v n="Id">2678395525L</v>
@@ -2038,10 +2038,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>35540281-7491-4c2e-bc61-dab9f14fcc8c</v>
-                <v>FB_Exit</v>
-                <v>372f9518-27a3-4207-bad5-477decb54c0c</v>
                 <v>FB_Reinit</v>
                 <v>170544cc-1d94-4c31-8098-a7a98cb693ca</v>
+                <v>FB_Exit</v>
+                <v>372f9518-27a3-4207-bad5-477decb54c0c</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{2c30f18e-a616-42eb-9269-e8631f03a352}</v>
@@ -2085,7 +2085,7 @@
             </o>
             <v n="DialogDut">{8c5bd58b-6a37-4831-a66a-1ca060805a4c}</v>
           </o>
-          <v n="LastUsedIdForIdentifier">37</v>
+          <v n="LastUsedIdForIdentifier">41</v>
           <o n="TextDocument" t="TextDocument">
             <a n="TextLines" cet="TextLine">
               <o>

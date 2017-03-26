@@ -63,6 +63,9 @@ Id;Default;fr;de;en
 12;Mode Init;;;
 14;Mode Manual;;;
 112;Mode Pas-a-Pas;;;
+130;Mot X;;;
+131;Mot Y;;;
+129;Mot Z;;;
 55;Motor;Moteur;Motor;Motor
 59;MOTOR;MOTEUR;MOTOR;MOTOR
 89;NetID: %s;;;

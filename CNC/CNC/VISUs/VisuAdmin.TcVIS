@@ -335,11 +335,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">65</v>
+                      <v n="Value">265</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">286</v>
+                      <v n="Value">213</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -371,11 +371,11 @@
                     </o>
                     <o>
                       <v n="Id">550940142L</v>
-                      <v n="Value">185</v>
+                      <v n="Value">385</v>
                     </o>
                     <o>
                       <v n="Id">1473355128L</v>
-                      <v n="Value">328</v>
+                      <v n="Value">255</v>
                     </o>
                     <o>
                       <v n="Id">493260384L</v>
@@ -497,15 +497,15 @@
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">9</v>
+                      <v n="Value">8</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
-                      <v n="Value">369</v>
+                      <v n="Value">864</v>
                     </o>
                     <o>
                       <v n="Id">2134141914L</v>
-                      <v n="Value">454</v>
+                      <v n="Value">518</v>
                     </o>
                     <o>
                       <v n="Id">3729828405L</v>
@@ -525,11 +525,11 @@
                     </o>
                     <o>
                       <v n="Id">550940142L</v>
-                      <v n="Value">191</v>
+                      <v n="Value">439</v>
                     </o>
                     <o>
                       <v n="Id">1473355128L</v>
-                      <v n="Value">236</v>
+                      <v n="Value">267</v>
                     </o>
                     <o>
                       <v n="Id">2678395525L</v>
@@ -569,44 +569,23 @@
                     </o>
                     <o>
                       <v n="Id">2597686782L</v>
-                      <v n="Value">false</v>
+                      <v n="Value">true</v>
                     </o>
                   </l>
                 </o>
                 <v n="VisualElementName">"Rectangle"</v>
                 <v n="VisualElementTypeName">"VisuFbElemSimple"</v>
                 <v n="VisualElementIsRectangle">true</v>
-                <v n="VisualElementIdentifier">"GenElemInst_22"</v>
+                <v n="VisualElementIdentifier">"GenElemInst_87"</v>
                 <n n="VisualElementOfflinePaintCommands" />
                 <n n="VisualElementFrameInformation" />
                 <d n="VisualElementInputActions" t="Hashtable" />
-                <v n="VisualElementIdentification">{2950182d-a0ff-457f-a16b-b4a4f84e15f1}</v>
+                <v n="VisualElementIdentification">{55abbba5-e2b4-42cb-8aed-9b7b844694bf}</v>
                 <v n="VisualElementOwningObjectGuid">{6b6a12a9-332a-46cc-9275-7970492bc41a}</v>
                 <a n="LMGuids" et="Guid" />
                 <d n="SubElements" t="Hashtable" />
-                <v n="VisualElementId">22</v>
-                <l n="UserManagementAccessRights" t="ArrayList" cet="VisuAccessRightInfo">
-                  <o>
-                    <v n="GroupName">"Admin"</v>
-                    <v n="GroupId">1</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Service"</v>
-                    <v n="GroupId">2</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Operable</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"Operator"</v>
-                    <v n="GroupId">3</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                  <o>
-                    <v n="GroupName">"None"</v>
-                    <v n="GroupId">0</v>
-                    <v n="AccessRight" t="VisuAccessRightType">Invisible</v>
-                  </o>
-                </l>
+                <v n="VisualElementId">95</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
               </o>
               <o>
                 <a n="ConfiguredComplexInputs" et="ComplexInput" />
@@ -664,11 +643,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">11</v>
+                      <v n="Value">20</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">475</v>
+                      <v n="Value">486</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -718,11 +697,11 @@
                     </o>
                     <o>
                       <v n="Id">550940142L</v>
-                      <v n="Value">86</v>
+                      <v n="Value">95</v>
                     </o>
                     <o>
                       <v n="Id">1473355128L</v>
-                      <v n="Value">490</v>
+                      <v n="Value">501</v>
                     </o>
                     <o>
                       <v n="Id">493260384L</v>
@@ -1355,11 +1334,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">40</v>
+                      <v n="Value">22</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">155</v>
+                      <v n="Value">127</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1502,11 +1481,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">0</v>
+                      <v n="Value">1</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">121</v>
+                      <v n="Value">210</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1621,11 +1600,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">20</v>
+                      <v n="Value">177</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">268</v>
+                      <v n="Value">58</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1768,11 +1747,11 @@
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
-                      <v n="Value">19</v>
+                      <v n="Value">145</v>
                     </o>
                     <o>
                       <v n="Id">357335551L</v>
-                      <v n="Value">240</v>
+                      <v n="Value">101</v>
                     </o>
                     <o>
                       <v n="Id">2422045748L</v>
@@ -1963,10 +1942,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>064ed60e-34f2-457a-b1ee-595f02194390</v>
-                <v>FB_Exit</v>
-                <v>e58d9909-ff12-47f6-bd27-7cf4fc672b81</v>
                 <v>FB_Reinit</v>
                 <v>bcdf104e-3f3e-4d67-b846-5d5df54c3c86</v>
+                <v>FB_Exit</v>
+                <v>e58d9909-ff12-47f6-bd27-7cf4fc672b81</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{65d1a25d-75e2-4628-a7df-53e84c51d366}</v>
@@ -2010,7 +1989,7 @@
             </o>
             <v n="DialogDut">{dd2fcb89-8b04-41d2-982e-daa2a0b7b63f}</v>
           </o>
-          <v n="LastUsedIdForIdentifier">85</v>
+          <v n="LastUsedIdForIdentifier">87</v>
           <o n="TextDocument" t="TextDocument">
             <a n="TextLines" cet="TextLine">
               <o>
