@@ -4,8 +4,8 @@
   <Title>Scope XY Project1</Title>
   <LayoutString>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="c781497b-cc7a-40c1-b2d1-45b942312750" LastFocused="131350093879666692" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="adf7ada0-3815-47a9-a18c-14ebef4fd9cb" DocumentIndexInWindowGroup="0" DocumentSplitPath="1" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
-  &lt;Window Guid="b2818bd9-5bd5-4766-8786-2699cb903dda" LastFocused="131350094166909673" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="8307846b-6ec6-4edb-82e9-6392b040a3b0" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="c781497b-cc7a-40c1-b2d1-45b942312750" LastFocused="131354160645858427" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="adf7ada0-3815-47a9-a18c-14ebef4fd9cb" DocumentIndexInWindowGroup="0" DocumentSplitPath="1" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="b2818bd9-5bd5-4766-8786-2699cb903dda" LastFocused="131354191532830990" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="8307846b-6ec6-4edb-82e9-6392b040a3b0" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="8307846b-6ec6-4edb-82e9-6392b040a3b0" Collapsed="0" SelectedControl="b2818bd9-5bd5-4766-8786-2699cb903dda"&gt;
@@ -97,7 +97,7 @@
               <LineWidth>1</LineWidth>
               <AutoScale>false</AutoScale>
               <AxisMin>-250</AxisMin>
-              <AxisMax>4000</AxisMax>
+              <AxisMax>5250</AxisMax>
               <ScaleFactor>0</ScaleFactor>
               <ShowCursorValue>true</ShowCursorValue>
               <GridColorValue>-13676721</GridColorValue>
@@ -204,7 +204,7 @@
             <LineWidth>1</LineWidth>
             <AutoScale>false</AutoScale>
             <AxisMin>-250</AxisMin>
-            <AxisMax>4000</AxisMax>
+            <AxisMax>5250</AxisMax>
             <ScaleFactor>0</ScaleFactor>
             <ShowCursorValue>true</ShowCursorValue>
             <GridColorValue>-13676721</GridColorValue>
@@ -426,7 +426,7 @@
               <SortPriority>-1</SortPriority>
             </ScopeChannelSerializable>
           </Channels>
-          <SortPriority>-1</SortPriority>
+          <SortPriority>0</SortPriority>
         </ScopeYAxisSerializable>
       </YAxes>
       <XYAxes />
