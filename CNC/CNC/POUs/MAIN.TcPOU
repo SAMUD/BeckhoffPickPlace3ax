@@ -128,7 +128,7 @@ fbMotorY.mSetMoveAbsLent();
 
 
 //pilotage homing (prise d'origine)
-fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=101;
+fbMotorX.mcHome.Execute:=fbCycleInit.iEtape=100;
 fbMotorX.mcHome.bCalibrationCam:=fbBtn.xHomingPosReached;
 
 //pilotage homing (prise d'origine)

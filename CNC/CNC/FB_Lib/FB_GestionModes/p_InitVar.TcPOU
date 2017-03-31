@@ -11,7 +11,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//VisuElems.CURRENTLANGUAGE := 'de';
+      <ST><![CDATA[VisuElems.CURRENTLANGUAGE := 'de';
 
 fbAct1.stParam.xPresenceSensIn:=TRUE;
 fbAct1.stParam.xPresenceSensOut:=TRUE;
@@ -22,12 +22,12 @@ fbAct1.stParam.tMoveOutTimeDelay:=T#0.2S;
 
 stParam.stStatus.eMMA:=Init;
 
-stParam.stMachine.stParamMotY.stMoveLent.lrVitesse:=2500;
+stParam.stMachine.stParamMotY.stMoveLent.lrVitesse:=3500;
 
-stParam.stMachine.stParamMotX.stMoveRapide.lrVitesse:=3000;
+stParam.stMachine.stParamMotX.stMoveRapide.lrVitesse:=3500;
 
-stParam.stMachine.stParamMotZ.stMoveRapide.lrVitesse:=500;
-stParam.stMachine.stParamMotZ.stMoveLent.lrVitesse:=100;
+stParam.stMachine.stParamMotZ.stMoveRapide.lrVitesse:=3500;
+stParam.stMachine.stParamMotZ.stMoveLent.lrVitesse:=50;
 
 //setup all reference positions. Except Position 0 cause this one needs to be calibrated
 stParam.stMachine.stPosition1.Initialized:=TRUE;
@@ -46,6 +46,10 @@ stParam.stMachine.stPosition4.PosY:=4000;
 //setup the Palette
 stParam.stRecipe.stPalette1.PaletteDimensionX:=10;
 stParam.stRecipe.stPalette1.PaletteDimensionY:=10;
+
+//init has not been done now
+stParam.stStatus.xInitOk:=FALSE;
+stParam.stStatus.xHomingDone:=FALSE;
 
 
 
@@ -69,6 +73,7 @@ stParam.stRecipe.stPalette1.PaletteDimensionY:=10;
       <LineId Id="91" Count="6" />
       <LineId Id="99" Count="0" />
       <LineId Id="101" Count="3" />
+      <LineId Id="183" Count="3" />
       <LineId Id="51" Count="0" />
       <LineId Id="61" Count="4" />
       <LineId Id="2" Count="0" />

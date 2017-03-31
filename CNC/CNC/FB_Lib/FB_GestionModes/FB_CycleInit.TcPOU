@@ -29,12 +29,19 @@ END_IF
 CASE fbEtape.iNo OF
 	0:fbEtape.psMess:='Init | Wait';
 		IF xStart THEN
-			fbEtape.piVal:=100;
+			fbEtape.piVal:=99;
 		END_IF
-		
-	100: fbEtape.psMess:='Init | Reset on Actuators and Motor';
-		fbEtape.piVal:=101;
-		fbEtape.tTimeQ:=T#100MS;
+	
+	
+	99: fbEtape.psMess:='Init | Reset on Actuators and Motor';
+		IF  stParam.stStatus.xHomingDone=TRUE THEN
+			fbEtape.piSVal:=400;
+		ELSE
+			fbEtape.piSVal:=100;
+		END_IF
+	100: fbEtape.psMess:='Start Homing X';
+			fbEtape.tTimeQ:=T#100MS;
+			fbEtape.piSVal:=101;
 	101:fbEtape.psMess:='Init | Wait 100MS';
 		IF fbEtape.xTimeQ THEN
 			fbEtape.piSVal:=102;
@@ -66,13 +73,26 @@ CASE fbEtape.iNo OF
 	302: fbEtape.psMess:='Init | Waiting for Homing Axis Z';
 		IF NOT fbMotorZ.mcHome.Active AND NOT fbBtn.xHomingPosReached THEN
 			fbEtape.piVal:=400;
+			stParam.stStatus.xHomingDone:=TRUE;
 		END_IF
 		
 		
 	400:fbEtape.psMess:='Init | Init Actor1';
-		IF  fbAct1.xInInPos THEN
+		IF  fbAct1.xInInPos AND stParam.stMachine.stPosition0.Initialized=FALSE THEN
+			fbEtape.piSVal:=500;
+		ELSIF  fbAct1.xInInPos AND stParam.stMachine.stPosition0.Initialized=TRUE THEN
 			fbEtape.piSVal:=999;
 		END_IF
+		
+	500:fbEtape.psMess:='Init | Init Home Position';
+		IF  fbBtn.xSetHomePos THEN
+			stParam.stMachine.stPosition0.Initialized:=TRUE;
+			stParam.stMachine.stPosition0.PosX:=fbMotorX.fbAxisRef.NcToPlc.ActPos;
+			stParam.stMachine.stPosition0.PosY:=fbMotorY.fbAxisRef.NcToPlc.ActPos;
+			fbEtape.piSVal:=999;
+		END_IF
+		
+		
 	
 	999:fbEtape.psMess:='Init | Finished';
 		IF (xStop) THEN
@@ -86,8 +106,15 @@ iEtape:=fbEtape.iNo;]]></ST>
     <LineIds Name="FB_CycleInit">
       <LineId Id="3" Count="12" />
       <LineId Id="55" Count="0" />
-      <LineId Id="16" Count="1" />
-      <LineId Id="56" Count="4" />
+      <LineId Id="137" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="140" Count="4" />
+      <LineId Id="148" Count="0" />
+      <LineId Id="150" Count="1" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="146" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="147" Count="0" />
       <LineId Id="50" Count="0" />
       <LineId Id="52" Count="2" />
       <LineId Id="74" Count="0" />
@@ -95,9 +122,18 @@ iEtape:=fbEtape.iNo;]]></ST>
       <LineId Id="73" Count="0" />
       <LineId Id="75" Count="3" />
       <LineId Id="69" Count="3" />
-      <LineId Id="93" Count="11" />
+      <LineId Id="93" Count="10" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="104" Count="0" />
       <LineId Id="61" Count="0" />
-      <LineId Id="22" Count="13" />
+      <LineId Id="22" Count="4" />
+      <LineId Id="134" Count="1" />
+      <LineId Id="127" Count="3" />
+      <LineId Id="132" Count="1" />
+      <LineId Id="136" Count="0" />
+      <LineId Id="131" Count="0" />
+      <LineId Id="123" Count="1" />
+      <LineId Id="27" Count="8" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

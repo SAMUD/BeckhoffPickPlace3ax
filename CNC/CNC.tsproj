@@ -1490,11 +1490,13 @@ External Setpoint Generation:
 					<Name>Axis 1</Name>
 					<AxisPara>
 						<Dynamic Acceleration="60900.1" Deceleration="60900.1" Jerk="1431970"/>
-						<Velo RefSync="10" FastManual="3500" Maximum="3500"/>
+						<Velo RefSync="10" SlowManual="25" FastManual="3500" Maximum="3500"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="25">
-						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="12800" MaxCount="#x0000ffff"/>
+						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="12800" MaxCount="#x0000ffff">
+							<SoftEndMaxControl Enable="true" Range="5000"/>
+						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Inputs</Name>
 							<Var>
@@ -1647,11 +1649,14 @@ External Setpoint Generation:
 					<AxisPara>
 						<General UnitName="°"/>
 						<Dynamic Acceleration="127260" Deceleration="127260" Jerk="25706400"/>
-						<Velo RefSearch="500" RefSync="100" SlowManual="15000" FastManual="40000" Maximum="58000"/>
+						<Velo RefSearch="500" RefSync="100" SlowManual="500" FastManual="40000" Maximum="58000"/>
+						<TargetPosControl Range="10"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
 					<Encoder Name="Enc" EncType="26">
-						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="2048" MaxCount="#x0000ffff"/>
+						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="2048" MaxCount="#x0000ffff">
+							<SoftEndMaxControl Enable="true" Range="5000"/>
+						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Eingänge</Name>
 							<Var>
@@ -1883,8 +1888,10 @@ External Setpoint Generation:
 						<Velo Maximum="3500"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
-					<Encoder Name="Enc" EncType="25">
-						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="12600" MaxCount="#x0000ffff"/>
+					<Encoder Name="Enc" EncType="1">
+						<EncPara ScaleFactorNumerator="360" ScaleFactorDenominator="12600">
+							<SoftEndMaxControl Range="5000"/>
+						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Eingänge</Name>
 							<Var>
@@ -1950,7 +1957,7 @@ External Setpoint Generation:
 							</Var>
 						</Vars>
 					</Encoder>
-					<Drive Name="Drive" DrvType="20">
+					<Drive Name="Drive" DrvType="5">
 						<DrvPara>
 							<Analog VeloReferenz="3500"/>
 							<TimeComp TaskDelayCycles="1"/>
@@ -3170,7 +3177,7 @@ External Setpoint Generation:
 						<CoeProfile ProfileNo="5001"/>
 					</EtherCAT>
 				</Box>
-				<Box BoxType="9081" AmsPort="28929" Id="2">
+				<Box Disabled="true" BoxType="9081" AmsPort="28929" Id="2">
 					<Name>Box 2 (BK1150)</Name>
 					<ImageId>1000</ImageId>
 					<Vars VarGrpType="1">
@@ -3868,16 +3875,6 @@ External Setpoint Generation:
 				<Link VarA="Enc^Inputs^In^nDataIn1[0]" VarB="Term 4 (KL2552)^Channel 1^Daten Ein"/>
 				<Link VarA="Enc^Inputs^In^nState1" VarB="Term 4 (KL2552)^Channel 1^Status" Size="4" OffsA="2"/>
 				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="Term 4 (KL2552)^Channel 1^Kontrolle" Size="5" OffsA="1"/>
-			</OwnerB>
-		</OwnerA>
-		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Achse 3 - Z">
-			<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 2 (BK1150)">
-				<Link VarA="Drive^Inputs^In^nState1" VarB="Term 11 (KL2531)^Channel 1^Status"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="Term 11 (KL2531)^Channel 1^Ctrl"/>
-				<Link VarA="Drive^Outputs^Out^nDataOut2[0]" VarB="Term 11 (KL2531)^Channel 1^Velocity"/>
-				<Link VarA="Enc^Inputs^In^nDataIn1[0]" VarB="Term 11 (KL2531)^Channel 1^Position"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="Term 11 (KL2531)^Channel 1^ExtStatus"/>
-				<Link VarA="Enc^Outputs^Out^nCtrl1" VarB="Term 11 (KL2531)^Channel 1^ExtCtrl"/>
 			</OwnerB>
 		</OwnerA>
 		<OwnerA Name="TINC^NC-Task 1 SAF^Axes^Axis 1">

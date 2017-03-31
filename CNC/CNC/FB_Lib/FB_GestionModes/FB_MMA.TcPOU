@@ -75,8 +75,8 @@ CASE fbEtape.iNo OF
 	//Auto
 	//--------------------------------------------------------------
 	300:fbEtape.psMess:='MMA | Auto | Wait for fbBtn.xStart';
-		IF (fbBtn.xStart) THEN
-			fbEtape.piVal:=350;
+		IF fbBtn.xStart THEN
+			fbEtape.piVal:=340;
 		ELSIF (stParam.stStatus.eMMA<>Auto) THEN
 			fbEtape.piVal:=50;
 		END_IF
@@ -87,6 +87,7 @@ CASE fbEtape.iNo OF
 	341:fbEtape.psMess:='MMA | Auto | Do Init - Wait end';
 		IF fbCycleInit.iEtape=999 THEN
 			fbEtape.piVal:=350;
+			stParam.stStatus.xInitOk:=TRUE;
 		END_IF
 		
 	350:fbEtape.psMess:='MMA | Auto | Production - Wait Stop Signal';
@@ -130,7 +131,9 @@ END_CASE
 iEtape:=fbEtape.iNo;]]></ST>
     </Implementation>
     <LineIds Name="FB_MMA">
-      <LineId Id="3" Count="115" />
+      <LineId Id="3" Count="74" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="78" Count="40" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
