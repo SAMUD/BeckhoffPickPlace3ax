@@ -56,6 +56,8 @@ CASE fbEtape.iNo OF
 			fbMotorY.mSetMoveAbsLent();
 			fbMotorY.mcMoveAbsolute.Position:=stParam.stMachine.stPosition0.PosY + stParam.stMachine.stPosition4.PosY;
 			fbEtape.piSVal:=110;
+		ELSIF xMemStop=TRUE THEN
+			fbEtape.piSVal:=999;
 		END_IF		
 	110:fbEtape.psMess:='Auto | Wait until in Pos 4';
 		IF (fbMotorX.mcMoveAbsolute.Done AND fbMotorY.mcMoveAbsolute.Done) OR fbBtn.xEmulateZDone THEN
@@ -132,8 +134,10 @@ CASE fbEtape.iNo OF
 		fbMotorZ.mcMoveAbsolute.Position:=0;
 		fbEtape.piVal:=161; //all is ok;
 	161:fbEtape.psMess:='Auto | Wait until Z is up';
-		IF fbMotorZ.mcMoveAbsolute.Done OR fbBtn.xEmulateZDone THEN
+		IF  xMemStop=FALSE THEN
 			fbEtape.piSVal:=100;
+		ELSIF (fbMotorZ.mcMoveAbsolute.Done OR fbBtn.xEmulateZDone) AND xMemStop=TRUE THEN
+			fbEtape.piSVal:=999;
 		END_IF	
 	
 	800:fbEtape.psMess:='Auto | Error occured - Going into stock state';
@@ -165,7 +169,9 @@ iEtape:=fbEtape.iNo;]]></ST>
       <LineId Id="167" Count="0" />
       <LineId Id="158" Count="1" />
       <LineId Id="163" Count="1" />
-      <LineId Id="156" Count="1" />
+      <LineId Id="156" Count="0" />
+      <LineId Id="286" Count="1" />
+      <LineId Id="157" Count="0" />
       <LineId Id="25" Count="5" />
       <LineId Id="175" Count="1" />
       <LineId Id="31" Count="0" />
@@ -197,7 +203,9 @@ iEtape:=fbEtape.iNo;]]></ST>
       <LineId Id="212" Count="1" />
       <LineId Id="53" Count="0" />
       <LineId Id="262" Count="1" />
-      <LineId Id="218" Count="23" />
+      <LineId Id="218" Count="22" />
+      <LineId Id="284" Count="1" />
+      <LineId Id="241" Count="0" />
       <LineId Id="56" Count="0" />
       <LineId Id="116" Count="1" />
       <LineId Id="119" Count="0" />

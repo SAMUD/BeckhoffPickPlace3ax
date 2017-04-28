@@ -12,7 +12,7 @@ STRUCT
 	
 	
 	
-	lSetSpeedMotor : LREAL;
+	iSetSpeedMotor : INT := 10;
 	
 	xAirPressureOk AT%I* : BOOL;
 	
@@ -22,7 +22,11 @@ STRUCT
 	xManualAct1GoOut AT%I* : BOOL;
 	
 	//Btn in init mode
-	xSetHomePos AT%I* : BOOL;
+	xSetHomePos   AT%I*: BOOL;
+	xJogXForward  AT%I*: BOOL;
+	xJogYForward  AT%I*: BOOL;
+	xJogXBackward AT%I*: BOOL;
+	xJogYBackward AT%I*: BOOL;
 	
 	//Auto mode
 	xAllowedGetPiece AT%I* : BOOL;

@@ -132,11 +132,29 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"143"</v>
+              <v n="TextDefault">"Auto"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"71"</v>
               <v n="TextDefault">"AUTOMATIC"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v>AUTOMATIQUE</v>
                 <v>AUTOMATISCH</v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"136"</v>
+              <v n="TextDefault">"Backward"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
                 <v></v>
               </l>
             </o>
@@ -339,6 +357,24 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"135"</v>
+              <v n="TextDefault">"Forward"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"134"</v>
+              <v n="TextDefault">"ForwardHomePosition"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"19"</v>
               <v n="TextDefault">"french"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -429,6 +465,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"142"</v>
+              <v n="TextDefault">"Init"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"102"</v>
               <v n="TextDefault">"Ir Ecart : %.5f"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -453,6 +498,24 @@
                 <v>LANGUE</v>
                 <v>SPRACHE</v>
                 <v>LANGUAGE</v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"138"</v>
+              <v n="TextDefault">"Language"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"140"</v>
+              <v n="TextDefault">"Language / User"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
               </l>
             </o>
             <o>
@@ -510,6 +573,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"137"</v>
+              <v n="TextDefault">"Main Speed Control"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"109"</v>
               <v n="TextDefault">"MAIN.fbCycleInit.fbEtape.sMess"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -539,6 +611,24 @@
             <o>
               <v n="TextID">"107"</v>
               <v n="TextDefault">"MAIN.fbCycleMan.iEtape"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"139"</v>
+              <v n="TextDefault">"MainControl"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"144"</v>
+              <v n="TextDefault">"Manual"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>
@@ -951,6 +1041,33 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"141"</v>
+              <v n="TextDefault">"Status"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"148"</v>
+              <v n="TextDefault">"Status Full"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"147"</v>
+              <v n="TextDefault">"Status Simple"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"26"</v>
               <v n="TextDefault">"stConfigBus.uiNbBits: %i"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -1095,6 +1212,15 @@
               </l>
             </o>
             <o>
+              <v n="TextID">"145"</v>
+              <v n="TextDefault">"X"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
               <v n="TextID">"74"</v>
               <v n="TextDefault">"xBusy"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
@@ -1187,6 +1313,15 @@
             <o>
               <v n="TextID">"50"</v>
               <v n="TextDefault">"xVonnected"</v>
+              <l n="LanguageTexts" t="ArrayList" cet="String">
+                <v></v>
+                <v></v>
+                <v></v>
+              </l>
+            </o>
+            <o>
+              <v n="TextID">"146"</v>
+              <v n="TextDefault">"Y"</v>
               <l n="LanguageTexts" t="ArrayList" cet="String">
                 <v></v>
                 <v></v>

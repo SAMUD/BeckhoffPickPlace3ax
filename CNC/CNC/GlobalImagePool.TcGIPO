@@ -4,22 +4,37 @@
     <XmlArchive>
       <Data>
         <o xml:space="preserve" t="GlobalImagePoolObject">
-          <v n="UniqueIdGenerator">"17"</v>
+          <v n="UniqueIdGenerator">"31"</v>
           <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
             <o>
               <v n="BitmapID">"Verinrentree"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\sdaur\OneDrive\Studium\Schweiz\Auto\ProjetPrintemps\Verinrentree.png"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\OneDrive\Studium\Schweiz\Auto\ProjetPrintemps\Verinrentree.png"</v>
               <v n="ItemID">4</v>
             </o>
             <o>
               <v n="BitmapID">"Verinsortie"</v>
-              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|C:\Users\sdaur\OneDrive\Studium\Schweiz\Auto\ProjetPrintemps\verinsortie.png"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\OneDrive\Studium\Schweiz\Auto\ProjetPrintemps\verinsortie.png"</v>
               <v n="ItemID">5</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Allemand"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\OneDrive\Studium\Schweiz\Auto\ProjetPrintemps\Deutschland.jpg"</v>
+              <v n="ItemID">9</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Francais"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\OneDrive\Studium\Schweiz\Auto\ProjetPrintemps\Frankreich.jpg"</v>
+              <v n="ItemID">20</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Anglais"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|D:\OneDrive\Studium\Schweiz\Auto\ProjetPrintemps\Englisch.png"</v>
+              <v n="ItemID">24</v>
             </o>
             <o>
               <v n="BitmapID">""</v>
               <v n="FileID">""</v>
-              <v n="ItemID">9</v>
+              <v n="ItemID">26</v>
             </o>
           </l>
           <v n="GuidInit">{ac284356-706a-42e5-90c4-b102c5c00caf}</v>

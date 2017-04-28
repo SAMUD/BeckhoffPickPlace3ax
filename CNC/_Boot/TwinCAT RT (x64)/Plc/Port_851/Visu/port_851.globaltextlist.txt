@@ -14,6 +14,7 @@ Id;Default;fr;de;en
 8;ARU;ARU;NOT-Aus;emergency Stop
 93;ARU - when there is no hardwarebutton present;ARU - seulement si il y a pas de Bouton Hardware;NOT-Aus - nur wenn es kein Hardware-Button gibt;emergency Stop - only when there is no Hardware Button
 71;AUTOMATIC;AUTOMATIQUE;AUTOMATISCH;
+136;Backward;;;
 126;Camera Control;;;
 53;Charge;Charge;Laden;Load
 96;Connected to Server;Connecté aux Serveur;Verbunden mit Serveur;
@@ -36,6 +37,8 @@ Id;Default;fr;de;en
 32;fbConfig.udiNbreIncBus : %i;;;
 105;fbMotor.fbMotor.fbConvertNumToMotorOut.QaSortie;;;
 98;Force Disconnect;;Zwangs-Trennen;
+135;Forward;;;
+134;ForwardHomePosition;;;
 19;french;Francais;Französisch;French
 43;Gain : %.2f;;;
 20;german;Allemand;Deutsch;German

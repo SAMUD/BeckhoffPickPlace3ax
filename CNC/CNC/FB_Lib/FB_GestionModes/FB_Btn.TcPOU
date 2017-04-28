@@ -8,7 +8,8 @@ VAR_INPUT
 	xReset:BOOL;
 	xNextPas:BOOL;
 	xAru:BOOL;
-		xAirPressureOk : BOOL;
+	xAirPressureOk : BOOL;
+	iMotorSpeed: INT;
 	
 	//Auto mode
 	xAllowedGetPiece: BOOL;
@@ -17,6 +18,10 @@ VAR_INPUT
 	
 	//Init Mode
 	xHomingPosReached : BOOL;
+	xJogXForward : BOOL;
+	xJogXBackward: BOOL;
+	xJogYForward : BOOL;
+	xJogYBackward: BOOL;
 	
 	//Btn used in Manual-Mode
 	xSetHomePos : BOOL;

@@ -27,6 +27,12 @@ fbBtn.xSetHomePos:=stio.stIn.xSetHomePos;
 fbBtn.xAllowedGetPiece:=stio.stIn.xAllowedGetPiece;
 fbBtn.xPiecePresent:=stio.stIn.xPiecePresent;
 fbBtn.xEmulateZDone:=stio.stIn.xEmulateZDone;
+fbBtn.xJogXBackward:=stio.stIn.xJogXBackward;
+fbBtn.xJogYBackward:=stio.stIn.xJogYBackward;
+fbBtn.xJogXForward:=stio.stIn.xJogXForward;
+fbBtn.xJogYForward:=stio.stIn.xJogYForward;
+fbBtn.iMotorSpeed:=stio.stIn.iSetSpeedMotor;
+
 
 //and now call it
 fbBtn();
@@ -70,7 +76,7 @@ fbCycleMan();
 //******************************************
 
 //activate Lamp1
-stIo.stOut.QxLampeRed:=fbCycleAuto.iEtape<800 AND fbCycleAuto.iEtape>0;
+stIo.stOut.QxLampeRed:=NOT fbBtn.xAru;
 
 
 
@@ -111,19 +117,19 @@ fbMotorZ(stParam:=stParam.stMachine.stParamMotZ);
 fbMotorX.mcPower.Enable:=stIO.stIn.IxAruIO;
 fbMotorX.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
 fbMotorX.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
-fbMotorX.mcPower.Override:=100;
+fbMotorX.mcPower.Override:=fbBtn.iMotorSpeed;
 fbMotorX.mSetMoveAbsRapide();
 
 fbMotorY.mcPower.Enable:=stIO.stIn.IxAruIO;
 fbMotorY.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
 fbMotorY.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
-fbMotorY.mcPower.Override:=100;
+fbMotorY.mcPower.Override:=fbBtn.iMotorSpeed;
 fbMotorY.mSetMoveAbsLent();
 
 fbMotorZ.mcPower.Enable:=stIO.stIn.IxAruIO;
 fbMotorZ.mcPower.Enable_Negative:=stIO.stIn.IxAruIO;
 fbMotorZ.mcPower.Enable_positive:=stIO.stIn.IxAruIO;
-fbMotorZ.mcPower.Override:=100;
+fbMotorZ.mcPower.Override:=fbBtn.iMotorSpeed;
 fbMotorY.mSetMoveAbsLent();
 
 
@@ -147,12 +153,14 @@ fbMotorZ.mcReset.Execute:=fbMMA.iEtape=810 OR fbCycleInit.iEtape=100;
 
 //pilotage déplacement absolu
 fbMotorX.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=110 OR fbCycleAuto.iEtape=131;
-
 fbMotorY.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=110 OR fbCycleAuto.iEtape=131;
-
 fbMotorZ.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=112 OR fbCycleAuto.iEtape=120 OR fbCycleAuto.iEtape=141 OR fbCycleAuto.iEtape=161;
 
-
+//Move Jog
+fbMotorX.mcJog.JogForward:= fbBtn.xJogXForward AND (fbCycleInit.iEtape=500 OR fbCycleMan.iEtape=100);
+fbMotorX.mcJog.JogBackwards:= fbBtn.xJogXBackward AND (fbCycleInit.iEtape=500 OR fbCycleMan.iEtape=100);
+fbMotorY.mcJog.JogForward:= fbBtn.xJogYForward AND (fbCycleInit.iEtape=500 OR fbCycleMan.iEtape=100);
+fbMotorY.mcJog.JogBackwards:= fbBtn.xJogYBackward AND (fbCycleInit.iEtape=500 OR fbCycleMan.iEtape=100);
 
 
 
@@ -168,6 +176,10 @@ fbMotorZ.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=112 OR fbCycleAuto.iEtape=12
       <LineId Id="194" Count="0" />
       <LineId Id="198" Count="1" />
       <LineId Id="201" Count="0" />
+      <LineId Id="205" Count="2" />
+      <LineId Id="209" Count="0" />
+      <LineId Id="211" Count="0" />
+      <LineId Id="210" Count="0" />
       <LineId Id="200" Count="0" />
       <LineId Id="29" Count="7" />
       <LineId Id="43" Count="2" />
@@ -210,8 +222,13 @@ fbMotorZ.mcMoveAbsolute.Execute:=fbCycleAuto.iEtape=112 OR fbCycleAuto.iEtape=12
       <LineId Id="53" Count="0" />
       <LineId Id="69" Count="0" />
       <LineId Id="11" Count="2" />
-      <LineId Id="54" Count="3" />
-      <LineId Id="60" Count="3" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="60" Count="2" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="72" Count="1" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="63" Count="0" />
       <LineId Id="59" Count="0" />
       <LineId Id="58" Count="0" />
       <LineId Id="1" Count="0" />

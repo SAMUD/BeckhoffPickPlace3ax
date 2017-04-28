@@ -22,12 +22,12 @@ fbAct1.stParam.tMoveOutTimeDelay:=T#0.2S;
 
 stParam.stStatus.eMMA:=Init;
 
-stParam.stMachine.stParamMotY.stMoveLent.lrVitesse:=3500;
+stParam.stMachine.stParamMotY.stMoveLent.lrVitesse:=4500;
 
 stParam.stMachine.stParamMotX.stMoveRapide.lrVitesse:=3500;
 
 stParam.stMachine.stParamMotZ.stMoveRapide.lrVitesse:=3500;
-stParam.stMachine.stParamMotZ.stMoveLent.lrVitesse:=50;
+stParam.stMachine.stParamMotZ.stMoveLent.lrVitesse:=500;
 
 //setup all reference positions. Except Position 0 cause this one needs to be calibrated
 stParam.stMachine.stPosition1.Initialized:=TRUE;
